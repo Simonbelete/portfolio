@@ -1,0 +1,52 @@
+.gretting {
+    color: #fff;
+}
+
+.gretting__message {
+    
+}
+
+.gretting__message__hello {
+    font-size: 90px;
+}
+
+.gretting__message__name {
+    font-size: 80px;
+    color: #e30000;
+}
+
+
+/* Style for our header texts
+	* --------------------------------------- */
+	h1{
+		font-size: 5em;
+		font-family: arial,helvetica;
+		color: #fff;
+		margin:0;
+	}
+	.intro p{
+		color: #fff;
+	}
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+	}
+
+
+	/* Overwriting styles for the navigation dots (to place it where we want)
+	* --------------------------------------- */
+	.fp-slidesNav.bottom{
+		bottom: 25px;
+	}
+
+	/* Bottom menu
+	* --------------------------------------- */
+	#infoMenu li a {
+		color: #fff;
+	}
+
+	#section2 h1{
+		color: #333;
+	}

@@ -14,9 +14,11 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.19",
     "gatsby": "^2.26.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-flexbox-grid": "^2.1.2"
   },
   "devDependencies": {
     "prettier": "2.2.1"
