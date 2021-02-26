@@ -66,17 +66,13 @@ a {
 
 .greet {
     color: #fff;
-    font-size: 90px;
-}
-
-.greet__hello {
-    font-family: Helvetica;
-    font-weight: 500;
+    font-size: 100px;
+    line-height: 1.2em;
 }
 
 .greet__name {
-    font-size: 80px;
-    color: #e30000;
+    font-size: 100px;
+    font-family: Helvetica;
 }
 
 /*.gretting {
@@ -86,12 +82,43 @@ a {
     text-align: unset !important;
 }*/
 
-.gretting__message {
-    
+
+/*********************************************************/
+/**             Skill Header                            **/
+/*********************************************************/
+.skill {
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    display: flex;
+    padding: 0;
 }
 
-.gretting__message__hello {
-    font-size: 90px;
+.skill__field {
+    margin-top: 5%;
+}
+
+.skill_name {
+    color: #fff;
+    font-family: Helvetica;
+    font-size: 20px;
+    margin-left: 9px;
+    margin-bottom: 11px;
+}
+
+.skill_name > svg {
+    width: 20px;
+}
+
+/** Title **/
+.title {
+    /*text-decoration: underline;*/
+    color: #fff;
+    font-size: 20px;
+    font-family: Helvetica;
+    margin-top: 10px;
+    text-align: center;
 }
 
 /* Centered texts in each section
@@ -113,6 +140,94 @@ a {
 * --------------------------------------- */
 .fp-slidesNav.bottom{
 	bottom: 25px;
+}
+
+.fp-sr-only + span {
+    background: #fff !important;
+}
+
+/** Progress Bar */
+.progress {
+    background: rgba(255,255,255,0.1);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 30px;
+    width: 500px;
+}
+  
+.progress-value-base {
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background: #fff;
+    height: 20px;
+    width: 0;
+}
+
+.progress-value-50 {
+    animation: load-50 3s normal forwards;
+}
+
+@keyframes load-50 {
+    0% { width: 0; }
+    100% { width: 50%; }
+}
+
+.progress-value-60 {
+    animation: load-60 3s normal forwards;
+}
+
+@keyframes load-60 {
+    0% { width: 0; }
+    100% { width: 60%; }
+}
+
+.progress-value-70 {
+    animation: load-70 3s normal forwards;
+}
+
+@keyframes load-70 {
+    0% { width: 0; }
+    100% { width: 70%; }
+}
+
+.progress-value-80 {
+    animation: load-80 3s normal forwards;
+}
+
+@keyframes load-80 {
+    0% { width: 0; }
+    100% { width: 80%; }
+}
+
+.progress-value-90 {
+    animation: load-80 3s normal forwards;
+}
+
+@keyframes load-90 {
+    0% { width: 0; }
+    100% { width: 90%; }
+}
+
+.progress-value-100 {
+    animation: load-100 3s normal forwards;
+}
+
+@keyframes load-100 {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+.progress-value-85 {
+    animation: load-80 3s normal forwards;
+}
+
+@keyframes load-85 {
+    0% { width: 0; }
+    100% { width: 85%; }
 }
 
 

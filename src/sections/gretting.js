@@ -62,10 +62,18 @@ const GrettingHello = () => {
                     Hello, I'm
                 </div>
                 <div className="greet__name">
-                    ስምኦን
+                    Simon.
                 </div>
             </div>
         </>   
+    )
+}
+
+const HeroButtons = () => {
+    return(
+        <Row>
+            <button>Hire Me!</button>
+        </Row>
     )
 }
 
@@ -76,13 +84,13 @@ const Gretting = () => {
            <Row className="navbar">
                <Col xs={0} md={2} />
                {/* Left Nabar */}
-               <Col xs={6} md={5}>
+               <Col xs={6} md={6}>
                    <LeftNavbar />
                </Col>
                {/* End of Left Navarb */}
                
                {/** Right Nabr */}
-               <Col xs={6} md={5}>
+               <Col xs={6} md={4}>
                    <RightNavbar />
                </Col>
                {/** End of Right Navbar */}
@@ -94,6 +102,7 @@ const Gretting = () => {
                <Col md={2} />
                <Col md={4}>
                     <GrettingHello />
+                    <HeroButtons />
                </Col>
            </Row>
            {/** End of Hero */}

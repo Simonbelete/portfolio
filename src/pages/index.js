@@ -2,6 +2,7 @@ import React from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
 import GrettingSection from '../sections/gretting';
 import ProjectSlide from '../sections/project';
+import SkillSection from '../sections/skill';
 
 import '../styles/index.css';
 
@@ -18,7 +19,7 @@ const Fullpage = () => (
         <ReactFullpage.Wrapper>
           <div id="fullpage">
             <GrettingSection />
-
+            <SkillSection />
             <ProjectSlide />
           </div>
         </ReactFullpage.Wrapper>
