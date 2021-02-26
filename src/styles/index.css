@@ -1,6 +1,90 @@
+/** Default props **/
+a {
+    text-decoration: none;
+}
+
+/** Fonts **/
+@font-face {
+    font-family: Helvetica;
+    src: url('../fonts/helvetica/Helvetica.ttf');
+}
+
+@font-face {
+    font-family: Helvetica-Bold;
+    font-weight: 500;
+    src: url('../fonts/helvetica/Helvetica-Bold.ttf');
+}
+
+/*********************************************************/
+/**             Gretting Section                        **/
+/*********************************************************/
 .gretting {
+    background: rgba(21,21,21, 1);
     color: #fff;
 }
+
+
+/*********************************************************/
+/**             Navbar Header                          **/
+/*********************************************************/
+.navbar {
+    margin-top: 40px;
+}
+
+.phonenumber {
+    font-family: Helvetica;
+    font-size: 14px
+}
+
+/* Icon */
+.icon {
+    color: #fff;
+    font-family: Helvetica;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.icon > svg {
+    height: 16px;
+    margin-right: 16px;
+    margin-left: 16px;
+    vertical-align: bottom;
+}
+
+.icon > span {
+    color: #fff;
+    font-size: 14px;
+    vertical-align: bottom;
+}
+
+/*********************************************************/
+/**             Hero Header                          **/
+/*********************************************************/
+.hero {
+    margin-top: 10%;
+}
+
+.greet {
+    color: #fff;
+    font-size: 90px;
+}
+
+.greet__hello {
+    font-family: Helvetica;
+    font-weight: 500;
+}
+
+.greet__name {
+    font-size: 80px;
+    color: #e30000;
+}
+
+/*.gretting {
+    color: #fff;
+	background-color: #000;
+    vertical-align: top !important;
+    text-align: unset !important;
+}*/
 
 .gretting__message {
     
@@ -10,43 +94,40 @@
     font-size: 90px;
 }
 
-.gretting__message__name {
-    font-size: 80px;
-    color: #e30000;
+/* Centered texts in each section
+* --------------------------------------- */
+.section{
+    text-align: unset !important;
+}
+
+.fp-tableCell {
+    vertical-align: top !important;
 }
 
 
-/* Style for our header texts
-	* --------------------------------------- */
-	h1{
-		font-size: 5em;
-		font-family: arial,helvetica;
-		color: #fff;
-		margin:0;
-	}
-	.intro p{
-		color: #fff;
-	}
+.fp-bottom {
+    text-align: center !important;
+}
 
-	/* Centered texts in each section
-	* --------------------------------------- */
-	.section{
-		text-align:center;
-	}
+/* Overwriting styles for the navigation dots (to place it where we want)
+* --------------------------------------- */
+.fp-slidesNav.bottom{
+	bottom: 25px;
+}
 
 
-	/* Overwriting styles for the navigation dots (to place it where we want)
-	* --------------------------------------- */
-	.fp-slidesNav.bottom{
-		bottom: 25px;
-	}
+/** Meida Query **/
+@media only screen and (max-width: 768px) {
+    .icon > span {
+        display: none;
+    }
 
-	/* Bottom menu
-	* --------------------------------------- */
-	#infoMenu li a {
-		color: #fff;
-	}
+    #hidden-xs {
+        display: none;
+    }
 
-	#section2 h1{
-		color: #333;
-	}
+    .icon {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
