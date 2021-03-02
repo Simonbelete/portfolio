@@ -6,7 +6,7 @@ import CallIcon from '../components/CallIcon';
 import GithubIcon from '../components/GithubIcon';
 import LinkIcon from '../components/LinkIcon';
 import TelegramIcon from '../components/TelegramIcon';
-
+import Footer from '../components/Footer';
 
 const Navbar = () => {
     return (
@@ -71,8 +71,8 @@ const GrettingHello = () => {
 
 const HeroButtons = () => {
     return(
-        <Row>
-            <button>Hire Me!</button>
+        <Row className="hero__buttons">
+            <a href="#" class="btn-flip" data-back="Available" data-front="Hire Me!"></a>
         </Row>
     )
 }
@@ -106,6 +106,10 @@ const Gretting = () => {
                </Col>
            </Row>
            {/** End of Hero */}
+
+           {/** Footer */}
+            <Footer />
+           {/** End or Footer */}
         </div>
     )
 }

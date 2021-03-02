@@ -1,0 +1,22 @@
+.about {
+    background: #f3da6a;
+    text-align: center;
+}
+
+.about__body {
+    margin-top: 10%;
+}
+
+.about__body__title {
+    color: #AE3411;
+    font-size: 33px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.about__body__description {
+    color: #311E3A;
+    font-size: 60PX;
+    font-weight: 600;
+    font-family: monospace;
+}

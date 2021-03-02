@@ -1,3 +1,11 @@
+@import './vendor/btn.css';
+@import './footer.css';
+@import './about.css';
+
+* {
+    font-family: Helvetica;
+}
+
 /** Default props **/
 a {
     text-decoration: none;
@@ -13,6 +21,17 @@ a {
     font-family: Helvetica-Bold;
     font-weight: 500;
     src: url('../fonts/helvetica/Helvetica-Bold.ttf');
+}
+
+
+/** Button **/
+.button {
+    padding: 10px;
+    border-radius: 6px;
+    border-width: 0;
+    border-color: unset;
+    text-align: center;
+    outline: none;
 }
 
 /*********************************************************/
@@ -61,7 +80,12 @@ a {
 /**             Hero Header                          **/
 /*********************************************************/
 .hero {
-    margin-top: 10%;
+    margin-top: 15%;
+}
+
+.hero__buttons {
+    margin-top: 50px;
+    margin-left: 10px;
 }
 
 .greet {
@@ -90,7 +114,7 @@ a {
     color: #fff;
     justify-content: center;
     align-items: center;
-    background: #000;
+    background: rgba(21,21,21, 1);
     display: flex;
     padding: 0;
 }
