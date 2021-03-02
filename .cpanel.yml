@@ -3,4 +3,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/simonbeletecom/public_html/
-    - /bin/cp -R public/ $DEPLOYPATH
+    - /bin/cp -R public/* $DEPLOYPATH

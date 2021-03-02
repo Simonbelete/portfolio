@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{m4F4:function(t,n,a){t.exports=a.p+"static/cartman404-aa765b4ba62f0b7e8d8062e0071a4293.png"},tF9t:function(t,n,a){},w2l6:function(t,n,a){"use strict";a.r(n);var e=a("q1tI"),c=a.n(e),i=a("m4F4"),r=a.n(i);a("tF9t");n.default=function(){return c.a.createElement("div",null,c.a.createElement("img",{src:r.a}))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-995e4a2f3ef7521727df.js.map
