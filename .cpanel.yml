@@ -1,0 +1,7 @@
+
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/simonbelete/public_html/
+    - npm run build
+    - /bin/cp -R public/ $DEPLOYPATH
