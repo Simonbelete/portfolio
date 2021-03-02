@@ -3,5 +3,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/simonbelete/public_html/
+    - npm install
     - npm run build
     - /bin/cp -R public/ $DEPLOYPATH
