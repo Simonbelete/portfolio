@@ -1,33 +1,16 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
-  "version": "0.1.0",
-  "license": "0BSD",
+  "name": "vite-project",
+  "version": "0.0.0",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "dependencies": {
-    "@fullpage/react-fullpage": "^0.1.19",
-    "gatsby": "^2.26.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-flexbox-grid": "^2.1.2"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview"
   },
   "devDependencies": {
-    "prettier": "2.2.1"
+    "typescript": "^4.2.3",
+    "vite": "^2.3.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "dependencies": {
+    "three": "^0.128.0"
   }
 }
