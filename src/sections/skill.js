@@ -4,9 +4,17 @@ import ProgressBar from '../components/ProgressBar';
 import PythonLogo from '../components/PythonLogo';
 import JavascriptLogo from '../components/JavascriptLogo';
 
-const Skill = () => {
+const GeneralSkill = () => {
     return (
-        <div className="section skill">
+        <div className="slide skill__specfic">
+            sdfsdf
+        </div>
+    )
+}
+
+const SpecficSkill = () => {
+    return (
+        <div className="slide">
             <div className="title">
                 <h1>MY SKILLS</h1>
             </div>
@@ -47,6 +55,15 @@ const Skill = () => {
 
                 </Col>
             </Row>
+        </div>
+    )
+}
+
+const Skill = () => {
+    return (
+        <div className="section skill">
+            <GeneralSkill />
+            <SpecficSkill />
         </div>
     )
 }

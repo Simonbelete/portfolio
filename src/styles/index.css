@@ -1,6 +1,7 @@
 @import './vendor/btn.css';
 @import './footer.css';
 @import './about.css';
+@import './skill.css';
 
 * {
     font-family: Helvetica;
@@ -168,6 +169,10 @@ a {
 
 .fp-sr-only + span {
     background: #fff !important;
+}
+
+.fp-next {
+    margin-right: 44px;
 }
 
 /** Progress Bar */
