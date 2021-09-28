@@ -1,7 +1,12 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import { TrackerProvider } from "provider";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <TrackerProvider>
+      <Component {...pageProps} />
+    </TrackerProvider>
+  );
 }
-export default MyApp
+export default MyApp;
