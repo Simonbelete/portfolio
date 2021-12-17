@@ -1,12 +1,12 @@
-import React from "react";
-import "./App.css";
+import React, { ReactElement } from "react";
+import { WindowsBooting } from "components";
 
-function App() {
+const App: React.FC = (): ReactElement => {
   return (
     <div>
-      <h1 className="bg-red-700 text-blue-600">Hello</h1>
+      <WindowsBooting />
     </div>
   );
-}
+};
 
 export default App;
