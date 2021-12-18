@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 .left-to-right-loading {
-  animation: leftToRight 1.3s  infinite;
+  animation: leftToRight 1.5s  infinite;
   animation-timing-function: linear;
   position: absolute;
 }
 
 
 @keyframes leftToRight {
-  0%   {transform: translateX(-40px);}
+  0%   {transform: translateX(-50px);}
   100%   {transform: translateX(180px);}
 }

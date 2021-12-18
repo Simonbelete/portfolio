@@ -5,11 +5,15 @@ const WindowsBooting: React.FC = (): ReactElement => {
   return (
     <div className="bg-black w-screen h-screen">
       {/* Page Ceneter */}
-      <div className="flex flex-col gap-24 items-center justify-center m-auto h-full">
+      <div className="flex flex-col gap-24 items-center justify-center m-auto h-full relative">
         <WindowsLogoFull />
         <LoadingBar />
+        {/* Footer */}
+        <div className="flex justify-between text-white w-full px-20 absolute bottom-20">
+          <h5>Copyright &copy; Microsoft Corporation</h5>
+          <h5 className="font-black italic">Microsoft</h5>
+        </div>
       </div>
-      {/* Footer */}
     </div>
   );
 };
