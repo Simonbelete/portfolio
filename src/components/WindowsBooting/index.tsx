@@ -9,7 +9,7 @@ const WindowsBooting: React.FC = (): ReactElement => {
         <WindowsLogoFull />
         <LoadingBar />
         {/* Footer */}
-        <div className="flex justify-between text-white w-full px-20 absolute bottom-20">
+        <div className="flex justify-between text-white w-full md:px-20 px-5 absolute bottom-20">
           <h5>Copyright &copy; Microsoft Corporation</h5>
           <h5 className="font-black italic">Microsoft</h5>
         </div>

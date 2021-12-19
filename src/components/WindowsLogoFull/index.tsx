@@ -3,7 +3,7 @@ import React, { ReactElement } from "react";
 const WindowsLogoFull: React.FC = (): ReactElement => {
   return (
     <svg
-      className="w-2/6"
+      className="md:w-2/6 w-1/2"
       xmlns="http://www.w3.org/2000/svg"
       // width="100"
       // height="60"

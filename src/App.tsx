@@ -1,10 +1,10 @@
 import React, { ReactElement } from "react";
-import { WindowsBooting } from "components";
+import { WelcomeScreen } from "components";
 
 const App: React.FC = (): ReactElement => {
   return (
     <div>
-      <WindowsBooting />
+      <WelcomeScreen />
     </div>
   );
 };
