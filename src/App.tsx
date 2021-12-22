@@ -1,11 +1,12 @@
 import React, { ReactElement } from "react";
-import { WelcomeScreen } from "components";
+import { BackgroundImageWrapper, Folder } from "components";
 
 const App: React.FC = (): ReactElement => {
   return (
-    <div>
-      <WelcomeScreen />
-    </div>
+    <BackgroundImageWrapper>
+      <div className="h-24" />
+      <Folder />
+    </BackgroundImageWrapper>
   );
 };
 
