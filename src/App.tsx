@@ -1,12 +1,28 @@
 import React, { ReactElement } from "react";
-import { BackgroundImageWrapper, Folder } from "components";
+import {
+  BackgroundImageWrapper,
+  FontWrapper,
+  Folder,
+  HomeScreen,
+  StartBar,
+  StartMenu,
+} from "components";
 
 const App: React.FC = (): ReactElement => {
   return (
-    <BackgroundImageWrapper>
-      <div className="h-24" />
-      <Folder />
-    </BackgroundImageWrapper>
+    <FontWrapper>
+      <BackgroundImageWrapper>
+        <HomeScreen>
+          <HomeScreen.Body>
+            <Folder />
+          </HomeScreen.Body>
+          <HomeScreen.Footer>
+            <StartMenu />
+            <StartBar />
+          </HomeScreen.Footer>
+        </HomeScreen>
+      </BackgroundImageWrapper>
+    </FontWrapper>
   );
 };
 

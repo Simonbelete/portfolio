@@ -1,7 +1,25 @@
 import React, { ReactElement } from "react";
 
-const HomeScreen: React.FC = (): ReactElement => {
-  return <div className="h-screen w-screen overflow-hidden"></div>;
+const HomeScreenComponent: React.FC<{
+  children: ReactElement | ReactElement[];
+}> = ({ children }): ReactElement => {
+  return <div className="h-full w-full relative">{children}</div>;
 };
+
+const Body: React.FC<{ children: ReactElement | ReactElement[] }> = ({
+  children,
+}): ReactElement => {
+  return <div className="w-full h-auto mb-10">{children}</div>;
+};
+
+const Footer: React.FC<{ children: ReactElement | ReactElement[] }> = ({
+  children,
+}): ReactElement => {
+  return (
+    <div className="absolute bottom-0 left-0 right-0 w-full">{children}</div>
+  );
+};
+
+const HomeScreen = Object.assign(HomeScreenComponent, { Body, Footer });
 
 export default HomeScreen;
