@@ -3,7 +3,7 @@ import React, { ReactElement } from "react";
 const BackgroundImageWrapper: React.FC<{
   children: ReactElement | ReactElement[];
   background?: string;
-}> = ({ children, background = "/bliss.jpg" }): ReactElement => {
+}> = ({ children, background = "/backgrounds/bliss.jpg" }): ReactElement => {
   return (
     <div
       className="w-screen h-screen  aspect-square bg-cover"
