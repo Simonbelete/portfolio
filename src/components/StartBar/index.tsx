@@ -6,7 +6,7 @@ const StartBar: React.FC<{ onClick: () => void }> = ({
 }): ReactElement => {
   return (
     <div className="grid grid-cols-12 bg-[#235cdb]">
-      <div
+      <button
         onClick={onClick}
         className="col-span-1 h-[25px] bg-[#369937] flex gap-1 items-center justify-center  rounded-tr-lg rounded-br-lg"
       >
@@ -17,7 +17,7 @@ const StartBar: React.FC<{ onClick: () => void }> = ({
         >
           Start
         </p>
-      </div>
+      </button>
       <div className="bg-[#235cdb] col-span-8"></div>
       <div className="bg-[#1199ed] col-span-2"></div>
     </div>
