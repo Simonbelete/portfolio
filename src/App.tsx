@@ -8,6 +8,7 @@ import {
   StartMenu,
   Folder,
   WindowsBooting,
+  Window,
 } from "components";
 import { BootingUpContaienr } from "container";
 
@@ -31,6 +32,7 @@ const App: React.FC = (): ReactElement => {
           <HomeScreen>
             <HomeScreen.Body>
               <Folder />
+              <Window />
             </HomeScreen.Body>
             <HomeScreen.Footer>
               <StartMenu />

@@ -8,21 +8,21 @@ const StartMenu: React.FC = (): ReactElement => {
     });
   }, []);
   return (
-    <div className="w-[500px] h-[600px] bg-white rounded-tl-lg rounded-tr-lg">
-      <Menu>
-        {({ open }) => (
-          <>
-            <Menu.Button>More</Menu.Button>
-            <Transition
-              show={false}
-              enter="transition duration-100 ease-out"
-              enterFrom="transform scale-95 opacity-0"
-              enterTo="transform scale-100 opacity-100"
-              leave="transition duration-75 ease-out"
-              leaveFrom="transform scale-100 opacity-100"
-              leaveTo="transform scale-95 opacity-0"
-            >
-              <Menu.Items static>
+    <Menu>
+      {({ open }) => (
+        <>
+          <Menu.Button>More</Menu.Button>
+          <Transition
+            show={false}
+            enter="transition duration-100 ease-out"
+            enterFrom="transform scale-95 opacity-0"
+            enterTo="transform scale-100 opacity-100"
+            leave="transition duration-75 ease-out"
+            leaveFrom="transform scale-100 opacity-100"
+            leaveTo="transform scale-95 opacity-0"
+          >
+            <Menu.Items static>
+              <div className="w-[500px] h-[600px] bg-white rounded-tl-lg rounded-tr-lg">
                 <Menu.Item>
                   {({ active }) => (
                     <a
@@ -47,12 +47,12 @@ const StartMenu: React.FC = (): ReactElement => {
                     </a>
                   )}
                 </Menu.Item>
-              </Menu.Items>
-            </Transition>
-          </>
-        )}
-      </Menu>
-    </div>
+              </div>
+            </Menu.Items>
+          </Transition>
+        </>
+      )}
+    </Menu>
   );
 };
 
