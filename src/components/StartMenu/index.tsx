@@ -11,7 +11,7 @@ const StartMenu: React.FC = (): ReactElement => {
     <Menu>
       {({ open }) => (
         <>
-          <Menu.Button>More</Menu.Button>
+          {/* <Menu.Button>More</Menu.Button> */}
           <Transition
             show={false}
             enter="transition duration-100 ease-out"

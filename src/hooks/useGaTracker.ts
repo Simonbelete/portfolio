@@ -3,7 +3,8 @@ import { useLocation } from "react-router-dom";
 import ReactGA from "react-ga";
 
 const useGaTracker = () => {
-  const TRACKING_ID = "UA-216092610-1";
+  // const TRACKING_ID = "UA-216092610-1"; // Production
+  const TRACKING_ID = "UA-123456789";
   const location = useLocation();
   const [initialized, setInitialized] = useState(false);
 

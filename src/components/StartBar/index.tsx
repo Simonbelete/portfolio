@@ -1,10 +1,15 @@
 import React, { ReactElement } from "react";
 import { StartButton, StartMenu } from "components";
 
-const StartBar: React.FC = (): ReactElement => {
+const StartBar: React.FC<{ onClick: () => void }> = ({
+  onClick,
+}): ReactElement => {
   return (
     <div className="grid grid-cols-12 bg-[#235cdb]">
-      <div className="col-span-1 h-[25px] bg-[#369937] flex gap-1 items-center justify-center  rounded-tr-lg rounded-br-lg">
+      <div
+        onClick={onClick}
+        className="col-span-1 h-[25px] bg-[#369937] flex gap-1 items-center justify-center  rounded-tr-lg rounded-br-lg"
+      >
         <StartButton />
         <p
           className="font-extrabold italic text-white font-sans"
