@@ -11,9 +11,13 @@ import {
   Window,
 } from "components";
 import { BootingUpContaienr } from "container";
+import { useGaTracker } from "hooks";
 
 const App: React.FC = (): ReactElement => {
   const [isBootingDone, setIsBootingDone] = useState<boolean>(false);
+
+  // Init ga tracker
+  useGaTracker();
 
   useEffect(() => {
     const timeId = setTimeout(() => {
