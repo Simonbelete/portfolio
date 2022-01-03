@@ -10,7 +10,11 @@ import {
   WindowsBooting,
   Window,
 } from "components";
-import { BootingUpContaienr, StartBarContainer } from "container";
+import {
+  BootingUpContaienr,
+  StartBarContainer,
+  StartMenuContaienr,
+} from "container";
 import { useGaTracker } from "hooks";
 
 const App: React.FC = (): ReactElement => {
@@ -39,7 +43,7 @@ const App: React.FC = (): ReactElement => {
               <Window />
             </HomeScreen.Body>
             <HomeScreen.Footer>
-              <StartMenu />
+              {/* <StartMenuContaienr /> */}
               <StartBarContainer />
             </HomeScreen.Footer>
           </HomeScreen>
