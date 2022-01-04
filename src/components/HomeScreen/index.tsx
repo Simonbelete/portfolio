@@ -18,7 +18,9 @@ const Footer: React.FC<{ children: ReactElement | ReactElement[] }> = ({
   children,
 }): ReactElement => {
   return (
-    <div className="absolute bottom-0 left-0 right-0 w-full">{children}</div>
+    <div className="absolute bottom-0 left-0 right-0 w-full h-[32px]">
+      {children}
+    </div>
   );
 };
 
