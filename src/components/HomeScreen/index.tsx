@@ -11,7 +11,7 @@ const HomeScreenComponent: React.FC<{
 const Body: React.FC<{ children: ReactElement | ReactElement[] }> = ({
   children,
 }): ReactElement => {
-  return <div className="w-full h-full mb-10">{children}</div>;
+  return <div className="w-full h-full">{children}</div>;
 };
 
 const Footer: React.FC<{ children: ReactElement | ReactElement[] }> = ({

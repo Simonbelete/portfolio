@@ -10,7 +10,7 @@ const StartBar: React.FC<{ onClick: () => void }> = ({
   return (
     <div className="w-full h-full bg-[#235cdb]">
       <Menu as="div" className="h-full">
-        <div className="w-[500px]">
+        <div className="w-[100px] md:w-[500px] absolute bottom-8">
           <Transition
             enter="transition duration-100 ease-out"
             enterFrom="transform scale-95 opacity-0"
@@ -20,7 +20,7 @@ const StartBar: React.FC<{ onClick: () => void }> = ({
             leaveTo="transform scale-95 opacity-0"
           >
             <Menu.Items className="w-auto">
-              <div className="w-full h-[600px] bg-white rounded-tl-lg rounded-tr-lg">
+              <div className="w-full h-[400px] md:h-[600px] bg-white rounded-tl-lg rounded-tr-lg">
                 <Menu.Item>
                   {({ active }) => (
                     <a
