@@ -9,7 +9,7 @@ const Folder: React.FC<{ shortcut?: boolean; open?: boolean; name?: string }> =
           x: 0,
           y: 0,
           width: "auto",
-          height: 200,
+          height: 50,
         }}
         enableResizing={false}
         bounds="parent"

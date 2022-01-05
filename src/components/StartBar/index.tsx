@@ -8,7 +8,12 @@ const StartBar: React.FC<{ onClick: () => void }> = ({
   onClick,
 }): ReactElement => {
   return (
-    <div className="w-full h-full bg-[#235cdb]">
+    <div
+      className="w-full h-full"
+      style={{
+        background: "linear-gradient(white -26px, #225ad9 10px, #225ad9)",
+      }}
+    >
       <Menu as="div" className="h-full">
         <div className="w-[100px] md:w-[500px] absolute bottom-8">
           <Transition
@@ -54,8 +59,13 @@ const StartBar: React.FC<{ onClick: () => void }> = ({
           <Menu.Button className="basis-24">
             <StartButton />
           </Menu.Button>
-          <div className="bg-[#235cdb] basis-1/2"></div>
-          <div className="bg-[#1199ed] basis-1/4"></div>
+          <div className="basis-3/4 border-r-2 border-gray-600"></div>
+          <div
+            className=" shadow-lg basis-1/6"
+            style={{
+              background: "linear-gradient(white -26px, #0e8fdf 10px, #0e8fdf)",
+            }}
+          ></div>
         </div>
       </Menu>
     </div>
