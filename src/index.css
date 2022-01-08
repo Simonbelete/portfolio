@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  cursor: url("../public/cursors/CursorsXP.cur"), default
+}
+
 .left-to-right-loading {
   animation: leftToRight 1.5s  infinite;
   animation-timing-function: linear;

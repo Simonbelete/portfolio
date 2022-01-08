@@ -4,6 +4,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      cursor: {
+        'xp': 'url("../public/cursors/CursorsXP.cur"), default'
+      },
       keyframes: {
         leftToRight: {
           '0%': { left: '0px'},
