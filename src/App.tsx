@@ -14,6 +14,8 @@ import {
   BootingUpContaienr,
   StartBarContainer,
   StartMenuContaienr,
+  WindowsManager,
+  DesktopContainer,
 } from "container";
 import { useGaTracker } from "hooks";
 
@@ -39,8 +41,8 @@ const App: React.FC = (): ReactElement => {
         <BackgroundImageWrapper>
           <HomeScreen>
             <HomeScreen.Body>
-              <Folder />
-              <Window />
+              <DesktopContainer />
+              <WindowsManager />
             </HomeScreen.Body>
             <HomeScreen.Footer>
               {/* <StartMenuContaienr /> */}
