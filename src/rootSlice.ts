@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // Enums
 export enum DesktopType {
   FOLDER = "FOLDER",
+  GITHUB = "GITHUB",
 }
 
 // Interfaces
@@ -14,6 +15,7 @@ interface Windows {
 
 interface Desktops {
   id: number;
+  iconUrl: string;
   type: DesktopType;
   shortcut: boolean;
   name: string;
@@ -37,6 +39,7 @@ const initialState: RootState = {
   desktops: [
     {
       id: 1,
+      iconUrl: "/icons/folder_closed.ico",
       type: DesktopType.FOLDER,
       name: "New Folder",
       shortcut: false,

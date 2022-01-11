@@ -4,6 +4,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        tahoma: ['tahoma']
+      },
       cursor: {
         'xp': 'url("../public/cursors/CursorsXP.cur"), default'
       },

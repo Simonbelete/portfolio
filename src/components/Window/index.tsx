@@ -15,9 +15,14 @@ const Window: React.FC = (): ReactElement => {
       enableResizing={true}
       bounds="parent"
     >
-      <div className="bg-[#0058f4] rounded-t-xl w-full h-full relative cursor-xp">
+      <div
+        style={{
+          background: "linear-gradient(white -26px, #225ad9 10px, #225ad9)",
+        }}
+        className=" rounded-t-lg w-full h-full relative cursor-xp"
+      >
         <div
-          className="bg-white h-auto w-atuo absolute top-10 bottom-1 left-1 right-1"
+          className="bg-white h-auto w-atuo absolute top-8 bottom-1 left-1 right-1"
           draggable="false"
         >
           <ToolBars />

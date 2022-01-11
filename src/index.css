@@ -2,8 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'tahoma';
+  src: url('../public/fonts/tahoma.ttf')  format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'tahoma';
+  src: url('../public/fonts/tahomabd.ttf')  format('truetype');
+  font-weight: 700;
+}
+
 html, body {
-  cursor: url("../public/cursors/CursorsXP.cur"), default
+  cursor: url("../public/cursors/CursorsXP.cur"), default;
 }
 
 .left-to-right-loading {
@@ -16,18 +28,6 @@ html, body {
 @keyframes leftToRight {
   0%   {transform: translateX(-50px);}
   100%   {transform: translateX(180px);}
-}
-
-@font-face {
-  font-family: 'tahoma';
-  src: url('../public/fonts/tahoma.ttf')  format('truetype');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'tahoma';
-  src: url('../public/fonts/tahomabd.ttf')  format('truetype');
-  font-weight: 700;
 }
 
 img{

@@ -13,3 +13,5 @@ export { default as Window } from "./Window";
 export { default as ToolBarFileMenu } from "./ToolBarFileMenu";
 export { default as ToolBarMenus } from "./ToolBarMenus";
 export { default as ToolBars } from "./ToolBars";
+export { default as DesktopIcon } from "./DesktopIcon";
+export { default as GithubdesktopIcon } from "./GithubDesktopIcon";
