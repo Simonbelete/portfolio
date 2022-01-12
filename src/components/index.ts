@@ -15,3 +15,4 @@ export { default as ToolBars } from "./ToolBars";
 export { default as DesktopIcon } from "./DesktopIcon";
 export { default as GithubdesktopIcon } from "./GithubDesktopIcon";
 export { default as PowerOffAndLogOff } from "./PowerOffAndLogOff";
+export { default as LogOffWindow } from "./LogOffWindow";
