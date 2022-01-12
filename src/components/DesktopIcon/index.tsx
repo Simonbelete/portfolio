@@ -16,7 +16,7 @@ const DesktopIcon: React.FC<{ children: string; iconUrl: string }> = ({
       enableResizing={false}
       bounds="parent"
     >
-      <div className="inline-flex flex-col justify-center items-center gap-1 cursor-default">
+      <div className="inline-flex flex-col justify-center items-center gap-1 cursor-xp">
         <img src={iconUrl} alt="" className="aspect-square h-8 w-8" />
         <p
           className="text-xs text-white"

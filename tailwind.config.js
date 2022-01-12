@@ -4,6 +4,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#0e8fdf",
+        primaryGradient: "linear-gradient(white -26px, #0e8fdf 10px, #0e8fdf)"
+      },
       fontFamily: {
         tahoma: ['tahoma']
       },

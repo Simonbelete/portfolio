@@ -1,8 +1,6 @@
 import React, { ReactElement } from "react";
-import { StartButton, StartMenu } from "components";
+import { StartButton } from "components";
 import { Menu, Transition } from "@headlessui/react";
-
-import { StartMenuContaienr } from "container";
 
 const StartBar: React.FC<{ onClick: () => void }> = ({
   onClick,
@@ -15,7 +13,7 @@ const StartBar: React.FC<{ onClick: () => void }> = ({
       }}
     >
       <Menu as="div" className="h-full">
-        <div className="w-[100px] md:w-[500px] absolute bottom-8">
+        <div className="w-[100px] md:w-[380px] absolute bottom-8">
           <Transition
             enter="transition duration-100 ease-out"
             enterFrom="transform scale-95 opacity-0"
@@ -25,31 +23,29 @@ const StartBar: React.FC<{ onClick: () => void }> = ({
             leaveTo="transform scale-95 opacity-0"
           >
             <Menu.Items className="w-auto">
-              <div className="w-full h-[400px] md:h-[600px] bg-white rounded-tl-lg rounded-tr-lg">
-                <Menu.Item>
-                  {({ active }) => (
-                    <a
-                      className={`${
-                        active
-                          ? "bg-blue-500 text-white"
-                          : "bg-white text-black"
-                      }`}
-                      href="/account-settings"
-                    >
-                      Account settings
-                    </a>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <a
-                      className={`${active && "bg-blue-500"}`}
-                      href="/account-settings"
-                    >
-                      Documentation
-                    </a>
-                  )}
-                </Menu.Item>
+              <div
+                className="relative flex flex-col justify-between w-full h-[400px] md:h-[500px] bg-white rounded-tl-[5px] rounded-tr-[5px]"
+                style={{
+                  background:
+                    "linear-gradient(#225ad9 7%, white, white, #225ad9)",
+                  boxShadow: "0px 1px 4px black",
+                }}
+              >
+                {/* Header */}
+                <div className="h-[15%]">Log off</div>
+                {/* Body */}
+                <div className="h-full w-full pr-[1px] bg-[#225ad9]">
+                  <div className="h-full w-full flex flex-row justify-between">
+                    {/* Left */}
+                    <div className="bg-white w-full h-full flex flex-col gap-2">
+                      #d3e5fa
+                    </div>
+                    {/* Right */}
+                    <div className="w-full h-full bg-[#d3e5fa]"></div>
+                  </div>
+                </div>
+                {/* Bottom */}
+                <div className="w-full h-[10%]">Log off</div>
               </div>
             </Menu.Items>
           </Transition>

@@ -8,7 +8,6 @@ export { default as FontWrapper } from "./FontWrapper";
 export { default as StartButton } from "./StartButton";
 export { default as StartBar } from "./StartBar";
 export { default as HomeScreen } from "./HomeScreen";
-export { default as StartMenu } from "./StartMenu";
 export { default as Window } from "./Window";
 export { default as ToolBarFileMenu } from "./ToolBarFileMenu";
 export { default as ToolBarMenus } from "./ToolBarMenus";

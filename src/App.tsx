@@ -5,7 +5,6 @@ import {
   BackgroundImageWrapper,
   HomeScreen,
   StartBar,
-  StartMenu,
   Folder,
   WindowsBooting,
   Window,
@@ -13,7 +12,6 @@ import {
 import {
   BootingUpContaienr,
   StartBarContainer,
-  StartMenuContaienr,
   WindowsManager,
   DesktopContainer,
 } from "container";
