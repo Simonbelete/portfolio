@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { StartButton } from "components";
+import { StartButton, PowerOffAndLogOff } from "components";
 import { Menu, Transition } from "@headlessui/react";
 
 const StartBar: React.FC<{ onClick: () => void }> = ({
@@ -45,7 +45,9 @@ const StartBar: React.FC<{ onClick: () => void }> = ({
                   </div>
                 </div>
                 {/* Bottom */}
-                <div className="w-full h-[10%]">Log off</div>
+                <div className="w-full h-[10%] flex justify-end items-center px-3">
+                  <PowerOffAndLogOff />
+                </div>
               </div>
             </Menu.Items>
           </Transition>

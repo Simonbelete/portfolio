@@ -4,13 +4,13 @@
 
 @font-face {
   font-family: 'tahoma';
-  src: url('../public/fonts/tahoma.ttf')  format('truetype');
+  src: local('tahoma'), url('../public/fonts/tahoma.ttf')  format('truetype');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'tahoma';
-  src: url('../public/fonts/tahomabd.ttf')  format('truetype');
+  src: local('tahoma'), url('../public/fonts/tahomabd.ttf')  format('truetype');
   font-weight: 700;
 }
 

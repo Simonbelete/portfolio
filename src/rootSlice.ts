@@ -39,7 +39,7 @@ const initialState: RootState = {
   desktops: [
     {
       id: 1,
-      iconUrl: "/icons/folder_closed.ico",
+      iconUrl: "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-003.ico",
       type: DesktopType.FOLDER,
       name: "New Folder",
       shortcut: false,
