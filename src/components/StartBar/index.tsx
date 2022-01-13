@@ -2,9 +2,7 @@ import React, { ReactElement } from "react";
 import { StartButton, PowerOffAndLogOff } from "components";
 import { Menu, Transition } from "@headlessui/react";
 
-const StartBar: React.FC<{ onClick: () => void }> = ({
-  onClick,
-}): ReactElement => {
+const StartBar: React.FC<{ user: ReactElement }> = ({ user }): ReactElement => {
   return (
     <div
       className="w-full h-full"
@@ -24,7 +22,7 @@ const StartBar: React.FC<{ onClick: () => void }> = ({
           >
             <Menu.Items className="w-auto">
               <div
-                className="relative flex flex-col justify-between w-full h-[400px] md:h-[500px] bg-white rounded-tl-[5px] rounded-tr-[5px]"
+                className="relative flex flex-col justify-between w-full h-[400px] md:h-[475px] bg-white rounded-tl-[5px] rounded-tr-[5px]"
                 style={{
                   background:
                     "linear-gradient(#225ad9 7%, white, white, #225ad9)",
@@ -32,7 +30,9 @@ const StartBar: React.FC<{ onClick: () => void }> = ({
                 }}
               >
                 {/* Header */}
-                <div className="h-[15%]">Log off</div>
+                <div className="h-[15%] flex items-center justify-start px-2 py-2">
+                  {user}
+                </div>
                 {/* Body */}
                 <div className="h-full w-full pr-[1px] bg-[#225ad9]">
                   <div className="h-full w-full flex flex-row justify-between">

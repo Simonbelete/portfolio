@@ -22,13 +22,24 @@ interface Desktops {
   window: Windows | null;
 }
 
+interface UserProfile {
+  image: string;
+  name: string;
+}
+
 interface RootState {
+  user: UserProfile;
   windows: Windows[];
   desktops: Desktops[];
 }
 
 // Init state
 const initialState: RootState = {
+  user: {
+    image: "/use_pictures/Chess_Pieces.png",
+    name: "Simon Belete",
+  },
+
   windows: [
     {
       id: 1,
