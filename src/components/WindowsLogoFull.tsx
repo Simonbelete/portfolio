@@ -5,12 +5,12 @@ const WindowsLogoFull: React.FC<{ size?: string }> = ({
 }): ReactElement => {
   return (
     <svg
-      className="md:w-2/6 w-1/2"
+      // className="md:w-2/6 w-1/2"
       xmlns="http://www.w3.org/2000/svg"
       // width="100"
       // height="60"
       width={size}
-      height={size}
+      // height={size}
       version="1.1"
       viewBox="0 0 100 60"
     >
