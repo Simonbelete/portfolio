@@ -1,4 +1,3 @@
-export { default as WindowsLogoFull } from "./WindowsLogoFull";
 export { default as WindowsBooting } from "./WindowsBooting";
 export { default as LoadingBar } from "./LoadingBar";
 export { default as WelcomeScreen } from "./WelcomeScreen";
@@ -20,3 +19,4 @@ export { default as Button } from "./Button";
 export { default as UserAccountIcon } from "./UserAccountIcon";
 
 export { default as GlowLine } from "./GlowLine";
+export { default as WindowsLogoFull } from "./WindowsLogoFull";
