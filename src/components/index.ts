@@ -21,3 +21,4 @@ export { default as UserAccountIcon } from "./UserAccountIcon";
 export { default as GlowLine } from "./GlowLine";
 export { default as WindowsLogoFull } from "./WindowsLogoFull";
 export { default as LogOffText } from "./LogOffText";
+export { default as UserAccountIconLogOffed } from "./UserAccountIconLogOffed";

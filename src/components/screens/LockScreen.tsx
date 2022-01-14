@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { GlowLine, LogOffText, UserAccountIcon } from "components";
+import { GlowLine, LogOffText, UserAccountIconLogOffed } from "components";
 
 const LockScreen: React.FC = (): ReactElement => {
   return (
@@ -18,7 +18,7 @@ const LockScreen: React.FC = (): ReactElement => {
       >
         <LogOffText />
         <GlowLine horizontal colors={["#658ced", "#91AEEE", "#658ced"]} />
-        <UserAccountIcon
+        <UserAccountIconLogOffed
           image="/use_pictures/Chess_Pieces.png"
           name="Simon Belete"
         />
