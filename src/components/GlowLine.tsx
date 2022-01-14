@@ -2,8 +2,8 @@ import React, { ReactElement } from "react";
 
 const GlowLine: React.FC<{ colors: String[] }> = ({ colors }): ReactElement => {
   return (
-    <hr
-      className="w-full h-1"
+    <div
+      className="w-full h-[2px] border-0"
       style={{
         background: `linear-gradient(to right, ${colors.join(",")})`,
       }}
