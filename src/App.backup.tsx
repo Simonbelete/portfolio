@@ -1,6 +1,5 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import {
-  WelcomeScreen,
   FontWrapper,
   BackgroundImageWrapper,
   HomeScreen,

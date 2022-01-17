@@ -1,5 +1,6 @@
 import React, { ReactElement, useEffect, useState } from "react";
-import { WelcomeScreen, WindowsBooting } from "components";
+import { WindowsBooting } from "components";
+import { WelcomeScreen } from "components/screens";
 import { useAudio } from "hooks";
 
 const BootingUpContaienr: React.FC = (): ReactElement => {
