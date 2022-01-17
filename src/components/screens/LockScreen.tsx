@@ -1,5 +1,10 @@
 import React, { ReactElement } from "react";
-import { GlowLine, LogOffText, UserAccountIconLogOffed } from "components";
+import {
+  GlowLine,
+  LogOffText,
+  UserAccountIconLogOffed,
+  TurnOffIcon,
+} from "components";
 
 const LockScreen: React.FC = (): ReactElement => {
   return (
@@ -26,9 +31,11 @@ const LockScreen: React.FC = (): ReactElement => {
       {/* Footer */}
       <GlowLine colors={["#203A97, #ED943F 50%, #26408C"]} />
       <div
-        className="h-[8%] bg-[#00309C]"
+        className="h-[8%] bg-[#00309C] flex justify-between"
         style={{ background: "linear-gradient(to right, #3833AC, #07309E)" }}
-      ></div>
+      >
+        <TurnOffIcon size={TurnOffIcon.Sizes.large} />
+      </div>
     </div>
   );
 };
