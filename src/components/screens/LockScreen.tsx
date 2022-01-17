@@ -31,10 +31,14 @@ const LockScreen: React.FC = (): ReactElement => {
       {/* Footer */}
       <GlowLine colors={["#203A97, #ED943F 50%, #26408C"]} />
       <div
-        className="h-[8%] bg-[#00309C] flex justify-between"
+        className="h-[8%] bg-[#00309C] flex px-8 pb-5 justify-between"
         style={{ background: "linear-gradient(to right, #3833AC, #07309E)" }}
       >
         <TurnOffIcon size={TurnOffIcon.Sizes.large} />
+        <p className="text-white text-[12px] mt-4 font-tahoma">
+          After you log on, you can add or change accounts, <br />
+          Just go to control Panel and click User Accounts.
+        </p>
       </div>
     </div>
   );
