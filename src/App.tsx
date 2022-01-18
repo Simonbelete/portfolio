@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import { useGaTracker } from "hooks";
-import { LockScreen } from "components/screens";
+import { UserPictureListSelector } from "components";
 
 const App: React.FC = (): ReactElement => {
   // Init ga tracker
@@ -8,7 +8,7 @@ const App: React.FC = (): ReactElement => {
 
   return (
     <>
-      <LockScreen />
+      <UserPictureListSelector />
     </>
   );
 };
