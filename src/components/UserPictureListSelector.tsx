@@ -27,17 +27,18 @@ const UserPictureListSelector: React.FC = (): ReactElement => {
     "snowflake.png",
   ];
   return (
-    <div className="grid grid-cols-7 gap-4 border border-black px-5 py-1 h-52 overflow-y-scroll">
-      {imagesList.map((_) => (
-        <div>
-          <img
-            src={`/user_pictures/${_}`}
-            alt={`${_}`}
-            className="aspect-square w-[55px] h-[55px]"
-          />
-        </div>
-      ))}
-    </div>
+    // <div className="grid grid-cols-7 gap-4 border border-black px-5 py-10  overflow-y-scroll">
+    //   dfsdfsdfsdfsdfsdfdsfsdfsdf
+    //   {/* {imagesList.map((_) => (
+    //     <div>
+    //       <img
+    //         src={`/user_pictures/${_}`}
+    //         alt={`${_}`}
+    //         className="aspect-square w-[55px] h-[55px]"
+    //       />
+    //     </div>
+    //   ))} */}
+    // </div>
   );
 };
 

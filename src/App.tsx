@@ -7,9 +7,9 @@ const App: React.FC = (): ReactElement => {
   useGaTracker();
 
   return (
-    <>
+    <div className="w-screen h-screen overflow-scroll">
       <UserPictureListSelector />
-    </>
+    </div>
   );
 };
 
