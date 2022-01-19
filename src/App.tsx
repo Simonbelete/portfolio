@@ -1,12 +1,13 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import { useGaTracker } from "hooks";
-import { PowerOffScreen } from "components/screens";
+import { BootingScreen } from "components/screens";
+import { WindowsBooting } from "components";
 
 const App: React.FC = (): ReactElement => {
   // Init ga tracker
   useGaTracker();
 
-  return <PowerOffScreen />;
+  return <BootingScreen />;
 };
 
 export default App;
