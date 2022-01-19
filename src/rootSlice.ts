@@ -28,6 +28,7 @@ interface UserProfile {
 }
 
 interface RootState {
+  background: string;
   user: UserProfile;
   windows: Windows[];
   desktops: Desktops[];
@@ -35,11 +36,11 @@ interface RootState {
 
 // Init state
 const initialState: RootState = {
+  background: "/backgrounds/bliss.jpg",
   user: {
     image: "/use_pictures/Chess_Pieces.png",
     name: "Simon Belete",
   },
-
   windows: [
     {
       id: 1,

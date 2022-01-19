@@ -1,5 +1,5 @@
 import React, { ReactElement, useEffect, useState } from "react";
-import { WindowsBooting } from "components";
+import { BootingScreen } from "components/screens";
 import { WelcomeScreen } from "components/screens";
 import { useAudio } from "hooks";
 
@@ -19,7 +19,7 @@ const BootingUpContaienr: React.FC = (): ReactElement => {
 
   if (booted) {
     return <WelcomeScreen />;
-  } else return <WindowsBooting />;
+  } else return <BootingScreen />;
 };
 
 export default BootingUpContaienr;
