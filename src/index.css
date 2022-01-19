@@ -19,6 +19,18 @@ html, body {
   font-family: 'tahoma';
 }
 
+.left-to-right-loading {
+  animation: leftToRight 1.5s  infinite;
+  animation-timing-function: linear;
+  position: absolute;
+}
+
+
+@keyframes leftToRight {
+  0%   {transform: translateX(-50px);}
+  100%   {transform: translateX(180px);}
+}
+
 img{
   pointer-events: none;
   user-drag: none;
