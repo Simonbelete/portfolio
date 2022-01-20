@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 // Enums
-export enum DesktopType {
-  FOLDER = "FOLDER",
-  GITHUB = "GITHUB",
-}
+// export enum DesktopType {
+//   FOLDER = "FOLDER",
+//   GITHUB = "GITHUB",
+// }
 
 // Interfaces
 interface Windows {
@@ -16,10 +16,12 @@ interface Windows {
 interface Desktops {
   id: number;
   iconUrl: string;
-  type: DesktopType;
+  // type: DesktopType;
   shortcut: boolean;
   name: string;
   window: Windows | null;
+  x: number;
+  y: number;
 }
 
 interface UserProfile {
@@ -52,10 +54,20 @@ const initialState: RootState = {
     {
       id: 1,
       iconUrl: "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-003.ico",
-      type: DesktopType.FOLDER,
       name: "New Folder",
       shortcut: false,
       window: null,
+      x: 0,
+      y: 0,
+    },
+    {
+      id: 2,
+      iconUrl: "/images/github-logo.png",
+      name: "Github \n (Simonbelete)",
+      shortcut: false,
+      window: null,
+      x: 0,
+      y: 70,
     },
   ],
 };

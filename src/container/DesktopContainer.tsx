@@ -7,7 +7,9 @@ const DesktopContainer: React.FC = (): ReactElement => {
   return (
     <>
       {desktopsList.map((_) => (
-        <DesktopIcon iconUrl={_.iconUrl}>{_.name}</DesktopIcon>
+        <DesktopIcon iconUrl={_.iconUrl} x={_.x} y={_.y}>
+          {_.name}
+        </DesktopIcon>
       ))}
     </>
   );

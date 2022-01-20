@@ -7,7 +7,6 @@ export { default as ToolBarFileMenu } from "./ToolBarFileMenu";
 export { default as ToolBarMenus } from "./ToolBarMenus";
 export { default as ToolBars } from "./ToolBars";
 export { default as DesktopIcon } from "./DesktopIcon";
-export { default as GithubdesktopIcon } from "./GithubDesktopIcon";
 export { default as PowerOffAndLogOff } from "./PowerOffAndLogOff";
 export { default as LogOffWindow } from "./LogOffWindow";
 export { default as Button } from "./Button";
