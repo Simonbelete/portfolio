@@ -9,7 +9,7 @@ const RightClickMenu: React.FC<{
     <>
       {show && (
         <div
-          className="absolute"
+          className="absolute bg-white px-2 py-2"
           style={{
             top: yPos,
             left: xPos,
