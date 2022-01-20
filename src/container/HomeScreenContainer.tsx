@@ -1,11 +1,16 @@
 import React, { ReactElement } from "react";
-import { connect } from "react-redux";
 import { HomeScreen } from "components/screens";
-import type { RootState } from "store";
-const mapStateToProps = (
-  state: RootState
-): React.ComponentProps<typeof HomeScreen> => ({
-  background: state.RootReducer.background,
-});
+import { useAppSelector } from "hooks";
+import { RightClickMenuContainer } from "container";
 
-export default connect(mapStateToProps)(HomeScreen);
+const HomeScreenContaienr: React.FC = (): ReactElement => {
+  const { background } = useAppSelector((state) => state.RootReducer);
+
+  return (
+    <HomeScreen background={background}>
+      <RightClickMenuContainer />
+    </HomeScreen>
+  );
+};
+
+export default HomeScreenContaienr;

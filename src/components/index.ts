@@ -20,3 +20,4 @@ export { default as UserAccountIconLogOffed } from "./UserAccountIconLogOffed";
 export { default as TurnOffIcon } from "./TurnOffIcon";
 export { default as Popover } from "./Popover";
 export { default as UserPictureListSelector } from "./UserPictureListSelector";
+export { default as RightClickMenu } from "./RightClickMenu";

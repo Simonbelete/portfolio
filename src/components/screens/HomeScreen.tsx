@@ -1,8 +1,10 @@
 import React, { ReactElement } from "react";
+import { RightClickMenu } from "components";
 
 const HomeScreen: React.FC<{
   background?: string;
-}> = ({ background = "/backgrounds/bliss.jpg" }): ReactElement => {
+  children: ReactElement | ReactElement[];
+}> = ({ background = "/backgrounds/bliss.jpg", children }): ReactElement => {
   return (
     <div
       className="w-screen h-screen  aspect-square bg-cover"
@@ -14,7 +16,7 @@ const HomeScreen: React.FC<{
       }}
     >
       <div className="h-full w-full relative overflow-hidden">
-        <div className="w-full h-full"></div>
+        <div className="w-full h-full relative">{children}</div>
         <div className="absolute bottom-0 left-0 right-0 w-full h-[32px]"></div>
       </div>
     </div>

@@ -1,12 +1,12 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import { useGaTracker } from "hooks";
-import { HomeScreen } from "components/screens";
+import { HomeScreenContainer } from "container";
 
 const App: React.FC = (): ReactElement => {
   // Init ga tracker
   useGaTracker();
 
-  return <HomeScreen />;
+  return <HomeScreenContainer />;
 };
 
 export default App;
