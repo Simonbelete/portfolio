@@ -5,6 +5,7 @@ import {
   RightClickMenuContainer,
   StartBarContainer,
   DesktopContainer,
+  WindowsManager,
 } from "container";
 
 const HomeScreenContaienr: React.FC = (): ReactElement => {
@@ -14,6 +15,7 @@ const HomeScreenContaienr: React.FC = (): ReactElement => {
     <HomeScreen background={background} footer={<StartBarContainer />}>
       <RightClickMenuContainer />
       <DesktopContainer />
+      <WindowsManager />
     </HomeScreen>
   );
 };

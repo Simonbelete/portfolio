@@ -40,7 +40,7 @@ interface RootState {
 const initialState: RootState = {
   background: "/backgrounds/bliss.jpg",
   user: {
-    image: "/use_pictures/Chess_Pieces.png",
+    image: "/user_pictures/Chess_Pieces.png",
     name: "Simon Belete",
   },
   windows: [

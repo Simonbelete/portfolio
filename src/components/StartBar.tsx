@@ -1,5 +1,10 @@
 import React, { ReactElement } from "react";
-import { StartButton, PowerOffAndLogOff } from "components";
+import {
+  StartButton,
+  PowerOffAndLogOff,
+  LeftStartMenus,
+  RightStartMenus,
+} from "components";
 import { Menu, Transition } from "@headlessui/react";
 
 const StartBar: React.FC<{ user: ReactElement }> = ({ user }): ReactElement => {
@@ -37,11 +42,13 @@ const StartBar: React.FC<{ user: ReactElement }> = ({ user }): ReactElement => {
                 <div className="h-full w-full pr-[1px] bg-[#225ad9]">
                   <div className="h-full w-full flex flex-row justify-between">
                     {/* Left */}
-                    <div className="bg-white w-full h-full flex flex-col gap-2">
-                      #d3e5fa
+                    <div className="bg-white w-full h-full flex flex-col gap-2 p-2">
+                      <LeftStartMenus />
                     </div>
                     {/* Right */}
-                    <div className="w-full h-full bg-[#d3e5fa]"></div>
+                    <div className="w-full h-full bg-[#d3e5fa]">
+                      <RightStartMenus />
+                    </div>
                   </div>
                 </div>
                 {/* Bottom */}

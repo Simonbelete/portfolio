@@ -9,7 +9,7 @@ module.exports = {
         primaryGradient: "linear-gradient(white -26px, #0e8fdf 10px, #0e8fdf)"
       },
       fontFamily: {
-        tahoma: ['tahoma']
+        tahoma: ['tahoma', 'sans-serif']
       },
       cursor: {
         'xp': 'url("../public/cursors/CursorsXP.cur"), default'

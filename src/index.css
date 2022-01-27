@@ -16,7 +16,7 @@
 
 html, body {
   cursor: url("../public/cursors/CursorsXP.cur"), default;
-  font-family: 'tahoma';
+  font-family: 'tahoma', 'sans-serif';
 }
 
 .left-to-right-loading {
