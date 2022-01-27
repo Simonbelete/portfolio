@@ -6,11 +6,16 @@ import React, {
   useRef,
 } from "react";
 
+export enum Size {
+  small = "small",
+}
+
 const Icon: React.FC<{
   iconUrl: string;
   children: string;
   description?: string;
-}> = ({ iconUrl, children, description }): ReactElement => {
+  size?: Size;
+}> = ({ iconUrl, children, description, size = "large" }): ReactElement => {
   const el = useRef<HTMLDivElement>(null);
   const [xPos, setXPos] = useState("0px");
   const [yPos, setYPos] = useState("0px");
@@ -45,10 +50,18 @@ const Icon: React.FC<{
 
   return (
     <div ref={el} className="inline-flex flex-row items-center gap-2 cursor-xp">
-      <img src={iconUrl} alt="" className="aspect-square h-8 w-8" />
+      <img
+        src={iconUrl}
+        alt=""
+        className={`aspect-square ${
+          size == Size.small ? "h-6 w-6" : "h-8 w-8"
+        } `}
+      />
       <p className="text-xs text-white w-[96px] text-center line-clamp-2">
         <div className="flex flex-col text-black">
-          <p className="font-bold self-start">{children}</p>
+          <p className={`${size == Size.small ? "" : "font-bold"}  self-start`}>
+            {children}
+          </p>
           <p className="self-start text-[10px] text-gray-700 tracking-wider">
             {description}
           </p>
@@ -58,4 +71,6 @@ const Icon: React.FC<{
   );
 };
 
-export default Icon;
+const IconObject = Object.assign(Icon, { Size });
+
+export default IconObject;

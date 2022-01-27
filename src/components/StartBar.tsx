@@ -46,7 +46,7 @@ const StartBar: React.FC<{ user: ReactElement }> = ({ user }): ReactElement => {
                       <LeftStartMenus />
                     </div>
                     {/* Right */}
-                    <div className="w-full h-full bg-[#d3e5fa]">
+                    <div className="w-full h-full bg-[#d3e5fa] p-2">
                       <RightStartMenus />
                     </div>
                   </div>
