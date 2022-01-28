@@ -23,3 +23,4 @@ export { default as RightClickMenu } from "./RightClickMenu";
 export { default as Icon } from "./Icon";
 export { default as LeftStartMenus } from "./LeftStartMenus";
 export { default as RightStartMenus } from "./RightStartMenus";
+export { default as TitleBarControllers } from "./TitleBarControllers";

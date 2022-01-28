@@ -1,6 +1,6 @@
 import React, { ReactElement, useRef, useEffect } from "react";
 import { Rnd } from "react-rnd";
-import { ToolBars } from "components";
+import { ToolBars, TitleBarControllers } from "components";
 import { Types } from "rootSlice";
 
 const Window: React.FC<{ type: Types }> = ({ type }): ReactElement => {
@@ -22,8 +22,11 @@ const Window: React.FC<{ type: Types }> = ({ type }): ReactElement => {
           boxShadow:
             "inset -1px -1px #00138c, inset 1px 1px #0831d9, inset -2px -2px #001ea0, inset 2px 2px #166aee, inset -3px -3px #003bda, inset 3px 3px #0855dd",
         }}
-        className=" rounded-tl-[8px] rounded-tr-[8px] w-full h-full relative cursor-xp"
+        className=" rounded-tl-lg rounded-tr-lg w-full h-full relative cursor-xp"
       >
+        <div className="py-2 px-2">
+          <TitleBarControllers />
+        </div>
         <div
           className="bg-white h-auto w-atuo absolute top-8 bottom-1 left-1 right-1"
           draggable="false"
