@@ -1,8 +1,9 @@
 import React, { ReactElement, useRef, useEffect } from "react";
 import { Rnd } from "react-rnd";
 import { ToolBars } from "components";
+import { Types } from "rootSlice";
 
-const Window: React.FC = (): ReactElement => {
+const Window: React.FC<{ type: Types }> = ({ type }): ReactElement => {
   return (
     <Rnd
       default={{

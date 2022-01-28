@@ -1,16 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 // Enums
-// export enum DesktopType {
-//   FOLDER = "FOLDER",
-//   GITHUB = "GITHUB",
-// }
+export enum Types {
+  FOLDER = "FOLDER",
+  GITHUB = "GITHUB",
+  BROWSER = "BROWSER",
+}
 
 // Interfaces
 interface Windows {
   id: number;
   minimized: boolean;
   focused: boolean;
+  type: Types;
 }
 
 interface Desktops {
@@ -48,6 +50,7 @@ const initialState: RootState = {
       id: 1,
       minimized: false,
       focused: true,
+      type: Types.FOLDER,
     },
   ],
   desktops: [
