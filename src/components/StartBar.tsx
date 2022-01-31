@@ -6,6 +6,7 @@ import {
   RightStartMenus,
 } from "components";
 import { Menu, Transition } from "@headlessui/react";
+import moment from "moment";
 
 const StartBar: React.FC<{ user: ReactElement }> = ({ user }): ReactElement => {
   return (
@@ -66,11 +67,15 @@ const StartBar: React.FC<{ user: ReactElement }> = ({ user }): ReactElement => {
           </Menu.Button>
           <div className="basis-3/4 lg:basis-4/5 border-r-2 border-gray-600"></div>
           <div
-            className="shadow-lg basis-1/6"
+            className="shadow-lg basis-1/6 flex flex-row items-center justify-end px-2"
             style={{
               background: "linear-gradient(white -26px, #0e8fdf 10px, #0e8fdf)",
             }}
-          ></div>
+          >
+            <p className="text-white font-tahoma text-[12px]">
+              {moment().format("hh:mm A")}
+            </p>
+          </div>
         </div>
       </Menu>
     </div>
