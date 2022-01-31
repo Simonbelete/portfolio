@@ -32,6 +32,7 @@ interface UserProfile {
 }
 
 interface RootState {
+  isPowerOn: boolean;
   background: string;
   user: UserProfile;
   windows: Windows[];
@@ -40,6 +41,7 @@ interface RootState {
 
 // Init state
 const initialState: RootState = {
+  isPowerOn: true,
   background: "/backgrounds/bliss.jpg",
   user: {
     image: "/user_pictures/Chess_Pieces.png",

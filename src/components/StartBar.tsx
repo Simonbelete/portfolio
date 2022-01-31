@@ -64,9 +64,9 @@ const StartBar: React.FC<{ user: ReactElement }> = ({ user }): ReactElement => {
           <Menu.Button className="basis-24">
             <StartButton />
           </Menu.Button>
-          <div className="basis-3/4 border-r-2 border-gray-600"></div>
+          <div className="basis-3/4 lg:basis-4/5 border-r-2 border-gray-600"></div>
           <div
-            className=" shadow-lg basis-1/6"
+            className="shadow-lg basis-1/6"
             style={{
               background: "linear-gradient(white -26px, #0e8fdf 10px, #0e8fdf)",
             }}

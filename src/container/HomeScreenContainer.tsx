@@ -13,7 +13,7 @@ const HomeScreenContaienr: React.FC = (): ReactElement => {
 
   return (
     <HomeScreen background={background} footer={<StartBarContainer />}>
-      <RightClickMenuContainer />
+      {/* <RightClickMenuContainer /> */}
       <DesktopContainer />
       <WindowsManager />
     </HomeScreen>
