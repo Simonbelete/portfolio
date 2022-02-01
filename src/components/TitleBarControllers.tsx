@@ -6,14 +6,18 @@ const TitleBarControllers: React.FC = (): ReactElement => {
       <img
         src="/icons/minimize.svg"
         alt="Minimize"
-        className="w-[21px] h-[21px]"
+        className="w-[21px] h-[21px] hover:backdrop-brightness-125"
       />
       <img
         src="/icons/maximize.svg"
         alt="Maximize"
-        className="w-[21px] h-[21px]"
+        className="w-[21px] h-[21px] hover:backdrop-brightness-125"
       />
-      <img src="/icons/close.svg" alt="Close" className="w-[21px] h-[21px]" />
+      <img
+        src="/icons/close.svg"
+        alt="Close"
+        className="w-[21px] h-[21px] hover:backdrop-brightness-125"
+      />
     </div>
   );
 };

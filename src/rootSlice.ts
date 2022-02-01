@@ -39,7 +39,7 @@ interface RootState {
   desktops: Desktops[];
 }
 
-// Init state
+// Init statedefault
 const initialState: RootState = {
   isPowerOn: true,
   background: "/backgrounds/bliss.jpg",

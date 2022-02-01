@@ -1,6 +1,6 @@
 import React, { ReactElement, useRef, useEffect } from "react";
 import { Rnd } from "react-rnd";
-import { ToolBars, TitleBarControllers } from "components";
+import { ToolBar, TitleBarControllers } from "components";
 import { Types } from "rootSlice";
 
 const Window: React.FC<{
@@ -20,15 +20,16 @@ const Window: React.FC<{
       bounds="parent"
     >
       <div
-        className="rounded-tl-[8px] rounded-tr-[8px]"
+        className="rounded-tl-[8px] rounded-tr-[8px] h-full w-full"
         style={{
           boxShadow:
             "inset -1px -1px #00138c, inset 1px 1px #0831d9, inset -2px -2px #001ea0, inset 2px 2px #166aee, inset -3px -3px #003bda, inset 3px 3px #0855dd",
           padding: "0 0 3px 0",
         }}
       >
+        {/* Title Bar */}
         <div
-          className="text-white flex flex-row items-center justify-between"
+          className="text-white flex flex-row items-center justify-between cursor-xp"
           style={{
             background:
               "linear-gradient(180deg, rgba(9, 151, 255, 1) 0%, rgba(0, 83, 238, 1) 8%, rgba(0, 80, 238, 1) 40%, rgba(0, 102, 255, 1) 88%, rgba(0, 102, 255, 1) 93%, rgba(0, 91, 255, 1) 95%, rgba(0, 61, 215, 1) 96%, rgba(0, 61, 215, 1) 100%)",
@@ -48,7 +49,16 @@ const Window: React.FC<{
             <TitleBarControllers />
           </div>
         </div>
-        {children}
+        {/* ToolBars */}
+        <div className="flex flex-col px-1">
+          <div className="bg-[#f2efe3]">
+            <ToolBar />
+          </div>
+        </div>
+        {/* Body */}
+        <div className="">asdfsdf</div>
+        {/* Status Bar */}
+        <div className="flex flex-row justify-between"></div>
       </div>
       {/* <div
         style={{
