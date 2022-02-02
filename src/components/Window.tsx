@@ -6,21 +6,30 @@ import { Types } from "rootSlice";
 const Window: React.FC<{
   type?: Types;
   children?: ReactElement | ReactElement[];
-}> = ({ type, children }): ReactElement => {
+  width?: number;
+  height?: number;
+  enableResizing?: boolean;
+}> = ({
+  type,
+  children,
+  width,
+  height,
+  enableResizing = true,
+}): ReactElement => {
   return (
     <Rnd
       default={{
         x: 100,
         y: 100,
-        width: 300,
-        height: 300,
+        width: width ?? 300,
+        height: height ?? 300,
       }}
-      // size={{ height: 50, width: 50 }}
-      enableResizing={true}
+      // size={{ height: height ? height : "auto", width: width ? width : "auto" }}
+      enableResizing={enableResizing}
       bounds="parent"
     >
       <div
-        className="rounded-tl-[8px] rounded-tr-[8px] h-full w-full"
+        className="rounded-tl-[8px] rounded-tr-[8px] h-full w-full flex flex-col"
         style={{
           boxShadow:
             "inset -1px -1px #00138c, inset 1px 1px #0831d9, inset -2px -2px #001ea0, inset 2px 2px #166aee, inset -3px -3px #003bda, inset 3px 3px #0855dd",
@@ -56,7 +65,7 @@ const Window: React.FC<{
           </div>
         </div>
         {/* Body */}
-        <div className="">asdfsdf</div>
+        <div className="flex px-1 h-full w-full">{children}</div>
         {/* Status Bar */}
         <div className="flex flex-row justify-between"></div>
       </div>
