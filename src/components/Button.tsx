@@ -4,7 +4,15 @@ const Button: React.FC<{ children: string }> = ({ children }): ReactElement => {
   return (
     <button
       type="button"
-      className="font-tahoma text-[12px] bg-[#F4F4F0] box-border min-w-[75px] min-h-[23px] px-[12px] border border-black hover:outline hover:outline-2 hover:outline-offset-[-3px] hover:outline-[#E59700]"
+      className="font-tahoma text-[11px] px-2 py-1"
+      style={{
+        boxSizing: "border-box",
+        border: "1px solid #003c74",
+        background:
+          "linear-gradient( 180deg, rgba(255, 255, 255, 1) 0%, rgba(236, 235, 229, 1) 86%, rgba(216, 208, 196, 1) 100%)",
+        boxShadow: "none",
+        borderRadius: "3px",
+      }}
     >
       {children}
     </button>

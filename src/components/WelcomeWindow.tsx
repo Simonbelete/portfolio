@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { Window } from "components";
+import { Window, Button } from "components";
 import { useScreenSize } from "hooks";
 
 const WelcomeWindow: React.FC = (): ReactElement => {
@@ -7,7 +7,7 @@ const WelcomeWindow: React.FC = (): ReactElement => {
   return (
     <Window
       enableResizing={false}
-      width={300}
+      width={350}
       height={200}
       x={width < 500 ? width * 0.06 : width * 0.4}
       y={height * 0.1}
@@ -27,8 +27,10 @@ const WelcomeWindow: React.FC = (): ReactElement => {
             I'm a Full Stack developer and AI enthusiast
           </p>
         </div>
-        <div className="w-full flex justify-end items-center pb-10">
-          Downlaod
+        <div className="w-full flex flex-row gap-1 justify-end items-center pb-10">
+          <Button>Download CV</Button>
+          <Button>View Projects</Button>
+          <Button>Cancel</Button>
         </div>
       </div>
     </Window>
