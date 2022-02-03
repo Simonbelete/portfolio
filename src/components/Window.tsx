@@ -9,18 +9,22 @@ const Window: React.FC<{
   width?: number;
   height?: number;
   enableResizing?: boolean;
+  x?: number;
+  y?: number;
 }> = ({
   type,
   children,
   width,
   height,
   enableResizing = true,
+  x,
+  y,
 }): ReactElement => {
   return (
     <Rnd
       default={{
-        x: 100,
-        y: 100,
+        x: x ?? 100,
+        y: y ?? 100,
         width: width ?? 300,
         height: height ?? 300,
       }}
