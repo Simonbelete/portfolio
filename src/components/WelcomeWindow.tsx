@@ -24,10 +24,11 @@ const WelcomeWindow: React.FC = (): ReactElement => {
             <br />
             I'm a Full Stack developer and AI enthusiast
           </p>
-          atch/81023928?trackId=155573560
         </div>
         <div className="w-full flex flex-row gap-1 justify-end items-center pb-10">
-          <Button>Download CV</Button>
+          <a target="_blank" href="/simon_belete_cv.pdf">
+            <Button>Download CV</Button>
+          </a>
           <Button>View Projects</Button>
           <Button>Cancel</Button>
         </div>

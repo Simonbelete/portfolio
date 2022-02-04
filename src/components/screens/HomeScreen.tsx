@@ -20,7 +20,7 @@ const HomeScreen: React.FC<{
       }}
     >
       <div className="h-full w-full relative overflow-hidden">
-        <div className="w-full h-full relative mx-5 py-5">{children}</div>
+        <div className="w-full h-full relative mx-0 py-5">{children}</div>
         <div className="absolute bottom-0 left-0 right-0 w-full h-[31px]">
           {footer}
         </div>
