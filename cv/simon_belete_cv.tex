@@ -1,0 +1,308 @@
+%-------------------------
+% Resume in Latex
+% Author : Abey George
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{fontawesome}
+\usepackage{tikz}
+\usetikzlibrary{svg.path}
+
+
+\definecolor{cvblue}{HTML}{0E5484}
+\definecolor{black}{HTML}{130810}
+\definecolor{darkcolor}{HTML}{0F4539}
+\definecolor{cvgreen}{HTML}{3BD80D}
+\definecolor{taggreen}{HTML}{00E278}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{name}{black}
+\colorlet{tagline}{darkcolor}
+\colorlet{heading}{darkcolor}
+\colorlet{headingrule}{cvblue}
+\colorlet{accent}{darkcolor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+% \pagestyle{fancy}
+% \fancyhf{}  % clear all header and footer fields
+% \fancyfoot{}
+% \renewcommand{\headrulewidth}{0pt}
+% \renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\large#1} &  \textbf{\small #2} \\
+      \textit{\large#3} & \textit{\small #4} \\
+      
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} &amp; \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 &amp; \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+
+
+\begin{center}
+    {\Huge \scshape Simon Belete} \\ \vspace{1pt}
+    Addis Ababa,Ethiopia \\ \vspace{1pt}
+    \small \href{tel:+xxxxxxxxxxxx}{ \raisebox{-0.1\height}\faPhone\ \underline{+251-966751230} ~} \href{mailto:simonbelete@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{simonbelete@gmail.com}} ~ 
+    \href{https://linkedin.com/in/simonbelete}{\raisebox{-0.2\height}\faLinkedinSquare\ \underline{simonbelete}}  ~
+    \href{https://github.com/Simonbelete}{\raisebox{-0.2\height}\faGithub\ \underline{Simonbelete}} ~
+    \href{https://simonbelete.com}{\raisebox{-0.2\height}\faGlobe\ \underline{simonbelete.com}}
+    \vspace{-8pt}
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{EXPERIENCE}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Ecopia}{06 2017 -- 09 2017} 
+      {\underline{Intern}}{Addis Ababa, Ethiopia}
+      \resumeItemListStart
+        \resumeItem{\normalsize{Write proposal}}
+  \resumeItem{\normalsize{Develop ERP Inventory Management System}}
+      \resumeItemListEnd  
+	
+	\resumeSubheading
+      {Prime Maven Engineering PLC}{03 2021 -- 05 2017} 
+      {\underline{Backend developer}}{Addis Ababa, Ethiopia}
+      \resumeItemListStart
+        \resumeItem{\normalsize{Develop REST API for mobile application}}
+      \resumeItemListEnd    
+      
+      \resumeSubheading
+      {Shewaberr Technologies PLC}{02 2021 -- 11 2017} 
+      {\underline{CTO \& CO-FOUNDER}}{Addis Ababa, Ethiopia}
+      \resumeItemListStart
+        \resumeItem{\normalsize{Develop E-commerce website}}
+        \resumeItem{\normalsize{Prepare scrum}}
+        \resumeItem{\normalsize{Review codes and manage developers}}
+        \resumeItem{\normalsize{Deploy and monitor website(CI/CD)}}
+      \resumeItemListEnd     
+      
+      \resumeSubheading
+      {Freelancing}{2017 -- Current} 
+      {\underline{}}{Addis Ababa, Ethiopia}
+   
+      
+  \resumeSubHeadingListEnd
+  
+  
+\vspace{-12pt}
+
+
+%------RELEVANT COURSEWORK-------
+%\section{COURSEWORK / SKILLS}
+    %\resumeSubHeadingListStart
+%        \begin{multicols}{4}
+%            \begin{itemize}[itemsep=-2pt, parsep=5pt]
+%                \item Data Structures \&amp; Algorithms
+%                \item Operating Systems
+%                \item Network Security
+%                \item Database Management System (DBMS)
+%                \item Artificial Intelligence
+%                \item OOPS Concept
+%                \item Web Development
+%                \item Android Development
+%            \end{itemize}
+%        \end{multicols}
+%        \vspace*{2.0\multicolsep}
+    %\resumeSubHeadingListEnd
+
+
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+	
+		\resumeProjectHeading
+          {\href{simonbelete.com/\#guya-delivery}	{\textbf{\large{\underline{Guya Delivery}}} \href{Project Link}{\raisebox{-0.1\height}\faExternalLink }} $|$ \large{\underline{}}}{}
+          \resumeItemListStart
+            \resumeItem{\normalsize{Design and build a web based food ordering system. }}
+          \resumeItemListEnd 
+          \vspace{-13pt}	    
+    
+       \resumeProjectHeading
+          {\href{simonbelete.com/\#guya-e-commerce-delivery}	{\textbf{\large{\underline{E-commerce \& Express}}} \href{Project Link}{\raisebox{-0.1\height}\faExternalLink }} $|$ \large{\underline{}}}{}
+          \resumeItemListStart
+            \resumeItem{\normalsize{Build an online sales and delivery system using
+the Microservices Architecture}}
+\resumeItem{\normalsize{Real time delivery GPS tracking}}
+          \resumeItemListEnd 
+          \vspace{-13pt}
+ 
+
+	\resumeProjectHeading
+          {\href{simonbelete.com/\#mafi-printing}	{\textbf{\large{\underline{Mafi printing company website}}} \href{Project Link}{\raisebox{-0.1\height}\faExternalLink }} $|$ \large{\underline{}}}{}
+          \resumeItemListStart
+            \resumeItem{\normalsize{Design and build frontend company's
+profile page with a gallery show cases.}}  
+          \resumeItemListEnd 
+          \vspace{-13pt} 
+          
+          \resumeProjectHeading
+          {\href{simonbelete.com/\#school-management}	{\textbf{\large{\underline{School Management System}}} \href{Project Link}{\raisebox{-0.1\height}\faExternalLink }} $|$ \large{\underline{}}}{}
+          \resumeItemListStart
+            \resumeItem{\normalsize{Is an information management system for
+educational institutions to manage student.}}  
+			\resumeItem{\normalsize{Provides abilities such as registration of students in classes.}}  
+			\resumeItem{\normalsize{Documenting of grades and analytical marks of each student.}}  
+			\resumeItem{\normalsize{Generating report card.}}  
+          \resumeItemListEnd 
+          \vspace{-13pt} 
+          
+          \resumeProjectHeading
+          {\href{simonbelete.com/\#erp}	{\textbf{\large{\underline{ERP Inventory Management System}}} \href{Project Link}{\raisebox{-0.1\height}\faExternalLink }} $|$ \large{\underline{}}}{}
+          \resumeItemListStart
+            \resumeItem{\normalsize{The system provides real-time
+inventory information to the entire organization.}}  
+          \resumeItemListEnd 
+
+ 
+    \resumeSubHeadingListEnd
+\vspace{-12pt}
+
+%
+
+%-----------PROGRAMMING SKILLS-----------
+\section{TECHNICAL SKILLS}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{\normalsize{Languages:}}{ \normalsize{Python, JavaScript, PHP, SQL, NoSQL}} \\
+     \textbf{\normalsize{Technologies/Frameworks:}}{\normalsize{ Linux, GitHub, Docker, Kubernetes, CI/CD, ReactJS, Redux, Redux Toolkit, NextJS, NodeJS, ExpressJS, Git, Mongo, Flutter}} \\
+    }}
+ \end{itemize}
+ \vspace{-15pt}
+
+ 
+ %-----------CERTIFICATIONS---------------
+%\section{CERTIFICATIONS}
+
+%$\sbullet[.75] \hspace{0.1cm}$ {\href{certificateLink.com}{ReactJS \&amp; %Redux - Udemy}} \hspace{1.6cm}
+%$\sbullet[.75] \hspace{0.1cm}$ {\href{certificateLink.com}{Java}} %%\hspace{2.59cm}
+%$\sbullet[.75] \hspace{0.2cm}${\href{certificateLink.com} {Command Line in %Linux - Coursera}}\\
+
+%$\sbullet[.75] \hspace{0.2cm}${\href{certificateLink.com}{Python for Data Science - XIE}} \hspace{1cm}
+%$\sbullet[.75] \hspace{0.1cm}$ {\href{certificateLink.com}{SQL}} \hspace{2.6cm}
+%$\sbullet[.75] \hspace{0.2cm}${\href{certificateLink.com}{Microsoft AI Classroom - Microsoft}} \\
+
+%$\sbullet[.75] \hspace{0.2cm}${\href{certificateLink.com}{\textbf{5 Stars} in \textbf{C++} \&amp; \textbf{SQL} \href{certificateLink.com}{\raisebox{-0.1\height}\faExternalLink }}}\hspace{1.45cm}
+%$\sbullet[.75] \hspace{0.2cm}${\href{certificateLink.com}{MongoDB Basics}} \hspace{0.5cm}
+%$\sbullet[.75] \hspace{0.2cm}${\href{certificateLink.com}{NodeJS with Express \&amp; MongoDB - Udemy}} \\
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Debre Markos University} {09 2016 -- 01 2021}
+      {Bachelor of Science Software Engineering }{Debre Markos, Ethiopia}
+  \resumeSubHeadingListEnd
+  
+\end{document}

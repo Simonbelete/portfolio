@@ -14,8 +14,6 @@ const WelcomeWindow: React.FC = (): ReactElement => {
     >
       <div className="bg-[#f2efe3] flex flex-col justify-between gap-3 px-4 h-auto w-full cursor-xp">
         <div className="flex flex-row items-center gap-5">
-          {console.log(width)}
-
           <img
             src="/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-221.ico"
             alt="Info icon"
@@ -26,6 +24,7 @@ const WelcomeWindow: React.FC = (): ReactElement => {
             <br />
             I'm a Full Stack developer and AI enthusiast
           </p>
+          atch/81023928?trackId=155573560
         </div>
         <div className="w-full flex flex-row gap-1 justify-end items-center pb-10">
           <Button>Download CV</Button>
