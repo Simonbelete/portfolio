@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { Window, BackButton, UserHomeIcon } from "components";
+import { Window, BackButton, UserHomeIcon, WindowTitle } from "components";
 import NextButton from "./NextButton";
 import { useScreenSize } from "hooks";
 
@@ -20,6 +20,11 @@ const UserAccountWindow: React.FC = (): ReactElement => {
       toolBar={<UserAccountWindowToolBar />}
       width={width / 2.5}
       height={height / 2}
+      title={
+        <WindowTitle iconUrl="/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-160.ico">
+          User Accounts
+        </WindowTitle>
+      }
     >
       <div className="grid grid-cols-12 w-full h-auto">
         {/* Left */}

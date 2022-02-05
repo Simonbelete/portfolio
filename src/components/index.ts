@@ -29,3 +29,4 @@ export { default as BackButton } from "./BackButton";
 export { default as UserAccountWindow } from "./UserAccountWindow";
 export { default as NextButton } from "./NextButton";
 export { default as UserHomeIcon } from "./UserHomeIcon";
+export { default as WindowTitle } from "./WindowTitle";
