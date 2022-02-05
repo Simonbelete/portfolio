@@ -4,6 +4,7 @@ import { ToolBar, TitleBarControllers } from "components";
 import { Types } from "rootSlice";
 
 const Window: React.FC<{
+  title?: ReactElement | ReactElement[];
   type?: Types;
   children?: ReactElement | ReactElement[];
   width?: number;
@@ -13,6 +14,7 @@ const Window: React.FC<{
   y?: number;
   toolBar?: ReactElement | ReactElement[];
 }> = ({
+  title,
   type,
   children,
   width,
@@ -59,7 +61,7 @@ const Window: React.FC<{
             height: "30px",
           }}
         >
-          <div className="truncate">Icon and Name</div>
+          <div className="truncate">{title}</div>
           <div>
             <TitleBarControllers />
           </div>
