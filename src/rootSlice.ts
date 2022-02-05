@@ -5,6 +5,8 @@ export enum Types {
   FOLDER = "FOLDER",
   GITHUB = "GITHUB",
   BROWSER = "BROWSER",
+  USER_ACCOUNT_WINDOW = "USER_ACCOUNT_WINDOW",
+  WELCOME_WINDOW = "WELCOME_WINDOW",
 }
 
 // Interfaces
@@ -52,7 +54,13 @@ const initialState: RootState = {
       id: 1,
       minimized: false,
       focused: true,
-      type: Types.FOLDER,
+      type: Types.WELCOME_WINDOW,
+    },
+    {
+      id: 1,
+      minimized: false,
+      focused: true,
+      type: Types.USER_ACCOUNT_WINDOW,
     },
   ],
   desktops: [

@@ -11,6 +11,7 @@ const Window: React.FC<{
   enableResizing?: boolean;
   x?: number;
   y?: number;
+  toolBar?: ReactElement | ReactElement[];
 }> = ({
   type,
   children,
@@ -19,6 +20,7 @@ const Window: React.FC<{
   enableResizing = true,
   x,
   y,
+  toolBar,
 }): ReactElement => {
   return (
     <Rnd
@@ -64,9 +66,7 @@ const Window: React.FC<{
         </div>
         {/* ToolBars */}
         <div className="flex flex-col px-1">
-          <div className="bg-[#f2efe3]">
-            <ToolBar />
-          </div>
+          <div className="bg-[#f2efe3]">{toolBar}</div>
         </div>
         {/* Body */}
         <div className="flex px-1 h-full w-full">{children}</div>
