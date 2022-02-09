@@ -5,8 +5,7 @@ import React, {
   useState,
   useCallback,
 } from "react";
-// import { Rnd } from "react-rnd";
-import Rnd from "react-rnd";
+import Draggable from "react-draggable";
 
 const DesktopIcon: React.FC<{
   children: string;
@@ -47,15 +46,10 @@ const DesktopIcon: React.FC<{
   }, [showMenu]);
 
   return (
-    <Rnd
-      default={{
-        x: x,
-        y: y,
-        width: "auto",
-        height: 50,
-      }}
-      // enableResizing={false}
+    <Draggable
       bounds="parent"
+      handle=".handle"
+      defaultPosition={{ x: x, y: y }}
     >
       <div
         ref={el}
@@ -73,7 +67,7 @@ const DesktopIcon: React.FC<{
           {children}
         </p>
       </div>
-    </Rnd>
+    </Draggable>
   );
 };
 
