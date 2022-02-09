@@ -1,6 +1,5 @@
 import React, { ReactElement, useRef, useEffect } from "react";
 // import { Rnd } from "react-rnd";
-import Rnd from "react-rnd";
 import { ToolBar, TitleBarControllers } from "components";
 import { Types } from "rootSlice";
 import Draggable from "react-draggable";
