@@ -1,6 +1,8 @@
 import React, { ReactElement } from "react";
 import { Window, Button } from "components";
 import { useScreenSize } from "hooks";
+import Rnd from "react-rnd";
+import Draggable from "react-draggable";
 
 const WelcomeWindow: React.FC = (): ReactElement => {
   const { height, width } = useScreenSize();

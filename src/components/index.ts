@@ -30,3 +30,4 @@ export { default as UserAccountWindow } from "./UserAccountWindow";
 export { default as NextButton } from "./NextButton";
 export { default as UserHomeIcon } from "./UserHomeIcon";
 export { default as WindowTitle } from "./WindowTitle";
+export { default as List } from "./List";

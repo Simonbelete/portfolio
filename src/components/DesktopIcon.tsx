@@ -5,7 +5,8 @@ import React, {
   useState,
   useCallback,
 } from "react";
-import { Rnd } from "react-rnd";
+// import { Rnd } from "react-rnd";
+import Rnd from "react-rnd";
 
 const DesktopIcon: React.FC<{
   children: string;
@@ -53,7 +54,7 @@ const DesktopIcon: React.FC<{
         width: "auto",
         height: 50,
       }}
-      enableResizing={false}
+      // enableResizing={false}
       bounds="parent"
     >
       <div

@@ -56,12 +56,12 @@ const initialState: RootState = {
       focused: true,
       type: Types.WELCOME_WINDOW,
     },
-    {
-      id: 1,
-      minimized: false,
-      focused: true,
-      type: Types.USER_ACCOUNT_WINDOW,
-    },
+    // {
+    //   id: 1,
+    //   minimized: false,
+    //   focused: true,
+    //   type: Types.USER_ACCOUNT_WINDOW,
+    // },
   ],
   desktops: [
     {

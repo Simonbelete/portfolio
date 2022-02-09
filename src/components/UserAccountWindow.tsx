@@ -1,11 +1,17 @@
 import React, { ReactElement } from "react";
-import { Window, BackButton, UserHomeIcon, WindowTitle } from "components";
+import {
+  Window,
+  BackButton,
+  UserHomeIcon,
+  WindowTitle,
+  List,
+} from "components";
 import NextButton from "./NextButton";
 import { useScreenSize } from "hooks";
 
 const UserAccountWindowToolBar: React.FC = (): ReactElement => {
   return (
-    <div className="flex flex-row gap-3 py-1 px-2">
+    <div className="flex flex-row gap-3 py-1 px-2 cursor-xp">
       <BackButton />
       <NextButton disabled />
       <UserHomeIcon />
@@ -26,11 +32,18 @@ const UserAccountWindow: React.FC = (): ReactElement => {
         </WindowTitle>
       }
     >
-      <div className="grid grid-cols-12 w-full h-auto">
+      <div className="flex flex-row w-full h-auto">
         {/* Left */}
-        <div className="h-full w-full col-span-4 bg-[#6C85DC]"></div>
+        <div className="h-full w-[300px] bg-[#6C85DC] hidden md:flex justify-center">
+          <div className="mx-2 my-5 w-full">
+            <List>
+              <List.Title>Current Picture</List.Title>
+              <List.Item>Test</List.Item>
+            </List>
+          </div>
+        </div>
         {/* Right */}
-        <div className="h-full w-full col-span-8 bg-white"></div>
+        <div className="h-full w-full bg-white"></div>
       </div>
     </Window>
   );
