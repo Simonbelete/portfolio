@@ -1,5 +1,4 @@
 export { default as LoadingBar } from "./LoadingBar";
-export { default as Folder } from "./Folder";
 export { default as StartButton } from "./StartButton";
 export { default as StartBar } from "./StartBar";
 export { default as Window } from "./Window";
