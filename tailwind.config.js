@@ -3,7 +3,14 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    fontSize: {
+      'base': '12px'
+    },
+    extend: {
+      colors: {
+        'mariner': '#245DD7'
+      }
+    },
   },
   plugins: [],
 }

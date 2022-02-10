@@ -1,5 +1,5 @@
 import React, { ReactElement, useEffect, useState } from "react";
-import { Icon } from "components";
+import { Icon, RightClickMenu } from "components";
 
 const App: React.FC = (): ReactElement => {
   const [isBootingDone, setIsBootingDone] = useState<boolean>(false);
@@ -24,8 +24,17 @@ const App: React.FC = (): ReactElement => {
   // else if (isBootingDone) return <HomeScreenContainer />;
   // else return <BootingUpContaienr />;
   return (
-    <div className="flex flex-col gap-1">
+    <div
+      className="flex flex-col gap-1 h-screen w-screen"
+      style={{
+        background: `url(/backgrounds/bliss.jpg)`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      }}
+    >
       <Icon.Folder>New Folder</Icon.Folder>
+      <RightClickMenu.Folder show={true} />
     </div>
   );
 };
