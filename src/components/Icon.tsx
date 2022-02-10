@@ -1,21 +1,16 @@
 import React, {
   ReactElement,
-  useState,
   useEffect,
   useCallback,
+  useState,
   useRef,
 } from "react";
+import Draggable from "react-draggable";
 
-export enum Size {
-  small = "small",
-}
-
-const Icon: React.FC<{
-  iconUrl: string;
-  children: string;
-  description?: string;
-  size?: Size;
-}> = ({ iconUrl, children, description, size = "large" }): ReactElement => {
+const Icon: React.FC<{ children?: string; icon?: string }> = ({
+  children,
+  icon,
+}): ReactElement => {
   const el = useRef<HTMLDivElement>(null);
   const [xPos, setXPos] = useState("0px");
   const [yPos, setYPos] = useState("0px");
@@ -49,28 +44,40 @@ const Icon: React.FC<{
   }, [showMenu]);
 
   return (
-    <div ref={el} className="inline-flex flex-row items-center gap-2 cursor-xp">
-      <img
-        src={iconUrl}
-        alt=""
-        className={`aspect-square ${
-          size == Size.small ? "h-6 w-6" : "h-8 w-8"
-        } `}
-      />
-      <p className="text-xs text-white w-[96px] text-center line-clamp-2">
-        <div className="flex flex-col text-black">
-          <p className={`${size == Size.small ? "" : "font-bold"}  self-start`}>
+    <Draggable
+      bounds="parent"
+      handle=".handle"
+      defaultPosition={{ x: 0, y: 0 }}
+    >
+      <div
+        ref={el}
+        className="inline-flex flex-col justify-center items-center gap-1 cursor-xp"
+      >
+        <img src={icon} alt="" className="aspect-square h-8 w-8" />
+        {children && (
+          <p
+            className="text-xs text-white w-[96px] text-center line-clamp-2"
+            style={{
+              textShadow: "0.1em 1px 1px black",
+              fontSize: "0.7em",
+              letterSpacing: "-0.025em",
+            }}
+          >
             {children}
           </p>
-          <p className="self-start text-[10px] text-gray-700 tracking-wider">
-            {description}
-          </p>
-        </div>
-      </p>
-    </div>
+        )}
+      </div>
+    </Draggable>
   );
 };
 
-const IconObject = Object.assign(Icon, { Size });
+const Folder: React.FC<React.ComponentProps<typeof Icon>> = ({
+  icon = "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-003.ico",
+  ...props
+}): ReactElement => {
+  return <Icon icon={icon} {...props} />;
+};
+
+const IconObject = Object.assign(Icon, { Folder });
 
 export default IconObject;

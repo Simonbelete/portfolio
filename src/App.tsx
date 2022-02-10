@@ -1,15 +1,12 @@
 import React, { ReactElement, useEffect, useState } from "react";
-import { useGaTracker, useAppDispatch, useAppSelector } from "hooks";
-import { HomeScreenContainer, BootingUpContaienr } from "container";
-import { LockScreen } from "components/screens";
-import { WelcomeWindow } from "components";
+import { Icon } from "components";
 
 const App: React.FC = (): ReactElement => {
   const [isBootingDone, setIsBootingDone] = useState<boolean>(false);
-  const { isPowerOn } = useAppSelector((state) => state.RootReducer);
+  // const { isPowerOn } = useAppSelector((state) => state.RootReducer);
 
   // Init ga tracker
-  useGaTracker();
+  // useGaTracker();
 
   // useEffect(() => {
   //   if (isPowerOn) {
@@ -26,7 +23,11 @@ const App: React.FC = (): ReactElement => {
   // if (!isPowerOn) return <LockScreen />;
   // else if (isBootingDone) return <HomeScreenContainer />;
   // else return <BootingUpContaienr />;
-  return <HomeScreenContainer />;
+  return (
+    <div className="flex flex-col gap-1">
+      <Icon.Folder>New Folder</Icon.Folder>
+    </div>
+  );
 };
 
 export default App;
