@@ -117,6 +117,9 @@ img{
 .po-range:hover::-webkit-slider-thumb {
   background: url("../public/icons/indicator-rectangle-horizontal-hover.svg");
 }
+.po-range:hover::-moz-range-thumb {
+  background: url("../public/icons/indicator-rectangle-horizontal-hover.svg");
+}
 
 .po-range::-webkit-slider-runnable-track {
   height: 2px;
@@ -129,49 +132,14 @@ img{
   box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 #9d9c99, 1px -1px 0 #9d9c99,
       0 -1px 0 #9d9c99, 1px 1px 0 white, -1px -1px #9d9c99;
 }
-
-/* .po-range::-webkit-slider-runnable-track {
-  height: 2px;
-  box-sizing: border-box;
-  background: #ecebe4;
-  border-radius: 2px;
-  border-left: 1px solid #f3f2ea;
-  border-right: 0;
-  border-bottom: 1px solid #f3f2ea;
-  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 #9d9c99, 1px -1px 0 #9d9c99,
-      0 -1px 0 #9d9c99, 1px 1px 0 white, -1px -1px #9d9c99;
-} */
-/*
 .po-range::-moz-range-track {
-  width: 100%;
   height: 2px;
   box-sizing: border-box;
   background: #ecebe4;
-  border-right: 1px solid #f3f2ea;
-  border-bottom: 1px solid #f3f2ea;
   border-radius: 2px;
-  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 #9d9c99, -1px -1px 0 #9d9c99,
-      0 -1px 0 #9d9c99, -1px 1px 0 white, 1px -1px #9d9c99;
-}
-.has-box-indicator::-webkit-slider-thumb {
-  background: url("../public/icons/indicator-rectangle-horizontal.svg");
-  transform: translateY(-10px);
-}
-.has-box-indicator::-moz-range-thumb {
-  background: url("../public/icons/indicator-rectangle-horizontal.svg");
-  transform: translateY(0px);
-}
-.po-range-vertical::-webkit-slider-runnable-track {
   border-left: 1px solid #f3f2ea;
   border-right: 0;
   border-bottom: 1px solid #f3f2ea;
   box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 #9d9c99, 1px -1px 0 #9d9c99,
       0 -1px 0 #9d9c99, 1px 1px 0 white, -1px -1px #9d9c99;
 }
-.po-range-vertical::-moz-range-track {
-  border-left: 1px solid #f3f2ea;
-  border-right: 0;
-  border-bottom: 1px solid #f3f2ea;
-  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 #9d9c99, 1px -1px 0 #9d9c99,
-      0 -1px 0 #9d9c99, 1px 1px 0 white, -1px -1px #9d9c99;
-} */
