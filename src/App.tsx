@@ -34,7 +34,7 @@ const App: React.FC = (): ReactElement => {
       }}
     >
       <Icon.Folder>New Folder</Icon.Folder>
-      {/* <RightClickMenu.Folder show={true} /> */}
+      <RightClickMenu.Folder show={true} />
       <Slider />
     </div>
   );
