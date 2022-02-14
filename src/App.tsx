@@ -1,5 +1,5 @@
 import React, { ReactElement, useEffect, useState } from "react";
-import { Icon, RightClickMenu } from "components";
+import { Icon, RightClickMenu, Slider } from "components";
 
 const App: React.FC = (): ReactElement => {
   const [isBootingDone, setIsBootingDone] = useState<boolean>(false);
@@ -25,7 +25,7 @@ const App: React.FC = (): ReactElement => {
   // else return <BootingUpContaienr />;
   return (
     <div
-      className="flex flex-col gap-1 h-screen w-screen"
+      className="relative h-screen w-screen"
       style={{
         background: `url(/backgrounds/bliss.jpg)`,
         backgroundRepeat: "no-repeat",
@@ -34,7 +34,8 @@ const App: React.FC = (): ReactElement => {
       }}
     >
       <Icon.Folder>New Folder</Icon.Folder>
-      <RightClickMenu.Folder show={true} />
+      {/* <RightClickMenu.Folder show={true} /> */}
+      <Slider />
     </div>
   );
 };
