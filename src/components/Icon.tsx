@@ -78,6 +78,13 @@ const Folder: React.FC<React.ComponentProps<typeof Icon>> = ({
   return <Icon icon={icon} {...props} />;
 };
 
-const IconObject = Object.assign(Icon, { Folder });
+const Sound: React.FC<React.ComponentProps<typeof Icon>> = ({
+  icon = "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-168.ico",
+  ...props
+}): ReactElement => {
+  return <Icon icon={icon} {...props} />;
+};
+
+const IconObject = Object.assign(Icon, { Folder, Sound });
 
 export default IconObject;

@@ -1,5 +1,5 @@
 import React, { ReactElement, useEffect, useState } from "react";
-import { Icon, RightClickMenu, Slider, StartMenu } from "components";
+import { Icon, RightClickMenu, Slider, StartMenu, TaskBar } from "components";
 
 const App: React.FC = (): ReactElement => {
   const [isBootingDone, setIsBootingDone] = useState<boolean>(false);
@@ -33,6 +33,7 @@ const App: React.FC = (): ReactElement => {
         backgroundSize: "cover",
       }}
     >
+      <TaskBar />
       <Icon.Folder>New Folder</Icon.Folder>
       <RightClickMenu.Folder show={true} />
       <Slider />
