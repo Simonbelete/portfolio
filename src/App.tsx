@@ -1,5 +1,6 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import { Icon, RightClickMenu, Slider, StartMenu, TaskBar } from "components";
+import { HomeScreenContainer } from "container";
 
 const App: React.FC = (): ReactElement => {
   const [isBootingDone, setIsBootingDone] = useState<boolean>(false);
@@ -23,23 +24,25 @@ const App: React.FC = (): ReactElement => {
   // if (!isPowerOn) return <LockScreen />;
   // else if (isBootingDone) return <HomeScreenContainer />;
   // else return <BootingUpContaienr />;
-  return (
-    <div
-      className="relative h-screen w-screen"
-      style={{
-        background: `url(/backgrounds/bliss.jpg)`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-      }}
-    >
-      <TaskBar />
-      <Icon.Folder>New Folder</Icon.Folder>
-      <RightClickMenu.Folder show={true} />
-      <Slider />
-      <StartMenu />
-    </div>
-  );
+  // return (
+  //   <div
+  //     className="relative h-screen w-screen"
+  //     style={{
+  //       background: `url(/backgrounds/bliss.jpg)`,
+  //       backgroundRepeat: "no-repeat",
+  //       backgroundPosition: "center",
+  //       backgroundSize: "cover",
+  //     }}
+  //   >
+  //     <TaskBar />
+  //     <Icon.Folder>New Folder</Icon.Folder>
+  //     <RightClickMenu.Folder show={true} />
+  //     <Slider />
+  //     <StartMenu />
+  //   </div>
+  // );
+
+  return <HomeScreenContainer />;
 };
 
 export default App;

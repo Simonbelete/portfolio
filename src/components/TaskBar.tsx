@@ -5,7 +5,7 @@ import { NotificationArea } from "components";
 const TaskBar: React.FC = (): ReactElement => {
   return (
     <div
-      className="w-screen h-[31px]"
+      className="w-screen absolute bottom-0 left-0 right-0 h-[31px]"
       style={{
         background: "linear-gradient(white -26px, #225ad9 10px, #225ad9)",
       }}

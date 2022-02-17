@@ -4,3 +4,5 @@ export { default as Slider } from "./Slider";
 export { default as StartMenu } from "./StartMenu";
 export { default as TaskBar } from "./TaskBar";
 export { default as NotificationArea } from "./NotificationArea";
+export { default as Logo } from "./Logo";
+// export { default as LoadingBar } from "./LoadingBar";
