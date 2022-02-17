@@ -5,4 +5,6 @@ export { default as StartMenu } from "./StartMenu";
 export { default as TaskBar } from "./TaskBar";
 export { default as NotificationArea } from "./NotificationArea";
 export { default as Logo } from "./Logo";
-// export { default as LoadingBar } from "./LoadingBar";
+export { default as LoadingBar } from "./LoadingBar";
+export { default as Window } from "./Window";
+export { default as Butotn } from "./Button";
