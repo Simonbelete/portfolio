@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 import { Window, Button } from "components";
 import { useScreenSize } from "hooks";
 
-const Gretting: React.FC = (): ReactElement => {
+const GrettingWindow: React.FC = (): ReactElement => {
   const { height, width } = useScreenSize();
   return (
     <Window
@@ -37,4 +37,4 @@ const Gretting: React.FC = (): ReactElement => {
   );
 };
 
-export default WelcomeWindow;
+export default GrettingWindow;

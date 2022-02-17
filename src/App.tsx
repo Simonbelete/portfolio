@@ -1,13 +1,14 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import { Icon, RightClickMenu, Slider, StartMenu, TaskBar } from "components";
 import { HomeScreenContainer } from "container";
+import { useGaTracker } from "hooks";
 
 const App: React.FC = (): ReactElement => {
   const [isBootingDone, setIsBootingDone] = useState<boolean>(false);
   // const { isPowerOn } = useAppSelector((state) => state.RootReducer);
 
   // Init ga tracker
-  // useGaTracker();
+  useGaTracker();
 
   // useEffect(() => {
   //   if (isPowerOn) {
