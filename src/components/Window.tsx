@@ -66,7 +66,7 @@ const Window: React.FC<{
             <div className="bg-[#f2efe3]">{toolBar}</div>
           </div>
           {/* Body */}
-          <div className="flex px-1 h-full w-full">{children}</div>
+          <div className="flex px-[3px] h-full w-full">{children}</div>
           {/* Status Bar */}
           <div className="flex flex-row justify-between"></div>
         </div>
