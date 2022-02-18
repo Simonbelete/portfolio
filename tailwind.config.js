@@ -10,7 +10,8 @@ module.exports = {
     extend: {
       colors: {
         'mariner': '#245DD7',
-        'white-rock': '#F0EFE2'
+        'white-rock': '#F0EFE2',
+        'mariner-1': '#316AC5'
       }
     },
   },

@@ -8,6 +8,7 @@ import { HomeScreen } from "components/screens";
 //   WindowsManager,
 // } from "container";
 import { Icon } from "components";
+import WindowsManager from "./WindowsManager";
 
 const HomeScreenContaienr: React.FC = (): ReactElement => {
   // const { background } = useAppSelector((state) => state.RootReducer);
@@ -23,6 +24,7 @@ const HomeScreenContaienr: React.FC = (): ReactElement => {
   return (
     <HomeScreen>
       <Icon.Folder />
+      <WindowsManager />
     </HomeScreen>
   );
 };
