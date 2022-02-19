@@ -13,12 +13,14 @@ const Icon: React.FC<{
   horizontal?: boolean;
   size?: string;
   dragable?: boolean;
+  description?: string;
 }> = ({
   children,
   icon,
   horizontal,
   size = "h-8 w-8",
   dragable = true,
+  description,
 }): ReactElement => {
   const el = useRef<HTMLDivElement>(null);
   const [xPos, setXPos] = useState("0px");
@@ -59,13 +61,37 @@ const Icon: React.FC<{
       {children && (
         <p
           className="text-xs text-white max-w-[96px] text-center line-clamp-2"
-          style={{
-            textShadow: "0.1em 1px 1px black",
-            fontSize: "0.7em",
-            letterSpacing: "-0.025em",
-          }}
+          style={
+            description
+              ? {
+                  textShadow: "0",
+                  fontSize: "0.7em",
+                  letterSpacing: "-0.025em",
+                }
+              : {
+                  textShadow: "0.1em 1px 1px black",
+                  fontSize: "0.7em",
+                  letterSpacing: "-0.025em",
+                }
+          }
         >
-          {children}
+          {description ? (
+            <div className="flex flex-col text-black">
+              <p
+                className="self-start"
+                // className={`${
+                //   size == Size.small ? "" : "font-bold"
+                // }  self-start`}
+              >
+                {children}
+              </p>
+              <p className="self-start text-[10px] text-gray-700 tracking-wider">
+                {description}
+              </p>
+            </div>
+          ) : (
+            children
+          )}
         </p>
       )}
     </div>
@@ -76,9 +102,6 @@ const IconWrapper: React.FC<React.ComponentProps<typeof Icon>> = ({
   dragable,
   ...props
 }): ReactElement => {
-  console.group("dragable");
-  console.log(dragable);
-  console.groupEnd();
   if (dragable)
     return (
       <Draggable
@@ -123,11 +146,19 @@ const LogOff: React.FC<React.ComponentProps<typeof Icon>> = ({
   return <IconWrapper icon={icon} {...props} />;
 };
 
+const InternetExplore: React.FC<React.ComponentProps<typeof Icon>> = ({
+  icon = "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-220.ico",
+  ...props
+}): ReactElement => {
+  return <IconWrapper icon={icon} {...props} />;
+};
+
 const IconObject = Object.assign(IconWrapper, {
   Folder,
   Sound,
   PowerOff,
   LogOff,
+  InternetExplore,
 });
 
 export default IconObject;

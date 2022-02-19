@@ -3,7 +3,13 @@ import React, { ReactElement } from "react";
 import { UserIcon } from "components";
 
 const LeftStartMenus: React.FC = (): ReactElement => {
-  return <a>a</a>;
+  return (
+    <div className="flex flex-col">
+      <Icon.InternetExplore description="Internet Explore" horizontal={true}>
+        Internet
+      </Icon.InternetExplore>
+    </div>
+  );
 };
 
 const StartMenu: React.FC = (): ReactElement => {
@@ -19,14 +25,17 @@ const StartMenu: React.FC = (): ReactElement => {
         >
           {/* Header */}
           <div className="h-[15%] flex items-center justify-start px-2 py-2">
-            <UserIcon />
+            <UserIcon
+              name="Simon Belete"
+              image="/user_pictures/Chess_Pieces.png"
+            />
           </div>
           {/* Body */}
           <div className="h-full w-full pr-[1px] bg-[#225ad9]">
             <div className="h-full w-full flex flex-row justify-between">
               {/* Left */}
               <div className="bg-white w-full h-full flex flex-col gap-2 p-2">
-                {/* <LeftStartMenus /> */}
+                <LeftStartMenus />
               </div>
               {/* Right */}
               <div className="w-full h-full bg-[#d3e5fa] p-2">
