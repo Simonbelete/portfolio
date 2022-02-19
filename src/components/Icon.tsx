@@ -12,7 +12,14 @@ const Icon: React.FC<{
   icon?: string;
   horizontal?: boolean;
   size?: string;
-}> = ({ children, icon, horizontal, size = "h-8 w-8" }): ReactElement => {
+  dragable?: boolean;
+}> = ({
+  children,
+  icon,
+  horizontal,
+  size = "h-8 w-8",
+  dragable = true,
+}): ReactElement => {
   const el = useRef<HTMLDivElement>(null);
   const [xPos, setXPos] = useState("0px");
   const [yPos, setYPos] = useState("0px");
@@ -42,63 +49,85 @@ const Icon: React.FC<{
   });
 
   return (
-    <Draggable
-      bounds="parent"
-      handle=".handle"
-      defaultPosition={{ x: 0, y: 0 }}
+    <div
+      ref={el}
+      className={`inline-flex ${
+        horizontal ? "flex-row" : "flex-col"
+      } justify-center items-center gap-1 cursor-xp`}
     >
-      <div
-        ref={el}
-        className={`inline-flex ${
-          horizontal ? "flex-row" : "flex-col"
-        } justify-center items-center gap-1 cursor-xp`}
-      >
-        <img src={icon} alt="" className={`aspect-square ${size}`} />
-        {children && (
-          <p
-            className="text-xs text-white max-w-[96px] text-center line-clamp-2"
-            style={{
-              textShadow: "0.1em 1px 1px black",
-              fontSize: "0.7em",
-              letterSpacing: "-0.025em",
-            }}
-          >
-            {children}
-          </p>
-        )}
-      </div>
-    </Draggable>
+      <img src={icon} alt="" className={`handle aspect-square ${size}`} />
+      {children && (
+        <p
+          className="text-xs text-white max-w-[96px] text-center line-clamp-2"
+          style={{
+            textShadow: "0.1em 1px 1px black",
+            fontSize: "0.7em",
+            letterSpacing: "-0.025em",
+          }}
+        >
+          {children}
+        </p>
+      )}
+    </div>
   );
 };
 
-const Folder: React.FC<React.ComponentProps<typeof Icon>> = ({
-  icon = "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-003.ico",
+const IconWrapper: React.FC<React.ComponentProps<typeof Icon>> = ({
+  dragable,
   ...props
 }): ReactElement => {
-  return <Icon icon={icon} {...props} />;
+  console.group("dragable");
+  console.log(dragable);
+  console.groupEnd();
+  if (dragable)
+    return (
+      <Draggable
+        bounds="parent"
+        handle=".handle"
+        defaultPosition={{ x: 0, y: 0 }}
+      >
+        <div className="inline-flex handle">
+          <Icon {...props} />
+        </div>
+      </Draggable>
+    );
+  else return <Icon {...props} />;
+};
+
+const Folder: React.FC<React.ComponentProps<typeof IconWrapper>> = ({
+  icon = "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-003.ico",
+  dragable,
+  ...props
+}): ReactElement => {
+  return <IconWrapper dragable={dragable} icon={icon} {...props} />;
 };
 
 const Sound: React.FC<React.ComponentProps<typeof Icon>> = ({
   icon = "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-168.ico",
   ...props
 }): ReactElement => {
-  return <Icon icon={icon} {...props} />;
+  return <IconWrapper icon={icon} {...props} />;
 };
 
 const PowerOff: React.FC<React.ComponentProps<typeof Icon>> = ({
   icon = "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-027.ico",
   ...props
 }) => {
-  return <Icon icon={icon} {...props} />;
+  return <IconWrapper icon={icon} {...props} />;
 };
 
 const LogOff: React.FC<React.ComponentProps<typeof Icon>> = ({
   icon = "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-044.ico",
   ...props
 }): ReactElement => {
-  return <Icon icon={icon} {...props} />;
+  return <IconWrapper icon={icon} {...props} />;
 };
 
-const IconObject = Object.assign(Icon, { Folder, Sound, PowerOff, LogOff });
+const IconObject = Object.assign(IconWrapper, {
+  Folder,
+  Sound,
+  PowerOff,
+  LogOff,
+});
 
 export default IconObject;

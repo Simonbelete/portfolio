@@ -2,6 +2,10 @@ import { Icon } from "components";
 import React, { ReactElement } from "react";
 import { UserIcon } from "components";
 
+const LeftStartMenus: React.FC = (): ReactElement => {
+  return <a>a</a>;
+};
+
 const StartMenu: React.FC = (): ReactElement => {
   return (
     <div className="w-[100px] md:w-[380px] absolute bottom-8">
