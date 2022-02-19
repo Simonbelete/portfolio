@@ -8,3 +8,4 @@ export { default as Logo } from "./Logo";
 export { default as LoadingBar } from "./LoadingBar";
 export { default as Window } from "./Window";
 export { default as Button } from "./Button";
+export { default as UserIcon } from "./UserIcon";
