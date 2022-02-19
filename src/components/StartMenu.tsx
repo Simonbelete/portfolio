@@ -30,9 +30,13 @@ const StartMenu: React.FC = (): ReactElement => {
             </div>
           </div>
           {/* Bottom */}
-          <div className="w-full h-[10%] flex justify-end items-center px-3">
-            <Icon.LogOff>Log Off</Icon.LogOff>
-            <Icon.PowerOff>Turn Off Computer</Icon.PowerOff>
+          <div className="w-full h-[10%] flex gap-5 justify-end items-center px-3">
+            <Icon.LogOff horizontal size="h-6 w-6">
+              Log Off
+            </Icon.LogOff>
+            <Icon.PowerOff horizontal size="h-6 w-6">
+              Turn Off Computer
+            </Icon.PowerOff>
           </div>
         </div>
       </div>

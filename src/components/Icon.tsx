@@ -7,10 +7,12 @@ import React, {
 } from "react";
 import Draggable from "react-draggable";
 
-const Icon: React.FC<{ children?: string; icon?: string }> = ({
-  children,
-  icon,
-}): ReactElement => {
+const Icon: React.FC<{
+  children?: string;
+  icon?: string;
+  horizontal?: boolean;
+  size?: string;
+}> = ({ children, icon, horizontal, size = "h-8 w-8" }): ReactElement => {
   const el = useRef<HTMLDivElement>(null);
   const [xPos, setXPos] = useState("0px");
   const [yPos, setYPos] = useState("0px");
@@ -47,12 +49,14 @@ const Icon: React.FC<{ children?: string; icon?: string }> = ({
     >
       <div
         ref={el}
-        className="inline-flex flex-col justify-center items-center gap-1 cursor-xp"
+        className={`inline-flex ${
+          horizontal ? "flex-row" : "flex-col"
+        } justify-center items-center gap-1 cursor-xp`}
       >
-        <img src={icon} alt="" className="aspect-square h-8 w-8" />
+        <img src={icon} alt="" className={`aspect-square ${size}`} />
         {children && (
           <p
-            className="text-xs text-white w-[96px] text-center line-clamp-2"
+            className="text-xs text-white max-w-[96px] text-center line-clamp-2"
             style={{
               textShadow: "0.1em 1px 1px black",
               fontSize: "0.7em",
