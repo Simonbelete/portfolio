@@ -39,10 +39,6 @@ const Icon: React.FC<{ children?: string; icon?: string }> = ({
     };
   });
 
-  useEffect(() => {
-    console.log(showMenu);
-  }, [showMenu]);
-
   return (
     <Draggable
       bounds="parent"
@@ -85,6 +81,20 @@ const Sound: React.FC<React.ComponentProps<typeof Icon>> = ({
   return <Icon icon={icon} {...props} />;
 };
 
-const IconObject = Object.assign(Icon, { Folder, Sound });
+const PowerOff: React.FC<React.ComponentProps<typeof Icon>> = ({
+  icon = "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-027.ico",
+  ...props
+}) => {
+  return <Icon icon={icon} {...props} />;
+};
+
+const LogOff: React.FC<React.ComponentProps<typeof Icon>> = ({
+  icon = "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-044.ico",
+  ...props
+}): ReactElement => {
+  return <Icon icon={icon} {...props} />;
+};
+
+const IconObject = Object.assign(Icon, { Folder, Sound, PowerOff, LogOff });
 
 export default IconObject;

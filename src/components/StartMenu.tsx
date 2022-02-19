@@ -1,3 +1,4 @@
+import { Icon } from "components";
 import React, { ReactElement } from "react";
 
 const StartMenu: React.FC = (): ReactElement => {
@@ -30,7 +31,8 @@ const StartMenu: React.FC = (): ReactElement => {
           </div>
           {/* Bottom */}
           <div className="w-full h-[10%] flex justify-end items-center px-3">
-            {/* <PowerOffAndLogOff /> */}
+            <Icon.LogOff>Log Off</Icon.LogOff>
+            <Icon.PowerOff>Turn Off Computer</Icon.PowerOff>
           </div>
         </div>
       </div>
