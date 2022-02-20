@@ -55,7 +55,7 @@ const Icon: React.FC<{
       ref={el}
       className={`inline-flex ${
         horizontal ? "flex-row" : "flex-col"
-      } justify-center items-center gap-1 cursor-xp`}
+      }  items-center gap-1 cursor-xp`}
     >
       <img src={icon} alt="" className={`handle aspect-square ${size}`} />
       {children && (

@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { GrettingWindow } from "components/windows";
+import { GrettingWindow, BrowserWindow } from "components/windows";
 import { OnScreenKeyboard } from "components/apps";
 
 const WindowsManager: React.FC = (): ReactElement => {
@@ -7,6 +7,7 @@ const WindowsManager: React.FC = (): ReactElement => {
     <>
       <GrettingWindow />
       <OnScreenKeyboard />
+      <BrowserWindow />
     </>
   );
 };

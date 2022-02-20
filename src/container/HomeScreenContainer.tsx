@@ -24,7 +24,7 @@ const HomeScreenContaienr: React.FC = (): ReactElement => {
 
   return (
     <HomeScreen>
-      <Icon.Folder dragable={true} />
+      <Icon.Folder dragable={true}>New Folder</Icon.Folder>
       <Draggable
         bounds="parent"
         handle=".handle"
