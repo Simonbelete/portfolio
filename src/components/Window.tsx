@@ -1,8 +1,7 @@
-import React, { ReactElement, useRef, useEffect } from "react";
-// import { Rnd } from "react-rnd";
+import React, { ReactElement } from "react";
 // import { ToolBar, TitleBarControllers } from "components";
 // import { Types } from "rootSlice";
-import Draggable from "react-draggable";
+import { Rnd } from "react-rnd";
 
 const Window: React.FC<{
   title?: ReactElement | ReactElement[];
@@ -26,12 +25,17 @@ const Window: React.FC<{
   toolBar,
 }): ReactElement => {
   return (
-    <Draggable
+    <Rnd
+      default={{
+        x: x ?? 100,
+        y: y ?? 100,
+        width: width ?? 300,
+        height: height ?? 300,
+      }}
       bounds="parent"
-      handle=".handle"
-      defaultPosition={{ x: x ?? 100, y: y ?? 100 }}
+      dragHandleClassName="handle"
     >
-      <div className="inline-flex" style={{ width: width, height: height }}>
+      <div className="inline-flex w-full h-full">
         <div
           className="rounded-tl-[8px] rounded-tr-[8px] h-full w-full flex flex-col"
           style={{
@@ -71,7 +75,7 @@ const Window: React.FC<{
           <div className="flex flex-row justify-between"></div>
         </div>
       </div>
-    </Draggable>
+    </Rnd>
   );
   // return (
   //   <Rnd
