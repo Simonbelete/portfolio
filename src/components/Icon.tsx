@@ -5,7 +5,7 @@ import React, {
   useState,
   useRef,
 } from "react";
-import Draggable from "react-draggable";
+import { Rnd } from "react-rnd";
 
 const Icon: React.FC<{
   children?: string;
@@ -14,6 +14,8 @@ const Icon: React.FC<{
   size?: string;
   dragable?: boolean;
   description?: string;
+  x?: number;
+  y?: number;
 }> = ({
   children,
   icon,
@@ -21,6 +23,8 @@ const Icon: React.FC<{
   size = "h-8 w-8",
   dragable = true,
   description,
+  x = 0,
+  y = 0,
 }): ReactElement => {
   const el = useRef<HTMLDivElement>(null);
   const [xPos, setXPos] = useState("0px");
@@ -53,7 +57,7 @@ const Icon: React.FC<{
   return (
     <div
       ref={el}
-      className={`inline-flex ${
+      className={`inline-flex ${description ? "" : "w-[69px]"} ${
         horizontal ? "flex-row" : "flex-col"
       }  items-center gap-1 cursor-xp`}
     >
@@ -100,25 +104,36 @@ const Icon: React.FC<{
 
 const IconWrapper: React.FC<React.ComponentProps<typeof Icon>> = ({
   dragable,
+  x = 0,
+  y = 0,
   ...props
 }): ReactElement => {
   if (dragable)
     return (
-      <Draggable
+      <Rnd
         bounds="parent"
+        enableResizing={false}
         handle=".handle"
-        defaultPosition={{ x: 0, y: 0 }}
+        default={{ x: x, y: y, width: "auto", height: "auto" }}
       >
         <div className="inline-flex handle">
           <Icon {...props} />
         </div>
-      </Draggable>
+      </Rnd>
     );
   else return <Icon {...props} />;
 };
 
 const Folder: React.FC<React.ComponentProps<typeof IconWrapper>> = ({
   icon = "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-003.ico",
+  dragable,
+  ...props
+}): ReactElement => {
+  return <IconWrapper dragable={dragable} icon={icon} {...props} />;
+};
+
+const Github: React.FC<React.ComponentProps<typeof IconWrapper>> = ({
+  icon = "/images/github-logo.png",
   dragable,
   ...props
 }): ReactElement => {
@@ -159,6 +174,7 @@ const IconObject = Object.assign(IconWrapper, {
   PowerOff,
   LogOff,
   InternetExplore,
+  Github,
 });
 
 export default IconObject;
