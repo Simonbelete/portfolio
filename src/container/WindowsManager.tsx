@@ -6,8 +6,8 @@ const WindowsManager: React.FC = (): ReactElement => {
   return (
     <>
       <GrettingWindow />
-      <OnScreenKeyboard />
-      <BrowserWindow />
+      {/* <OnScreenKeyboard /> */}
+      {/* <BrowserWindow /> */}
     </>
   );
 };

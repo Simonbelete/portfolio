@@ -7,9 +7,7 @@ import { HomeScreen } from "components/screens";
 //   DesktopContainer,
 //   WindowsManager,
 // } from "container";
-import { Icon } from "components";
-import WindowsManager from "./WindowsManager";
-import Draggable from "react-draggable";
+import { WindowsManager, DesktopContainer } from "container";
 
 const HomeScreenContaienr: React.FC = (): ReactElement => {
   // const { background } = useAppSelector((state) => state.RootReducer);
@@ -24,14 +22,7 @@ const HomeScreenContaienr: React.FC = (): ReactElement => {
 
   return (
     <HomeScreen>
-      <Icon.Folder dragable={true}>New Folder</Icon.Folder>
-      <Draggable
-        bounds="parent"
-        handle=".handle"
-        defaultPosition={{ x: 10, y: 0 }}
-      >
-        <div className="handle inline-flex">Drag Me</div>
-      </Draggable>
+      <DesktopContainer />
       <WindowsManager />
     </HomeScreen>
   );
