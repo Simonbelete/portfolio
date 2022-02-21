@@ -10,6 +10,9 @@ const DesktopContainer: React.FC = (): ReactElement => {
       <Icon.Github dragable={true} x={0} y={70}>
         Github (Simonbelete)
       </Icon.Github>
+      <Icon.RecycleBin dragable={true} y={155}>
+        Recycle Bin
+      </Icon.RecycleBin>
     </>
   );
 };

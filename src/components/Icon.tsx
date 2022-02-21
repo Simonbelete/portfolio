@@ -140,6 +140,14 @@ const Github: React.FC<React.ComponentProps<typeof IconWrapper>> = ({
   return <IconWrapper dragable={dragable} icon={icon} {...props} />;
 };
 
+const RecycleBin: React.FC<React.ComponentProps<typeof IconWrapper>> = ({
+  icon = "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-145.ico",
+  dragable,
+  ...props
+}): ReactElement => {
+  return <IconWrapper dragable={dragable} icon={icon} {...props} />;
+};
+
 const Sound: React.FC<React.ComponentProps<typeof Icon>> = ({
   icon = "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-168.ico",
   ...props
@@ -175,6 +183,7 @@ const IconObject = Object.assign(IconWrapper, {
   LogOff,
   InternetExplore,
   Github,
+  RecycleBin,
 });
 
 export default IconObject;
