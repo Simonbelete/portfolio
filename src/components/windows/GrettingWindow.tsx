@@ -11,6 +11,7 @@ const GrettingWindow: React.FC = (): ReactElement => {
       height={200}
       x={width < 500 ? width * 0.06 : width * 0.4}
       y={height * 0.1}
+      title={<p>Welcome </p>}
     >
       <div className="bg-[#f2efe3] flex flex-col justify-between gap-3 px-4 h-auto w-full cursor-xp">
         <div className="flex flex-row items-center gap-5">

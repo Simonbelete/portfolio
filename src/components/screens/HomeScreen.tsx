@@ -16,7 +16,7 @@ const HomeScreen: React.FC<{
       }}
     >
       <div className="h-full w-full relative overflow-hidden">
-        <div className="w-full h-full relative mx-0 py-5">{children}</div>
+        <div className="w-full h-full relative mx-0 py-0">{children}</div>
         <TaskBar />
       </div>
     </div>

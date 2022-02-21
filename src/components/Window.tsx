@@ -4,7 +4,7 @@ import React, { ReactElement } from "react";
 import { Rnd } from "react-rnd";
 
 const Window: React.FC<{
-  title?: ReactElement | ReactElement[];
+  title?: ReactElement | ReactElement[] | string;
   // type?: Types;
   children?: ReactElement | ReactElement[];
   width?: number;
