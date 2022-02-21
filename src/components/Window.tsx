@@ -63,7 +63,25 @@ const Window: React.FC<{
             // enableResizing={enableResizing}
           >
             <div className="truncate">{title}</div>
-            <div>{/* <TitleBarControllers /> */}</div>
+            <div>
+              <div className="flex flex-row gap-1 w-full justify-end">
+                <img
+                  src="/icons/minimize.svg"
+                  alt="Minimize"
+                  className="w-[21px] h-[21px] hover:backdrop-brightness-125"
+                />
+                <img
+                  src="/icons/maximize.svg"
+                  alt="Maximize"
+                  className="w-[21px] h-[21px] hover:backdrop-brightness-125"
+                />
+                <img
+                  src="/icons/close.svg"
+                  alt="Close"
+                  className="w-[21px] h-[21px] hover:backdrop-brightness-125"
+                />
+              </div>
+            </div>
           </div>
           {/* ToolBars */}
           <div className="flex flex-col px-1">
