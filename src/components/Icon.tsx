@@ -176,6 +176,20 @@ const InternetExplore: React.FC<React.ComponentProps<typeof Icon>> = ({
   return <IconWrapper icon={icon} {...props} />;
 };
 
+const MyDocument: React.FC<React.ComponentProps<typeof Icon>> = ({
+  icon = "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-126.ico",
+  ...props
+}): ReactElement => {
+  return <IconWrapper icon={icon} {...props} />;
+};
+
+const Phone: React.FC<React.ComponentProps<typeof Icon>> = ({
+  icon = "/icons_temp/Phone.ico",
+  ...props
+}): ReactElement => {
+  return <IconWrapper icon={icon} {...props} />;
+};
+
 const IconObject = Object.assign(IconWrapper, {
   Folder,
   Sound,
@@ -184,6 +198,8 @@ const IconObject = Object.assign(IconWrapper, {
   InternetExplore,
   Github,
   RecycleBin,
+  MyDocument,
+  Phone,
 });
 
 export default IconObject;

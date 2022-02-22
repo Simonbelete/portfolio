@@ -86,12 +86,14 @@ const Window: React.FC<{
           </div>
           {/* ToolBars */}
           <div className="flex flex-col px-[3px]">
-            <div className="bg-spring-wood">
+            {/* <div className="bg-spring-wood">
               <ToolBar />
-            </div>
+            </div> */}
           </div>
           {/* Body */}
-          <div className="flex px-[3px] h-full w-full">{children}</div>
+          <div className="flex px-[3px] h-full w-full overflow-auto">
+            {children}
+          </div>
           {/* Status Bar */}
           <div className="flex flex-row justify-between"></div>
         </div>
