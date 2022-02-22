@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 
 const RightClickMenu: React.FC<{
   show?: boolean;
@@ -6,17 +6,25 @@ const RightClickMenu: React.FC<{
   y?: string;
   menus?: string[];
 }> = ({ show = false, x, y, menus }): ReactElement => {
+  const [xPos, setXPos] = useState(x);
+  const [yPos, setYPos] = useState(y);
+
+  useEffect(() => {
+    setXPos(x);
+    setYPos(y);
+  }, [x, y]);
   return (
     <>
       {show && (
         <ul
           className="absolute bg-white py-1 px-1"
           style={{
-            top: x,
-            left: y,
+            top: yPos,
+            left: xPos,
             boxShadow: "1px 1px 4px rgb(0 0 0)",
           }}
         >
+          {console.log(x + " " + y)}
           {menus &&
             menus.map((_, i) => {
               if (_ === "<hr />") return <hr className="py-[2px]" />;
@@ -58,6 +66,20 @@ const Folder: React.FC<React.ComponentProps<typeof RightClickMenu>> = ({
   return <RightClickMenu menus={menus} {...props} />;
 };
 
-const RightClickMenuObject = Object.assign(RightClickMenu, { Folder });
+const Desktop: React.FC<React.ComponentProps<typeof RightClickMenu>> = ({
+  ...props
+}): ReactElement => {
+  const menus = [
+    "Arrange Icon By",
+    "Refresh",
+    "Paste",
+    "Paste Shortcut",
+    "New",
+    "Properties",
+  ];
+  return <RightClickMenu menus={menus} {...props} />;
+};
+
+const RightClickMenuObject = Object.assign(RightClickMenu, { Folder, Desktop });
 
 export default RightClickMenuObject;
