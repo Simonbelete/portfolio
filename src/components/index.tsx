@@ -10,3 +10,4 @@ export { default as Window } from "./Window";
 export { default as Button } from "./Button";
 export { default as UserIcon } from "./UserIcon";
 export { default as ToolBar } from "./ToolBar";
+export { default as GlowLine } from "./GlowLine";

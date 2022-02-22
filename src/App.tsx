@@ -2,6 +2,7 @@ import React, { ReactElement, useEffect, useState } from "react";
 import { Icon, RightClickMenu, Slider, StartMenu, TaskBar } from "components";
 import { HomeScreenContainer } from "container";
 import { useGaTracker } from "hooks";
+import { LockScreen } from "components/screens";
 
 const App: React.FC = (): ReactElement => {
   const [isBootingDone, setIsBootingDone] = useState<boolean>(false);
@@ -43,7 +44,8 @@ const App: React.FC = (): ReactElement => {
   //   </div>
   // );
 
-  return <HomeScreenContainer />;
+  // return <HomeScreenContainer />;
+  return <LockScreen />;
 };
 
 export default App;
