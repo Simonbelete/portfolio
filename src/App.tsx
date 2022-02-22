@@ -1,50 +1,34 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import { Icon, RightClickMenu, Slider, StartMenu, TaskBar } from "components";
-import { HomeScreenContainer } from "container";
+import { HomeScreenContainer, BootingUpContaienr } from "container";
 import { useGaTracker } from "hooks";
-import { WelcomeScreen } from "components/screens";
+import { LockScreen } from "components/screens";
 
 const App: React.FC = (): ReactElement => {
   const [isBootingDone, setIsBootingDone] = useState<boolean>(false);
   // const { isPowerOn } = useAppSelector((state) => state.RootReducer);
+  const isPowerOn = true;
 
   // Init ga tracker
   useGaTracker();
 
-  // useEffect(() => {
-  //   if (isPowerOn) {
-  //     const timeId = setTimeout(() => {
-  //       setIsBootingDone(true);
-  //     }, 5000);
+  useEffect(() => {
+    if (isPowerOn) {
+      const timeId = setTimeout(() => {
+        setIsBootingDone(true);
+      }, 5000);
 
-  //     return () => {
-  //       clearTimeout(timeId);
-  //     };
-  //   }
-  // }, []);
+      return () => {
+        clearTimeout(timeId);
+      };
+    }
+  }, []);
 
-  // if (!isPowerOn) return <LockScreen />;
-  // else if (isBootingDone) return <HomeScreenContainer />;
-  // else return <BootingUpContaienr />;
-  // return (
-  //   <div
-  //     className="relative h-screen w-screen"
-  //     style={{
-  //       background: `url(/backgrounds/bliss.jpg)`,
-  //       backgroundRepeat: "no-repeat",
-  //       backgroundPosition: "center",
-  //       backgroundSize: "cover",
-  //     }}
-  //   >
-  //     <TaskBar />
-  //     <Icon.Folder>New Folder</Icon.Folder>
-  //     <RightClickMenu.Folder show={true} />
-  //     <Slider />
-  //     <StartMenu />
-  //   </div>
-  // );
+  if (!isPowerOn) return <LockScreen />;
+  else if (isBootingDone) return <HomeScreenContainer />;
+  else return <BootingUpContaienr />;
 
-  return <HomeScreenContainer />;
+  // return <HomeScreenContainer />
 };
 
 export default App;
