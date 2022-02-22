@@ -24,7 +24,7 @@ const PhoneNumberWindow: React.FC = (): ReactElement => {
         </div>
         <div className="w-full flex flex-row gap-1 justify-center items-center">
           <a href="tel:+251966751230">
-            <Button>Call</Button>
+            <Button>Call Me</Button>
           </a>
         </div>
       </div>

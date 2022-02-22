@@ -18,8 +18,12 @@ const TaskBar: React.FC = (): ReactElement => {
 
         <div className="flex flex-row h-full">
           <Menu.Button className="basis-24">
-            <div className="hover:brightness-125">
-              <img src="/images/start_button.png" alt="start Menu" />
+            <div className="hover:brightness-125 h-full">
+              <img
+                src="/images/start_button.png"
+                alt="start Menu"
+                className="h-full w-full"
+              />
             </div>
           </Menu.Button>
           <div className="basis-3/4 lg:basis-4/5 border-r-2 border-gray-600"></div>
