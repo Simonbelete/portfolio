@@ -13,7 +13,8 @@ module.exports = {
         'white-rock': '#F0EFE2',
         'mariner-1': '#316AC5',
         'navy-blue': '#000080',
-        'jordy-blue': '#94B2F3'
+        'jordy-blue': '#94B2F3',
+        'spring-wood': '#F2EFE3'
       }
     },
   },
