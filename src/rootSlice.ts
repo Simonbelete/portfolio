@@ -4,7 +4,7 @@ export enum Types {
   WELCOME_WINDOW = "WELCOME_WINDOW",
 }
 
-interface Windows {
+export interface Windows {
   minimized?: boolean;
   focused?: boolean;
   type: Types;

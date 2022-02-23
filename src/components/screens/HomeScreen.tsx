@@ -6,11 +6,17 @@ import React, {
   useRef,
 } from "react";
 import { TaskBar, RightClickMenu } from "components";
+import { Windows, Types } from "rootSlice";
 
 const HomeScreen: React.FC<{
   background?: string;
   children: ReactElement | ReactElement[];
-}> = ({ background = "/backgrounds/bliss.jpg", children }): ReactElement => {
+  windows?: Windows[];
+}> = ({
+  background = "/backgrounds/bliss.jpg",
+  children,
+  windows = [],
+}): ReactElement => {
   const bRef = useRef<HTMLDivElement>(null);
   const [xPos, setXPos] = useState("0px");
   const [yPos, setYPos] = useState("0px");
@@ -65,7 +71,7 @@ const HomeScreen: React.FC<{
           <RightClickMenu.Desktop x={xPos} y={yPos} show={showMenu} />
           {children}
         </div>
-        <TaskBar />
+        <TaskBar windows={windows} />
       </div>
     </div>
   );
