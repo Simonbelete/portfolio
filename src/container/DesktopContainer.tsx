@@ -7,7 +7,7 @@ const DesktopContainer: React.FC = (): ReactElement => {
   return (
     <>
       <Icon.Folder dragable={true}>New Folder</Icon.Folder>
-      <Icon.Github dragable={true} x={0} y={70}>
+      <Icon.Github dragable={true} y={70}>
         Github (Simonbelete)
       </Icon.Github>
       <Icon.RecycleBin dragable={true} y={160}>
@@ -16,11 +16,11 @@ const DesktopContainer: React.FC = (): ReactElement => {
       <Icon.MyDocument dragable={true} y={230}>
         My Portfolio
       </Icon.MyDocument>
-      <a href="tel:+251966751230">
-        <Icon.Phone dragable={true} y={300}>
-          Phone Number
-        </Icon.Phone>
-      </a>
+      {/* <a href="tel:+251966751230"> */}
+      <Icon.Phone dragable={true} y={300}>
+        Phone Number
+      </Icon.Phone>
+      {/* </a> */}
     </>
   );
 };

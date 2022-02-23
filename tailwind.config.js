@@ -8,6 +8,9 @@ module.exports = {
       'base': '12px'
     },
     extend: {
+      cursor: {
+        'xp': 'url("../public/cursors/CursorsXP.cur"), default'
+      },
       colors: {
         'mariner': '#245DD7',
         'white-rock': '#F0EFE2',

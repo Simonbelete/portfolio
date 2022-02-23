@@ -8,7 +8,7 @@ import React, {
 import { Rnd } from "react-rnd";
 
 const Icon: React.FC<{
-  children?: string;
+  children?: string | ReactElement | ReactElement[];
   icon?: string;
   horizontal?: boolean;
   size?: string;
