@@ -14,7 +14,7 @@ const PhoneNumberWindow: React.FC = (): ReactElement => {
       title={<p>Contact Me - Phone Number </p>}
     >
       <div className="bg-spring-wood flex flex-col py-5  gap-3 px-4 h-auto w-full cursor-xp">
-        <div className="flex flex-row items-center gap-5">
+        <div className="flex flex-row items-center gap-5 cursor-pointer">
           <img
             src="/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-221.ico"
             alt="Info icon"

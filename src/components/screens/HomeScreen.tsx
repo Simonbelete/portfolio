@@ -12,10 +12,12 @@ const HomeScreen: React.FC<{
   background?: string;
   children: ReactElement | ReactElement[];
   windows?: Windows[];
+  onTaskBarWindowToggle: (type: Types) => void;
 }> = ({
   background = "/backgrounds/bliss.jpg",
   children,
   windows = [],
+  onTaskBarWindowToggle,
 }): ReactElement => {
   const bRef = useRef<HTMLDivElement>(null);
   const [xPos, setXPos] = useState("0px");
@@ -71,7 +73,10 @@ const HomeScreen: React.FC<{
           <RightClickMenu.Desktop x={xPos} y={yPos} show={showMenu} />
           {children}
         </div>
-        <TaskBar windows={windows} />
+        <TaskBar
+          windows={windows}
+          onTaskBarWindowToggle={onTaskBarWindowToggle}
+        />
       </div>
     </div>
   );
