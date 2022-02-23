@@ -26,7 +26,18 @@ const TaskBar: React.FC = (): ReactElement => {
               />
             </div>
           </Menu.Button>
-          <div className="basis-3/4 lg:basis-4/5 border-r-2 border-gray-600"></div>
+          <div className="basis-3/4 lg:basis-4/5 border-r-2 border-gray-600 pt-[6px] pb-[2px] px-3">
+            <div className="grid grid-cols-12 h-full w-full items-center justify-center">
+              <div className="col-span-1 flex flex-row items-center justify-start px-2 h-full w-full bg-[#3e83f1] hover:bg-[#5295ff] border-r border-[#1F408C] rounded">
+                <img
+                  src="/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-003.ico"
+                  alt=""
+                  className="h-[20px] w-[20px]"
+                />
+                <p className="text-white text-sm">New Folder</p>
+              </div>
+            </div>
+          </div>
           <NotificationArea />
         </div>
       </Menu>
