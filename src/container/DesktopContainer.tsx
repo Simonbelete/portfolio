@@ -1,9 +1,11 @@
 import React, { ReactElement, useState } from "react";
-import { useAppSelector } from "hooks";
+import { useAppDispatch, useAppSelector } from "hooks";
 import { Icon, RightClickMenu } from "components";
+import { addWindow, Types, Windows } from "rootSlice";
 
 const DesktopContainer: React.FC = (): ReactElement => {
   // const desktopsList = useAppSelector((state) => state.RootReducer.desktops);
+  const dispatch = useAppDispatch();
   const [xPos, setXPos] = useState("0px");
   const [yPos, setYPos] = useState("0px");
   const [showMenu, setShowMenu] = useState(false);
@@ -11,25 +13,24 @@ const DesktopContainer: React.FC = (): ReactElement => {
     e: any,
     xPos: string,
     yPos: string,
-    showMenu: boolean
+    showMenu: boolean,
+    type?: string
   ) => {
     setXPos(xPos);
     setYPos(yPos);
     setShowMenu(showMenu);
-    console.log(showMenu);
-    // switch (e.detail) {
-    //   case 1:
-    //     console.log("click");
-    //     break;
-    //   case 2:
-    //     console.log("double click");
-    //     break;
-    //   case 3:
-    //     console.log("triple click");
-    //     break;
-    //   default:
-    //     return;
-    // }
+    console.log(type);
+    if (e.detail === 2) {
+      switch (type) {
+        case "PHONE":
+          dispatch(
+            addWindow({
+              type: Types.PHONE_NUMBER_WINDOW,
+              minimized: false,
+            })
+          );
+      }
+    }
   };
 
   return (

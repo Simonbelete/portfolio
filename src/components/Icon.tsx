@@ -17,7 +17,14 @@ const Icon: React.FC<{
   description?: string;
   x?: number;
   y?: number;
-  onClick?: (e: any, xPos: string, yPos: string, showMenu: boolean) => void;
+  type?: string;
+  onClick?: (
+    e: any,
+    xPos: string,
+    yPos: string,
+    showMenu: boolean,
+    type?: string
+  ) => void;
 }> = ({
   children,
   icon,
@@ -28,6 +35,7 @@ const Icon: React.FC<{
   x = 0,
   y = 0,
   onClick,
+  type,
 }): ReactElement => {
   const el = useRef<HTMLDivElement>(null);
   const [xPos, setXPos] = useState("0px");
@@ -41,14 +49,14 @@ const Icon: React.FC<{
       setYPos(`${e.pageY + 0}px`);
       setShowMenu(true);
       if (onClick !== undefined)
-        onClick(e, `${e.pageX + 0}px`, `${e.pageY + 0}px`, true);
+        onClick(e, `${e.pageX + 0}px`, `${e.pageY + 0}px`, true, type);
     },
     [setXPos, setYPos, onClick]
   );
 
   const handleClick = useCallback(
     (e) => {
-      if (onClick !== undefined) onClick(e, xPos, yPos, false);
+      if (onClick !== undefined) onClick(e, xPos, yPos, false, type);
       showMenu && setShowMenu(false);
     },
     [showMenu, onClick]
@@ -69,7 +77,7 @@ const Icon: React.FC<{
       // then close the menu
       if (showMenu && el.current && !el.current.contains(e.target)) {
         setShowMenu(false);
-        if (onClick !== undefined) onClick(e, xPos, yPos, false);
+        if (onClick !== undefined) onClick(e, xPos, yPos, false, type);
       }
     };
 
@@ -160,7 +168,9 @@ const Folder: React.FC<React.ComponentProps<typeof IconWrapper>> = ({
   dragable,
   ...props
 }): ReactElement => {
-  return <IconWrapper dragable={dragable} icon={icon} {...props} />;
+  return (
+    <IconWrapper dragable={dragable} type="FOLDER" icon={icon} {...props} />
+  );
 };
 
 const Github: React.FC<React.ComponentProps<typeof IconWrapper>> = ({
@@ -168,7 +178,9 @@ const Github: React.FC<React.ComponentProps<typeof IconWrapper>> = ({
   dragable,
   ...props
 }): ReactElement => {
-  return <IconWrapper dragable={dragable} icon={icon} {...props} />;
+  return (
+    <IconWrapper dragable={dragable} type="GITHUB" icon={icon} {...props} />
+  );
 };
 
 const RecycleBin: React.FC<React.ComponentProps<typeof IconWrapper>> = ({
@@ -218,7 +230,7 @@ const Phone: React.FC<React.ComponentProps<typeof Icon>> = ({
   icon = "/icons_temp/Phone.ico",
   ...props
 }): ReactElement => {
-  return <IconWrapper icon={icon} {...props} />;
+  return <IconWrapper type="PHONE" icon={icon} {...props} />;
 };
 
 const IconObject = Object.assign(IconWrapper, {
