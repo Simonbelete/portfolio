@@ -53,7 +53,7 @@ const Window: React.FC<{
         >
           {/* Title Bar */}
           <div
-            className="handle text-white flex flex-row items-center justify-between cursor-xp"
+            className="text-white grid grid-cols-12 items-center justify-between cursor-xp"
             style={{
               background:
                 "linear-gradient(180deg, rgba(9, 151, 255, 1) 0%, rgba(0, 83, 238, 1) 8%, rgba(0, 80, 238, 1) 40%, rgba(0, 102, 255, 1) 88%, rgba(0, 102, 255, 1) 93%, rgba(0, 91, 255, 1) 95%, rgba(0, 61, 215, 1) 96%, rgba(0, 61, 215, 1) 100%)",
@@ -69,8 +69,8 @@ const Window: React.FC<{
             }}
             // enableResizing={enableResizing}
           >
-            <div className="truncate">{title}</div>
-            <div>
+            <div className="col-span-9 truncate w-full handle">{title}</div>
+            <div className="col-span-3">
               <div className="flex flex-row gap-1 w-full justify-end cursor-xp">
                 <button onClick={onMinimize}>
                   <img
