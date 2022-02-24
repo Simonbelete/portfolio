@@ -1,23 +1,54 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 import { useAppSelector } from "hooks";
-import { Icon } from "components";
+import { Icon, RightClickMenu } from "components";
 
 const DesktopContainer: React.FC = (): ReactElement => {
   // const desktopsList = useAppSelector((state) => state.RootReducer.desktops);
+  const [xPos, setXPos] = useState("0px");
+  const [yPos, setYPos] = useState("0px");
+  const [showMenu, setShowMenu] = useState(false);
+  const handleOnClick = (
+    e: any,
+    xPos: string,
+    yPos: string,
+    showMenu: boolean
+  ) => {
+    setXPos(xPos);
+    setYPos(yPos);
+    setShowMenu(showMenu);
+    console.log(showMenu);
+    // switch (e.detail) {
+    //   case 1:
+    //     console.log("click");
+    //     break;
+    //   case 2:
+    //     console.log("double click");
+    //     break;
+    //   case 3:
+    //     console.log("triple click");
+    //     break;
+    //   default:
+    //     return;
+    // }
+  };
+
   return (
     <>
-      <Icon.Folder dragable={true}>New Folder</Icon.Folder>
-      <Icon.Github dragable={true} y={70}>
+      <RightClickMenu.Folder x={xPos} y={yPos} show={showMenu} />
+      <Icon.Folder onClick={handleOnClick} dragable={true}>
+        New Folder
+      </Icon.Folder>
+      <Icon.Github onClick={handleOnClick} dragable={true} y={70}>
         Github (Simonbelete)
       </Icon.Github>
-      <Icon.RecycleBin dragable={true} y={160}>
+      <Icon.RecycleBin onClick={handleOnClick} dragable={true} y={160}>
         Recycle Bin
       </Icon.RecycleBin>
-      <Icon.MyDocument dragable={true} y={230}>
+      <Icon.MyDocument onClick={handleOnClick} dragable={true} y={230}>
         My Portfolio
       </Icon.MyDocument>
       {/* <a href="tel:+251966751230"> */}
-      <Icon.Phone dragable={true} y={300}>
+      <Icon.Phone onClick={handleOnClick} dragable={true} y={300}>
         Phone Number
       </Icon.Phone>
       {/* </a> */}

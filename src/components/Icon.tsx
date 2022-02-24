@@ -5,6 +5,7 @@ import React, {
   useState,
   useRef,
 } from "react";
+import { RightClickMenu } from "components";
 import { Rnd } from "react-rnd";
 
 const Icon: React.FC<{
@@ -16,6 +17,7 @@ const Icon: React.FC<{
   description?: string;
   x?: number;
   y?: number;
+  onClick?: (e: any, xPos: string, yPos: string, showMenu: boolean) => void;
 }> = ({
   children,
   icon,
@@ -25,6 +27,7 @@ const Icon: React.FC<{
   description,
   x = 0,
   y = 0,
+  onClick,
 }): ReactElement => {
   const el = useRef<HTMLDivElement>(null);
   const [xPos, setXPos] = useState("0px");
@@ -34,16 +37,22 @@ const Icon: React.FC<{
   const handleContextMenu = useCallback(
     (e) => {
       e.preventDefault();
-      setXPos(`${e.pageX + 10}px`);
-      setYPos(`${e.pageY + 15}px`);
+      setXPos(`${e.pageX + 0}px`);
+      setYPos(`${e.pageY + 0}px`);
       setShowMenu(true);
+      if (onClick !== undefined)
+        onClick(e, `${e.pageX + 0}px`, `${e.pageY + 0}px`, true);
     },
-    [setXPos, setYPos]
+    [setXPos, setYPos, onClick]
   );
 
-  const handleClick = useCallback(() => {
-    showMenu && setShowMenu(false);
-  }, [showMenu]);
+  const handleClick = useCallback(
+    (e) => {
+      if (onClick !== undefined) onClick(e, xPos, yPos, false);
+      showMenu && setShowMenu(false);
+    },
+    [showMenu, onClick]
+  );
 
   useEffect(() => {
     el.current?.addEventListener("click", handleClick);
@@ -54,51 +63,73 @@ const Icon: React.FC<{
     };
   });
 
+  useEffect(() => {
+    const checkIfClickedOutside = (e: any) => {
+      // If the menu is open and the clicked target is not within the menu,
+      // then close the menu
+      if (showMenu && el.current && !el.current.contains(e.target)) {
+        setShowMenu(false);
+        if (onClick !== undefined) onClick(e, xPos, yPos, false);
+      }
+    };
+
+    document.addEventListener("mousedown", checkIfClickedOutside);
+
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [showMenu]);
+
+  // const clickEvnent = useCallback((e) => {}, [onClick]);
+
   return (
-    <div
-      ref={el}
-      className={`inline-flex ${description ? "" : "w-[69px]"} ${
-        horizontal ? "flex-row" : "flex-col"
-      }  items-center gap-1 cursor-xp`}
-    >
-      <img src={icon} alt="" className={`handle aspect-square ${size}`} />
-      {children && (
-        <p
-          className="text-xs text-white max-w-[96px] text-center line-clamp-2"
-          style={
-            description
-              ? {
-                  textShadow: "0",
-                  fontSize: "0.7em",
-                  letterSpacing: "-0.025em",
-                }
-              : {
-                  textShadow: "0.1em 1px 1px black",
-                  fontSize: "0.7em",
-                  letterSpacing: "-0.025em",
-                }
-          }
-        >
-          {description ? (
-            <div className="flex flex-col text-black">
-              <p
-                className="self-start"
-                // className={`${
-                //   size == Size.small ? "" : "font-bold"
-                // }  self-start`}
-              >
-                {children}
-              </p>
-              <p className="self-start text-[10px] text-gray-700 tracking-wider">
-                {description}
-              </p>
-            </div>
-          ) : (
-            children
-          )}
-        </p>
-      )}
-    </div>
+    <>
+      <div
+        ref={el}
+        className={`inline-flex ${description ? "" : "w-[69px]"} ${
+          horizontal ? "flex-row" : "flex-col"
+        }  items-center gap-1 cursor-xp`}
+      >
+        <img src={icon} alt="" className={`handle aspect-square ${size}`} />
+        {children && (
+          <p
+            className="text-xs text-white max-w-[96px] text-center line-clamp-2"
+            style={
+              description
+                ? {
+                    textShadow: "0",
+                    fontSize: "0.7em",
+                    letterSpacing: "-0.025em",
+                  }
+                : {
+                    textShadow: "0.1em 1px 1px black",
+                    fontSize: "0.7em",
+                    letterSpacing: "-0.025em",
+                  }
+            }
+          >
+            {description ? (
+              <div className="flex flex-col text-black">
+                <p
+                  className="self-start"
+                  // className={`${
+                  //   size == Size.small ? "" : "font-bold"
+                  // }  self-start`}
+                >
+                  {children}
+                </p>
+                <p className="self-start text-[10px] text-gray-700 tracking-wider">
+                  {description}
+                </p>
+              </div>
+            ) : (
+              children
+            )}
+          </p>
+        )}
+      </div>
+    </>
   );
 };
 

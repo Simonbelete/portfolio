@@ -5,7 +5,11 @@ import { UserIcon } from "components";
 const LeftStartMenus: React.FC = (): ReactElement => {
   return (
     <div className="flex flex-col">
-      <Icon.InternetExplore description="Internet Explore" horizontal={true}>
+      <Icon.InternetExplore
+        onClick={() => {}}
+        description="Internet Explore"
+        horizontal={true}
+      >
         Internet
       </Icon.InternetExplore>
     </div>
@@ -45,10 +49,10 @@ const StartMenu: React.FC = (): ReactElement => {
           </div>
           {/* Bottom */}
           <div className="w-full h-[10%] flex gap-5 justify-end items-center px-3">
-            <Icon.LogOff horizontal size="h-6 w-6">
+            <Icon.LogOff onClick={() => {}} horizontal size="h-6 w-6">
               Log Off
             </Icon.LogOff>
-            <Icon.PowerOff horizontal size="h-6 w-6">
+            <Icon.PowerOff onClick={() => {}} horizontal size="h-6 w-6">
               Turn Off Computer
             </Icon.PowerOff>
           </div>
