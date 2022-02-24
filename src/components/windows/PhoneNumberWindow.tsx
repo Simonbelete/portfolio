@@ -2,10 +2,13 @@ import React, { ReactElement } from "react";
 import { Window, Button } from "components";
 import { useScreenSize } from "hooks";
 
-const PhoneNumberWindow: React.FC = (): ReactElement => {
+const PhoneNumberWindow: React.FC<React.ComponentProps<typeof Window>> = ({
+  ...props
+}): ReactElement => {
   const { height, width } = useScreenSize();
   return (
     <Window
+      {...props}
       enableResizing={false}
       width={260}
       height={130}

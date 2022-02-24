@@ -14,6 +14,9 @@ const Window: React.FC<{
   x?: number;
   y?: number;
   toolBar?: ReactElement | ReactElement[];
+  onMinimize?: () => void;
+  onMaximize?: () => void;
+  onClose?: () => void;
 }> = ({
   title,
   // type,
@@ -24,6 +27,9 @@ const Window: React.FC<{
   x,
   y,
   toolBar,
+  onMinimize,
+  onMaximize,
+  onClose,
 }): ReactElement => {
   return (
     <Rnd
@@ -65,22 +71,28 @@ const Window: React.FC<{
           >
             <div className="truncate">{title}</div>
             <div>
-              <div className="flex flex-row gap-1 w-full justify-end">
-                <img
-                  src="/icons/minimize.svg"
-                  alt="Minimize"
-                  className="w-[21px] h-[21px] hover:backdrop-brightness-125"
-                />
-                <img
-                  src="/icons/maximize.svg"
-                  alt="Maximize"
-                  className="w-[21px] h-[21px] hover:backdrop-brightness-125"
-                />
-                <img
-                  src="/icons/close.svg"
-                  alt="Close"
-                  className="w-[21px] h-[21px] hover:backdrop-brightness-125"
-                />
+              <div className="flex flex-row gap-1 w-full justify-end cursor-xp">
+                <button onClick={onMinimize}>
+                  <img
+                    src="/icons/minimize.svg"
+                    alt="Minimize"
+                    className="w-[21px] h-[21px] hover:backdrop-brightness-125"
+                  />
+                </button>
+                <button onClick={onMaximize}>
+                  <img
+                    src="/icons/maximize.svg"
+                    alt="Maximize"
+                    className="w-[21px] h-[21px] hover:backdrop-brightness-125"
+                  />
+                </button>
+                <button onClick={onClose}>
+                  <img
+                    src="/icons/close.svg"
+                    alt="Close"
+                    className="w-[21px] h-[21px] hover:backdrop-brightness-125"
+                  />
+                </button>
               </div>
             </div>
           </div>

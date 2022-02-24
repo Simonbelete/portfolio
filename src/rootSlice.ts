@@ -33,6 +33,18 @@ export const rootSlice = createSlice({
       if (!state.windows.some((w) => w.type === action.payload.type))
         state.windows = [...state.windows, action.payload];
     },
+    minimizeWindow: (state, action: PayloadAction<Windows>) => {
+      const i = state.windows.findIndex((w) => w.type === action.payload.type);
+      const cp = state.windows;
+      cp[i].minimized = true;
+      state.windows = cp;
+    },
+    maximizeWindow: (state, action: PayloadAction<Windows>) => {
+      const i = state.windows.findIndex((w) => w.type === action.payload.type);
+      const cp = state.windows;
+      cp[i].minimized = false;
+      state.windows = cp;
+    },
     removeWindow: (state, action: PayloadAction<Windows>) => {
       const newWindows = state.windows.filter(
         (x) => x.type !== action.payload.type
@@ -42,6 +54,7 @@ export const rootSlice = createSlice({
   },
 });
 
-export const { addWindow } = rootSlice.actions;
+export const { addWindow, minimizeWindow, maximizeWindow, removeWindow } =
+  rootSlice.actions;
 
 export default rootSlice.reducer;

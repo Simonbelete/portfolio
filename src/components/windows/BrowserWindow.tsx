@@ -12,9 +12,11 @@ const PageNotFound: React.FC = (): ReactElement => {
   );
 };
 
-const BrowserWindow: React.FC = (): ReactElement => {
+const BrowserWindow: React.FC<React.ComponentProps<typeof Window>> = ({
+  ...props
+}): ReactElement => {
   return (
-    <Window>
+    <Window {...props}>
       <div className="bg-white flex h-auto w-full">
         {/* <PageNotFound /> */}a
       </div>
