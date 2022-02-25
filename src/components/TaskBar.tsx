@@ -61,10 +61,12 @@ const TaskBar: React.FC<{
                 return (
                   <div
                     onClick={() => toggleVisibality(_.type)}
-                    className="col-span-1 flex flex-row items-center justify-start px-2 h-full w-full bg-[#3e83f1] hover:bg-[#5295ff] border-r border-[#1F408C] rounded"
+                    className="col-span-3 md:col-span-1 flex flex-row items-center justify-start px-2 h-full w-full bg-[#3e83f1] hover:bg-[#5295ff] border-r border-[#1F408C] rounded"
                   >
                     <img src={img} alt="" className="h-[20px] w-[20px]" />
-                    <p className="text-white text-sm truncate">{title}</p>
+                    <p className="text-white text-sm truncate hidden md:flex">
+                      {title}
+                    </p>
                   </div>
                 );
               })}
