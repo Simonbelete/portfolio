@@ -102,7 +102,7 @@ const Icon: React.FC<{
         <img src={icon} alt="" className={`handle aspect-square ${size}`} />
         {children && (
           <p
-            className="text-xs text-white max-w-[96px] text-center line-clamp-2"
+            className="handle text-xs text-white max-w-[96px] text-center line-clamp-2"
             style={
               description
                 ? {
@@ -154,8 +154,9 @@ const IconWrapper: React.FC<React.ComponentProps<typeof Icon>> = ({
         enableResizing={false}
         handle=".handle"
         default={{ x: x, y: y, width: "auto", height: "auto" }}
+        dragHandleClassName="handle"
       >
-        <div className="inline-flex handle">
+        <div className="inline-flex">
           <Icon {...props} />
         </div>
       </Rnd>

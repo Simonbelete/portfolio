@@ -1,11 +1,12 @@
 import React, { ReactElement, useState } from "react";
-import { useAppDispatch, useAppSelector } from "hooks";
+import { useAppDispatch, useScreenSize } from "hooks";
 import { Icon, RightClickMenu } from "components";
-import { addWindow, Types, Windows } from "rootSlice";
+import { addWindow, Types } from "rootSlice";
 
 const DesktopContainer: React.FC = (): ReactElement => {
   // const desktopsList = useAppSelector((state) => state.RootReducer.desktops);
   const dispatch = useAppDispatch();
+  const { height, width } = useScreenSize();
   const [xPos, setXPos] = useState("0px");
   const [yPos, setYPos] = useState("0px");
   const [showMenu, setShowMenu] = useState(false);
@@ -19,8 +20,7 @@ const DesktopContainer: React.FC = (): ReactElement => {
     setXPos(xPos);
     setYPos(yPos);
     setShowMenu(showMenu);
-    console.log(type);
-    if (e.detail === 2) {
+    if (e.detail === 2 || (e.detail === 1 && width < 425)) {
       switch (type) {
         case "PHONE":
           dispatch(
