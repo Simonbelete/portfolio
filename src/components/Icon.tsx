@@ -99,7 +99,7 @@ const Icon: React.FC<{
           horizontal ? "flex-row" : "flex-col"
         }  items-center gap-1 cursor-xp`}
       >
-        <img src={icon} alt="" className={`handle aspect-square ${size}`} />
+        <img src={icon} alt="" className={`aspect-square ${size}`} />
         {children && (
           <p
             className="handle text-xs text-white max-w-[96px] text-center line-clamp-2"
@@ -127,7 +127,7 @@ const Icon: React.FC<{
                 >
                   {children}
                 </p>
-                <p className="self-start text-[10px] text-gray-700 tracking-wider">
+                <p className="self-start text-left text-[10px] text-gray-700 tracking-wider">
                   {description}
                 </p>
               </div>

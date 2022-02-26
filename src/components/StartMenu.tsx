@@ -18,7 +18,7 @@ const LeftStartMenus: React.FC = (): ReactElement => {
 
 const StartMenu: React.FC = (): ReactElement => {
   return (
-    <div className="w-[100px] md:w-[380px] absolute bottom-8">
+    <div className="w-2/3 md:w-[380px] absolute bottom-8">
       <div className="w-auto">
         <div
           className="relative flex flex-col justify-between w-full h-[400px] md:h-[475px] bg-white rounded-tl-[5px] rounded-tr-[5px]"

@@ -3,6 +3,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 export enum Types {
   WELCOME_WINDOW = "WELCOME_WINDOW",
   PHONE_NUMBER_WINDOW = "PHONE_NUMBER_WINDOW",
+  BROWSER_WINDOW = "BROWSER_WINDOW",
+  GITHUB_WINDOW = "GITHUB_WINDOW",
 }
 
 export interface Windows {

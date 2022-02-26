@@ -29,6 +29,14 @@ const DesktopContainer: React.FC = (): ReactElement => {
               minimized: false,
             })
           );
+          break;
+        case "GITHUB":
+          dispatch(
+            addWindow({
+              type: Types.GITHUB_WINDOW,
+              minimized: false,
+            })
+          );
       }
     }
   };

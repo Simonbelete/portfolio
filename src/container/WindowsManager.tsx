@@ -1,7 +1,12 @@
 import React, { ReactElement } from "react";
 import { useAppDispatch, useAppSelector } from "hooks";
 import { Types, minimizeWindow, maximizeWindow, removeWindow } from "rootSlice";
-import { GrettingWindow, PhoneNumberWindow } from "components/windows";
+import {
+  GrettingWindow,
+  PhoneNumberWindow,
+  BrowserWindow,
+  GithubWindow,
+} from "components/windows";
 
 const WindowsManager: React.FC = (): ReactElement => {
   const windowsList = useAppSelector((state) => state.RootReducer.windows);
@@ -30,6 +35,22 @@ const WindowsManager: React.FC = (): ReactElement => {
         if (_.type === Types.PHONE_NUMBER_WINDOW && _.minimized === false)
           return (
             <PhoneNumberWindow
+              onMinimize={() => handleOnMinimize(Types.PHONE_NUMBER_WINDOW)}
+              onMaximize={() => handleOnMaximize(Types.PHONE_NUMBER_WINDOW)}
+              onClose={() => handleOnClose(Types.PHONE_NUMBER_WINDOW)}
+            />
+          );
+        if (_.type === Types.BROWSER_WINDOW && _.minimized === false)
+          return (
+            <BrowserWindow
+              onMinimize={() => handleOnMinimize(Types.PHONE_NUMBER_WINDOW)}
+              onMaximize={() => handleOnMaximize(Types.PHONE_NUMBER_WINDOW)}
+              onClose={() => handleOnClose(Types.PHONE_NUMBER_WINDOW)}
+            />
+          );
+        if (_.type === Types.GITHUB_WINDOW && _.minimized === false)
+          return (
+            <GithubWindow
               onMinimize={() => handleOnMinimize(Types.PHONE_NUMBER_WINDOW)}
               onMaximize={() => handleOnMaximize(Types.PHONE_NUMBER_WINDOW)}
               onClose={() => handleOnClose(Types.PHONE_NUMBER_WINDOW)}
