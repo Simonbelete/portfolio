@@ -5,6 +5,7 @@ export enum Types {
   PHONE_NUMBER_WINDOW = "PHONE_NUMBER_WINDOW",
   BROWSER_WINDOW = "BROWSER_WINDOW",
   GITHUB_WINDOW = "GITHUB_WINDOW",
+  WORKS_WINDOW = "WORKS_WINDOW",
 }
 
 export interface Windows {
@@ -22,6 +23,10 @@ const initialState: RootState = {
   windows: [
     {
       type: Types.WELCOME_WINDOW,
+      minimized: false,
+    },
+    {
+      type: Types.WORKS_WINDOW,
       minimized: false,
     },
   ],

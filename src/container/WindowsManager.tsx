@@ -6,6 +6,7 @@ import {
   PhoneNumberWindow,
   BrowserWindow,
   GithubWindow,
+  WorksWindow,
 } from "components/windows";
 
 const WindowsManager: React.FC = (): ReactElement => {
@@ -43,17 +44,25 @@ const WindowsManager: React.FC = (): ReactElement => {
         if (_.type === Types.BROWSER_WINDOW && _.minimized === false)
           return (
             <BrowserWindow
-              onMinimize={() => handleOnMinimize(Types.PHONE_NUMBER_WINDOW)}
-              onMaximize={() => handleOnMaximize(Types.PHONE_NUMBER_WINDOW)}
-              onClose={() => handleOnClose(Types.PHONE_NUMBER_WINDOW)}
+              onMinimize={() => handleOnMinimize(Types.BROWSER_WINDOW)}
+              onMaximize={() => handleOnMaximize(Types.BROWSER_WINDOW)}
+              onClose={() => handleOnClose(Types.BROWSER_WINDOW)}
             />
           );
         if (_.type === Types.GITHUB_WINDOW && _.minimized === false)
           return (
             <GithubWindow
-              onMinimize={() => handleOnMinimize(Types.PHONE_NUMBER_WINDOW)}
-              onMaximize={() => handleOnMaximize(Types.PHONE_NUMBER_WINDOW)}
-              onClose={() => handleOnClose(Types.PHONE_NUMBER_WINDOW)}
+              onMinimize={() => handleOnMinimize(Types.GITHUB_WINDOW)}
+              onMaximize={() => handleOnMaximize(Types.GITHUB_WINDOW)}
+              onClose={() => handleOnClose(Types.GITHUB_WINDOW)}
+            />
+          );
+        if (_.type === Types.WORKS_WINDOW && _.minimized === false)
+          return (
+            <WorksWindow
+              onMinimize={() => handleOnMinimize(Types.WORKS_WINDOW)}
+              onMaximize={() => handleOnMaximize(Types.WORKS_WINDOW)}
+              onClose={() => handleOnClose(Types.WORKS_WINDOW)}
             />
           );
       })}

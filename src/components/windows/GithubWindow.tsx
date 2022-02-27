@@ -23,7 +23,11 @@ const GithubWindow: React.FC<React.ComponentProps<typeof Window>> = ({
       title={<p>Github - Simon Belete</p>}
     >
       <div className="bg-white flex h-auto w-full">
-        {/* <PageNotFound /> */}
+        <iframe
+          title="Github - Simonbelete"
+          className="w-full h-full"
+          src="google.com"
+        ></iframe>
       </div>
     </Window>
   );

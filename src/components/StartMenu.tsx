@@ -6,6 +6,7 @@ const LeftStartMenus: React.FC = (): ReactElement => {
   return (
     <div className="flex flex-col">
       <Icon.InternetExplore
+        hoverable
         onClick={() => {}}
         description="Internet Explore"
         horizontal={true}

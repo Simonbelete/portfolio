@@ -25,6 +25,7 @@ const Icon: React.FC<{
     showMenu: boolean,
     type?: string
   ) => void;
+  hoverable?: boolean;
 }> = ({
   children,
   icon,
@@ -36,6 +37,7 @@ const Icon: React.FC<{
   y = 0,
   onClick,
   type,
+  hoverable,
 }): ReactElement => {
   const el = useRef<HTMLDivElement>(null);
   const [xPos, setXPos] = useState("0px");
@@ -95,7 +97,9 @@ const Icon: React.FC<{
     <>
       <div
         ref={el}
-        className={`inline-flex ${description ? "" : "w-[69px]"} ${
+        className={`inline-flex ${
+          hoverable && "hover:bg-mariner-1 hover:text-white"
+        } ${description ? "" : "w-[69px]"} ${
           horizontal ? "flex-row" : "flex-col"
         }  items-center gap-1 cursor-xp`}
       >

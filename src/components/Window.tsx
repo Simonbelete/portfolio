@@ -103,7 +103,7 @@ const Window: React.FC<{
             </div> */}
           </div>
           {/* Body */}
-          <div className="flex px-[3px] h-full w-full overflow-auto">
+          <div className="flex flex-row px-[3px] h-full w-full overflow-auto">
             {children}
           </div>
           {/* Status Bar */}
@@ -114,4 +114,25 @@ const Window: React.FC<{
   );
 };
 
-export default Window;
+const ExploreBar: React.FC<{
+  children: ReactElement | ReactElement[];
+}> = ({ children }): ReactElement => {
+  return (
+    <div
+      className="w-[350px]"
+      style={{ background: "linear-gradient(to bottom, #7AA1E6 ,#6478D7)" }}
+    >
+      {children}
+    </div>
+  );
+};
+
+const Body: React.FC<{
+  children: ReactElement | ReactElement[];
+}> = ({ children }): ReactElement => {
+  return <div className="bg-white h-full w-full">{children}</div>;
+};
+
+const WindowObject = Object.assign(Window, { ExploreBar, Body });
+
+export default WindowObject;
