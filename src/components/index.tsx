@@ -11,3 +11,4 @@ export { default as Button } from "./Button";
 export { default as UserIcon } from "./UserIcon";
 export { default as ToolBar } from "./ToolBar";
 export { default as GlowLine } from "./GlowLine";
+export { default as FolderAlt } from "./FolderAlt";

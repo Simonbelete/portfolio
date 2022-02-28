@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { Window, Button } from "components";
+import { Window, FolderAlt } from "components";
 import { useScreenSize } from "hooks";
 
 const WorksWindow: React.FC<React.ComponentProps<typeof Window>> = ({
@@ -21,7 +21,7 @@ const WorksWindow: React.FC<React.ComponentProps<typeof Window>> = ({
           <p>Hello</p>
         </Window.ExploreBar>
         <Window.Body>
-          <p>Body</p>
+          <FolderAlt>Shewaberr </FolderAlt>
         </Window.Body>
       </>
     </Window>
