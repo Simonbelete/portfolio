@@ -131,7 +131,7 @@ const ExploreBar: React.FC<{
 const Body: React.FC<{
   children: ReactElement | ReactElement[];
 }> = ({ children }): ReactElement => {
-  return <div className="bg-white h-full w-full">{children}</div>;
+  return <div className="bg-white h-full w-full px-5 py-1">{children}</div>;
 };
 
 const WindowObject = Object.assign(Window, { ExploreBar, Body });

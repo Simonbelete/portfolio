@@ -21,7 +21,7 @@ const WorksWindow: React.FC<React.ComponentProps<typeof Window>> = ({
           <p>Hello</p>
         </Window.ExploreBar>
         <Window.Body>
-          <FolderAlt>Shewaberr </FolderAlt>
+          <FolderAlt>Shewaberr</FolderAlt>
         </Window.Body>
       </>
     </Window>
