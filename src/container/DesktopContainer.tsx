@@ -21,23 +21,23 @@ const DesktopContainer: React.FC = (): ReactElement => {
     setYPos(yPos);
     setShowMenu(showMenu);
     if (e.detail === 2 || (e.detail === 1 && width < 425)) {
-      switch (type) {
-        case "PHONE":
-          dispatch(
-            addWindow({
-              type: Types.PHONE_NUMBER_WINDOW,
-              minimized: false,
-            })
-          );
-          break;
-        case "GITHUB":
-          dispatch(
-            addWindow({
-              type: Types.GITHUB_WINDOW,
-              minimized: false,
-            })
-          );
-      }
+      // switch (type) {
+      //   case "PHONE":
+      //     dispatch(
+      //       addWindow({
+      //         type: Types.PHONE_NUMBER_WINDOW,
+      //         minimized: false,
+      //       })
+      //     );
+      //     break;
+      //   case "GITHUB":
+      //     dispatch(
+      //       addWindow({
+      //         type: Types.GITHUB_WINDOW,
+      //         minimized: false,
+      //       })
+      //     );
+      // }
     }
   };
 

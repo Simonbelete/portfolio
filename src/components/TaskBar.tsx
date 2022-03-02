@@ -44,23 +44,23 @@ const TaskBar: React.FC<{
               {windows.map((_) => {
                 let img = "";
                 let title = "";
-                switch (_.type) {
-                  case Types.WELCOME_WINDOW:
-                    img =
-                      "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-070.ico";
-                    title = "Gretting - Welcome";
-                    break;
-                  case Types.PHONE_NUMBER_WINDOW:
-                    img =
-                      "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-221.ico";
-                    title = "Contact Me - Phone Number";
-                    break;
-                  default:
-                    break;
-                }
+                // switch (_.type) {
+                //   case Types.WELCOME_WINDOW:
+                //     img =
+                //       "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-070.ico";
+                //     title = "Gretting - Welcome";
+                //     break;
+                //   case Types.PHONE_NUMBER_WINDOW:
+                //     img =
+                //       "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-221.ico";
+                //     title = "Contact Me - Phone Number";
+                //     break;
+                //   default:
+                //     break;
+                // }
                 return (
                   <div
-                    onClick={() => toggleVisibality(_.type)}
+                    // onClick={() => toggleVisibality(null)}
                     className="col-span-3 md:col-span-1 flex flex-row items-center justify-start px-2 h-full w-full bg-[#3e83f1] hover:bg-[#5295ff] border-r border-[#1F408C] rounded"
                   >
                     <img src={img} alt="" className="h-[20px] w-[20px]" />

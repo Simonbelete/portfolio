@@ -1,4 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { GrettingWindow } from "components/windows";
+import { ReactElement } from "react";
 
 export enum Types {
   WELCOME_WINDOW = "WELCOME_WINDOW",
@@ -11,7 +13,7 @@ export enum Types {
 export interface Windows {
   minimized?: boolean;
   focused?: boolean;
-  type: Types;
+  component: any;
 }
 
 interface RootState {
@@ -22,11 +24,7 @@ interface RootState {
 const initialState: RootState = {
   windows: [
     {
-      type: Types.WELCOME_WINDOW,
-      minimized: false,
-    },
-    {
-      type: Types.WORKS_WINDOW,
+      component: GrettingWindow,
       minimized: false,
     },
   ],
@@ -37,26 +35,23 @@ export const rootSlice = createSlice({
   initialState,
   reducers: {
     addWindow: (state, action: PayloadAction<Windows>) => {
-      if (!state.windows.some((w) => w.type === action.payload.type))
-        state.windows = [...state.windows, action.payload];
+      // if (!state.windows.some((w) => w.type === action.payload.type))
+      //   state.windows = [...state.windows, action.payload];
     },
-    minimizeWindow: (state, action: PayloadAction<Windows>) => {
-      const i = state.windows.findIndex((w) => w.type === action.payload.type);
+    minimizeWindow: (state, action: PayloadAction<number>) => {
       const cp = state.windows;
-      cp[i].minimized = true;
+      cp[action.payload].minimized = true;
       state.windows = cp;
     },
-    maximizeWindow: (state, action: PayloadAction<Windows>) => {
-      const i = state.windows.findIndex((w) => w.type === action.payload.type);
+    maximizeWindow: (state, action: PayloadAction<number>) => {
       const cp = state.windows;
-      cp[i].minimized = false;
+      cp[action.payload].minimized = false;
       state.windows = cp;
     },
-    removeWindow: (state, action: PayloadAction<Windows>) => {
-      const newWindows = state.windows.filter(
-        (x) => x.type !== action.payload.type
-      );
-      state.windows = newWindows;
+    removeWindow: (state, action: PayloadAction<number>) => {
+      const cp = state.windows;
+      cp.splice(action.payload, 1);
+      state.windows = cp;
     },
   },
 });
