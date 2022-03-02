@@ -15,7 +15,7 @@ import {
 
 const findInstanceIndex = (o: any) => {
   for (var i = 0; i < WINDOWS.length; i = i + 1) {
-    if (WINDOWS[i].component === o) {
+    if (WINDOWS[i].component({}).type === o) {
       return WINDOWS[i].id;
     }
   }

@@ -1,4 +1,3 @@
-// export { default as GrettingWindow } from "./GrettingWindow";
 import GrettingWindow from "./GrettingWindow";
 import BrowserWindow from "./BrowserWindow";
 import PhoneNumberWindow from "./PhoneNumberWindow";

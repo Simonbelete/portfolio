@@ -19,13 +19,15 @@ const WindowsManager: React.FC = (): ReactElement => {
     <>
       {windowsList.length > 0 &&
         windowsList.map((_, i) => {
-          if (_.minimized === false && WINDOWS[i])
-            return WINDOWS[i].component({
+          if (_.minimized === false && WINDOWS[i]) {
+            const c = WINDOWS.find((x) => x.id == _.id);
+            return c?.component({
               key: i,
               onMinimize: () => handleOnMinimize(i),
               onMaximize: () => handleOnMaximize(i),
               onClose: () => handleOnClose(i),
             });
+          }
           return null;
         })}
     </>
