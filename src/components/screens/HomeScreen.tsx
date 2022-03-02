@@ -6,13 +6,13 @@ import React, {
   useRef,
 } from "react";
 import { TaskBar, RightClickMenu } from "components";
-import { Windows, Types } from "rootSlice";
+import { Windows } from "rootSlice";
 
 const HomeScreen: React.FC<{
   background?: string;
   children: ReactElement | ReactElement[];
   windows?: Windows[];
-  onTaskBarWindowToggle: (type: Types) => void;
+  onTaskBarWindowToggle: (i: number) => void;
 }> = ({
   background = "/backgrounds/bliss.jpg",
   children,

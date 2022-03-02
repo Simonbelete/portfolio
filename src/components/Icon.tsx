@@ -5,8 +5,22 @@ import React, {
   useState,
   useRef,
 } from "react";
-import { RightClickMenu } from "components";
 import { Rnd } from "react-rnd";
+import {
+  GrettingWindow,
+  GithubWindow,
+  PhoneNumberWindow,
+  WINDOWS,
+} from "components/windows";
+
+const findInstanceIndex = (o: any) => {
+  for (var i = 0; i < WINDOWS.length; i = i + 1) {
+    if (WINDOWS[i].component === o) {
+      return WINDOWS[i].id;
+    }
+  }
+  return -1;
+};
 
 const Icon: React.FC<{
   children?: string | ReactElement | ReactElement[];
@@ -17,13 +31,13 @@ const Icon: React.FC<{
   description?: string;
   x?: number;
   y?: number;
-  type?: string;
+  id?: number;
   onClick?: (
     e: any,
     xPos: string,
     yPos: string,
     showMenu: boolean,
-    type?: string
+    id?: number
   ) => void;
   hoverable?: boolean;
 }> = ({
@@ -36,7 +50,7 @@ const Icon: React.FC<{
   x = 0,
   y = 0,
   onClick,
-  type,
+  id,
   hoverable,
 }): ReactElement => {
   const el = useRef<HTMLDivElement>(null);
@@ -51,14 +65,14 @@ const Icon: React.FC<{
       setYPos(`${e.pageY + 0}px`);
       setShowMenu(true);
       if (onClick !== undefined)
-        onClick(e, `${e.pageX + 0}px`, `${e.pageY + 0}px`, true, type);
+        onClick(e, `${e.pageX + 0}px`, `${e.pageY + 0}px`, true, id);
     },
     [setXPos, setYPos, onClick]
   );
 
   const handleClick = useCallback(
     (e) => {
-      if (onClick !== undefined) onClick(e, xPos, yPos, false, type);
+      if (onClick !== undefined) onClick(e, xPos, yPos, false, id);
       showMenu && setShowMenu(false);
     },
     [showMenu, onClick]
@@ -79,7 +93,7 @@ const Icon: React.FC<{
       // then close the menu
       if (showMenu && el.current && !el.current.contains(e.target)) {
         setShowMenu(false);
-        if (onClick !== undefined) onClick(e, xPos, yPos, false, type);
+        if (onClick !== undefined) onClick(e, xPos, yPos, false, id);
       }
     };
 
@@ -90,8 +104,6 @@ const Icon: React.FC<{
       document.removeEventListener("mousedown", checkIfClickedOutside);
     };
   }, [showMenu]);
-
-  // const clickEvnent = useCallback((e) => {}, [onClick]);
 
   return (
     <>
@@ -174,7 +186,12 @@ const Folder: React.FC<React.ComponentProps<typeof IconWrapper>> = ({
   ...props
 }): ReactElement => {
   return (
-    <IconWrapper dragable={dragable} type="FOLDER" icon={icon} {...props} />
+    <IconWrapper
+      dragable={dragable}
+      id={findInstanceIndex(PhoneNumberWindow)}
+      icon={icon}
+      {...props}
+    />
   );
 };
 
@@ -184,7 +201,12 @@ const Github: React.FC<React.ComponentProps<typeof IconWrapper>> = ({
   ...props
 }): ReactElement => {
   return (
-    <IconWrapper dragable={dragable} type="GITHUB" icon={icon} {...props} />
+    <IconWrapper
+      dragable={dragable}
+      id={findInstanceIndex(GithubWindow)}
+      icon={icon}
+      {...props}
+    />
   );
 };
 
@@ -235,7 +257,13 @@ const Phone: React.FC<React.ComponentProps<typeof Icon>> = ({
   icon = "/icons_temp/Phone.ico",
   ...props
 }): ReactElement => {
-  return <IconWrapper type="PHONE" icon={icon} {...props} />;
+  return (
+    <IconWrapper
+      id={findInstanceIndex(PhoneNumberWindow)}
+      icon={icon}
+      {...props}
+    />
+  );
 };
 
 const IconObject = Object.assign(IconWrapper, {

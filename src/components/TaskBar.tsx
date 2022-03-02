@@ -2,15 +2,15 @@ import React, { ReactElement, useCallback } from "react";
 import { Menu } from "@headlessui/react";
 import { NotificationArea } from "components";
 import StartMenu from "./StartMenu";
-import { Windows, Types } from "rootSlice";
+import { Windows } from "rootSlice";
 
 const TaskBar: React.FC<{
   windows?: Windows[];
-  onTaskBarWindowToggle: (type: Types) => void;
+  onTaskBarWindowToggle: (i: number) => void;
 }> = ({ windows = [], onTaskBarWindowToggle }): ReactElement => {
   const toggleVisibality = useCallback(
-    (type: Types) => {
-      onTaskBarWindowToggle(type);
+    (i: number) => {
+      onTaskBarWindowToggle(i);
     },
     [onTaskBarWindowToggle]
   );
@@ -41,7 +41,7 @@ const TaskBar: React.FC<{
             <div className="grid grid-cols-12 h-full w-full items-center justify-center">
               {/* // TODO: use static description for taksbars */}
               {/* // Manually window's taskbar icon and title */}
-              {windows.map((_) => {
+              {windows.map((_, i) => {
                 let img = "";
                 let title = "";
                 // switch (_.type) {
@@ -60,7 +60,8 @@ const TaskBar: React.FC<{
                 // }
                 return (
                   <div
-                    // onClick={() => toggleVisibality(null)}
+                    key={i}
+                    onClick={() => toggleVisibality(i)}
                     className="col-span-3 md:col-span-1 flex flex-row items-center justify-start px-2 h-full w-full bg-[#3e83f1] hover:bg-[#5295ff] border-r border-[#1F408C] rounded"
                   >
                     <img src={img} alt="" className="h-[20px] w-[20px]" />

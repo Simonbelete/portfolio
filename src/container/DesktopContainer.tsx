@@ -1,7 +1,7 @@
 import React, { ReactElement, useState } from "react";
 import { useAppDispatch, useScreenSize } from "hooks";
 import { Icon, RightClickMenu } from "components";
-import { addWindow, Types } from "rootSlice";
+import { addWindow } from "rootSlice";
 
 const DesktopContainer: React.FC = (): ReactElement => {
   // const desktopsList = useAppSelector((state) => state.RootReducer.desktops);
@@ -15,29 +15,15 @@ const DesktopContainer: React.FC = (): ReactElement => {
     xPos: string,
     yPos: string,
     showMenu: boolean,
-    type?: string
+    id?: number
   ) => {
     setXPos(xPos);
     setYPos(yPos);
     setShowMenu(showMenu);
     if (e.detail === 2 || (e.detail === 1 && width < 425)) {
-      // switch (type) {
-      //   case "PHONE":
-      //     dispatch(
-      //       addWindow({
-      //         type: Types.PHONE_NUMBER_WINDOW,
-      //         minimized: false,
-      //       })
-      //     );
-      //     break;
-      //   case "GITHUB":
-      //     dispatch(
-      //       addWindow({
-      //         type: Types.GITHUB_WINDOW,
-      //         minimized: false,
-      //       })
-      //     );
-      // }
+      if (id !== undefined) {
+        dispatch(addWindow(id));
+      }
     }
   };
 
