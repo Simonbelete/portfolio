@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 import { Window, Button } from "components";
 import { useScreenSize } from "hooks";
 
@@ -6,14 +6,28 @@ const GrettingWindow: React.FC<React.ComponentProps<typeof Window>> = ({
   ...props
 }): ReactElement => {
   const { height, width } = useScreenSize();
+  const [xPos, setXPos] = useState(width < 500 ? width * 0.06 : width * 0.4);
+  const [yPos, setYPos] = useState(height * 0.1);
+  const [winWidth, setWindWidth] = useState(350);
+  const [winHeight, setWinHeight] = useState(200);
+
+  const handleMaximize = () => {
+    console.log("abcd");
+    setXPos(0);
+    setYPos(0);
+    setWindWidth(width);
+    setWinHeight(height);
+  };
+
   return (
     <Window
       {...props}
+      // onMaximize={handleMaximize}
       enableResizing={false}
-      width={350}
-      height={200}
-      x={width < 500 ? width * 0.06 : width * 0.4}
-      y={height * 0.1}
+      width={winWidth}
+      height={winHeight}
+      x={xPos}
+      y={yPos}
       title={<p>Welcome </p>}
     >
       <div className="bg-[#f2efe3] flex flex-col justify-between gap-3 px-4 h-auto w-full cursor-xp">

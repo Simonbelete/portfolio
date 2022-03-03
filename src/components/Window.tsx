@@ -1,8 +1,9 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 // import { ToolBar, TitleBarControllers } from "components";
 // import { Types } from "rootSlice";
 import { Rnd } from "react-rnd";
 import ToolBar from "./ToolBar";
+import { useScreenSize } from "hooks";
 
 const Window: React.FC<{
   title?: ReactElement | ReactElement[] | string;
@@ -31,12 +32,31 @@ const Window: React.FC<{
   onMaximize,
   onClose,
 }): ReactElement => {
+  const screen = useScreenSize();
+  const [fullScreen, setFullScreen] = useState(false);
+  const [rnd, setRnd] = useState<any>(null);
+  const [xPos, setXPos] = useState(x ?? 100);
+  const [yPos, setYPos] = useState(y ?? 100);
+
+  const handleMaximize = () => {
+    if (fullScreen) {
+      rnd.updateSize({ width: width, height: height });
+      rnd.updatePosition({ x: xPos, y: yPos });
+      setFullScreen(false);
+    } else {
+      rnd.updateSize({ width: screen.width, height: screen.height });
+      rnd.updatePosition({ x: 0, y: 0 });
+      setFullScreen(true);
+    }
+  };
+
   return (
     <Rnd
+      ref={(c) => setRnd(c)}
       default={{
-        x: x ?? 100,
-        y: y ?? 100,
-        width: width ?? 300,
+        x: xPos,
+        y: yPos,
+        width: width === undefined ? 300 : width,
         height: height ?? 300,
       }}
       bounds="parent"
@@ -80,7 +100,7 @@ const Window: React.FC<{
                     className="w-[21px] h-[21px] hover:backdrop-brightness-125"
                   />
                 </button>
-                <button onClick={onMaximize}>
+                <button onClick={handleMaximize}>
                   <img
                     src="/icons/maximize.svg"
                     alt="Maximize"
