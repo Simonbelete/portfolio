@@ -110,7 +110,7 @@ const Icon: React.FC<{
       <div
         ref={el}
         className={`inline-flex ${
-          hoverable && "hover:bg-mariner-1 hover:text-white"
+          hoverable && "hover:bg-mariner-1 text-white"
         } ${description ? "" : "w-[69px]"} ${
           horizontal ? "flex-row" : "flex-col"
         }  items-center gap-1 cursor-xp`}
