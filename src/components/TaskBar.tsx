@@ -3,6 +3,7 @@ import { Menu } from "@headlessui/react";
 import { NotificationArea } from "components";
 import StartMenu from "./StartMenu";
 import { Windows } from "rootSlice";
+import { WINDOWS } from "components/windows";
 
 const TaskBar: React.FC<{
   windows?: Windows[];
@@ -42,31 +43,19 @@ const TaskBar: React.FC<{
               {/* // TODO: use static description for taksbars */}
               {/* // Manually window's taskbar icon and title */}
               {windows.map((_, i) => {
-                let img = "";
-                let title = "";
-                // switch (_.type) {
-                //   case Types.WELCOME_WINDOW:
-                //     img =
-                //       "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-070.ico";
-                //     title = "Gretting - Welcome";
-                //     break;
-                //   case Types.PHONE_NUMBER_WINDOW:
-                //     img =
-                //       "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-221.ico";
-                //     title = "Contact Me - Phone Number";
-                //     break;
-                //   default:
-                //     break;
-                // }
                 return (
                   <div
                     key={i}
                     onClick={() => toggleVisibality(i)}
                     className="col-span-3 md:col-span-1 flex flex-row items-center justify-start px-2 h-full w-full bg-[#3e83f1] hover:bg-[#5295ff] border-r border-[#1F408C] rounded"
                   >
-                    <img src={img} alt="" className="h-[20px] w-[20px]" />
+                    <img
+                      src={WINDOWS[i].toolBarIcon}
+                      alt=""
+                      className="h-[20px] w-[20px]"
+                    />
                     <p className="text-white text-sm truncate hidden md:flex">
-                      {title}
+                      {WINDOWS[i].title}
                     </p>
                   </div>
                 );
