@@ -39,9 +39,9 @@ const DesktopContainer: React.FC = (): ReactElement => {
       <Icon.RecycleBin onClick={handleOnClick} dragable={true} y={160}>
         Recycle Bin
       </Icon.RecycleBin>
-      <Icon.MyDocument onClick={handleOnClick} dragable={true} y={230}>
+      <Icon.MyWorks onClick={handleOnClick} dragable={true} y={230}>
         My Portfolio
-      </Icon.MyDocument>
+      </Icon.MyWorks>
       {/* <a href="tel:+251966751230"> */}
       <Icon.Phone onClick={handleOnClick} dragable={true} y={300}>
         Phone Number
