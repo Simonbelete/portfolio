@@ -92,8 +92,11 @@ const Window: React.FC<{
           >
             <div className="w-full truncate handle">{title}</div>
             <div className="w-[80px] min-w-[80px]">
-              <div className="flex flex-row gap-1 w-full justify-end cursor-xp">
-                <button onClick={onMinimize} className="hover:brightness-125">
+              <div className="flex flex-row gap-1 w-full justify-end cursor-auto">
+                <button
+                  onClick={onMinimize}
+                  className="hover:brightness-125 cursor-default"
+                >
                   <img
                     src="/icons/minimize.svg"
                     alt="Minimize"
@@ -102,7 +105,7 @@ const Window: React.FC<{
                 </button>
                 <button
                   onClick={handleMaximize}
-                  className="hover:brightness-125"
+                  className="hover:brightness-125 cursor-default"
                 >
                   <img
                     src="/icons/maximize.svg"
@@ -110,7 +113,10 @@ const Window: React.FC<{
                     className="w-[21px] h-[21px]"
                   />
                 </button>
-                <button onClick={onClose} className="hover:brightness-125">
+                <button
+                  onClick={onClose}
+                  className="hover:brightness-125 cursor-default"
+                >
                   <img
                     src="/icons/close.svg"
                     alt="Close"
