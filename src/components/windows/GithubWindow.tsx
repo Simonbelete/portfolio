@@ -26,7 +26,7 @@ const GithubWindow: React.FC<React.ComponentProps<typeof Window>> = ({
         <iframe
           title="Github - Simonbelete"
           className="w-full h-full"
-          src="google.com"
+          src="https://github.com/Simonbelete"
         ></iframe>
       </div>
     </Window>
