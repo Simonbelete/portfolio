@@ -170,10 +170,10 @@ const IconWrapper: React.FC<React.ComponentProps<typeof Icon>> = ({
         bounds="parent"
         enableResizing={false}
         handle=".handle"
-        default={{ x: x, y: y, width: "auto", height: "auto" }}
+        default={{ x: x, y: y, width: "auto", height: "70px" }}
         dragHandleClassName="handle"
       >
-        <div className="inline-flex">
+        <div className="inline-flex items-center justify-center h-full">
           <Icon {...props} />
         </div>
       </Rnd>

@@ -28,7 +28,7 @@ const DesktopContainer: React.FC = (): ReactElement => {
   };
 
   const autoArrange = (i: number) => {
-    return { x: 0, y: i * 70 };
+    return { x: 0, y: i * 75 };
   };
 
   return (
