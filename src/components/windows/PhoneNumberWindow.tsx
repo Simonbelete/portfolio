@@ -12,8 +12,8 @@ const PhoneNumberWindow: React.FC<React.ComponentProps<typeof Window>> = ({
     <Window
       {...props}
       enableResizing={false}
-      width={width}
-      height={windowHeight}
+      width={260}
+      height={130}
       x={width < 500 ? width * 0.06 : width * 0.4}
       y={height * 0.1}
       title={<p>Contact Me - Phone Number </p>}
