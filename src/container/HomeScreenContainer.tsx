@@ -1,12 +1,14 @@
 import React, { ReactElement } from "react";
 import { HomeScreen } from "components/screens";
-import { useAppSelector } from "hooks";
+import { useAppDispatch, useAppSelector } from "hooks";
 import { WindowsManager, DesktopContainer } from "container";
+import { maximizeWindow } from "rootSlice";
 
 const HomeScreenContaienr: React.FC = (): ReactElement => {
   const { windows } = useAppSelector((state) => state.RootReducer);
-  const toggleTaskBarWindow = (type: any) => {
-    console.log(type);
+  const dispatch = useAppDispatch();
+  const toggleTaskBarWindow = (i: number) => {
+    dispatch(maximizeWindow(i));
   };
 
   return (
