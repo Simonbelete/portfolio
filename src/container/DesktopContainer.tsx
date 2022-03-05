@@ -35,28 +35,25 @@ const DesktopContainer: React.FC = (): ReactElement => {
     <>
       {/* Body Right click menu */}
       <RightClickMenu.Folder x={xPos} y={yPos} show={showMenu} />
-
-      <Icon.Folder onClick={handleOnClick} dragable={true} {...autoArrange(0)}>
-        New Folder
-      </Icon.Folder>
+      <Icon.MyWorks onClick={handleOnClick} dragable={true} {...autoArrange(0)}>
+        My Portfolio
+      </Icon.MyWorks>
       <Icon.Github onClick={handleOnClick} dragable={true} {...autoArrange(1)}>
         Github (Simonbelete)
       </Icon.Github>
+      <Icon.Phone onClick={handleOnClick} dragable={true} {...autoArrange(2)}>
+        Phone Number
+      </Icon.Phone>
+      <Icon.Folder onClick={handleOnClick} dragable={true} {...autoArrange(3)}>
+        New Folder
+      </Icon.Folder>
       <Icon.RecycleBin
         onClick={handleOnClick}
         dragable={true}
-        {...autoArrange(2)}
+        {...autoArrange(4)}
       >
         Recycle Bin
       </Icon.RecycleBin>
-      <Icon.MyWorks onClick={handleOnClick} dragable={true} {...autoArrange(3)}>
-        My Portfolio
-      </Icon.MyWorks>
-      {/* <a href="tel:+251966751230"> */}
-      <Icon.Phone onClick={handleOnClick} dragable={true} {...autoArrange(4)}>
-        Phone Number
-      </Icon.Phone>
-      {/* </a> */}
 
       {/* <Icon.Folder onClick={handleOnClick} dragable={true} {...autoArrange(0)}>
         New Folder
