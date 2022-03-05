@@ -27,10 +27,38 @@ const DesktopContainer: React.FC = (): ReactElement => {
     }
   };
 
+  const autoArrange = (i: number) => {
+    return { x: 0, y: i * 70 };
+  };
+
   return (
     <>
+      {/* Body Right click menu */}
       <RightClickMenu.Folder x={xPos} y={yPos} show={showMenu} />
-      <Icon.Folder onClick={handleOnClick} dragable={true}>
+
+      <Icon.Folder onClick={handleOnClick} dragable={true} {...autoArrange(0)}>
+        New Folder
+      </Icon.Folder>
+      <Icon.Github onClick={handleOnClick} dragable={true} {...autoArrange(1)}>
+        Github (Simonbelete)
+      </Icon.Github>
+      <Icon.RecycleBin
+        onClick={handleOnClick}
+        dragable={true}
+        {...autoArrange(2)}
+      >
+        Recycle Bin
+      </Icon.RecycleBin>
+      <Icon.MyWorks onClick={handleOnClick} dragable={true} {...autoArrange(3)}>
+        My Portfolio
+      </Icon.MyWorks>
+      {/* <a href="tel:+251966751230"> */}
+      <Icon.Phone onClick={handleOnClick} dragable={true} {...autoArrange(4)}>
+        Phone Number
+      </Icon.Phone>
+      {/* </a> */}
+
+      {/* <Icon.Folder onClick={handleOnClick} dragable={true} {...autoArrange(0)}>
         New Folder
       </Icon.Folder>
       <Icon.Github onClick={handleOnClick} dragable={true} y={70}>
@@ -42,11 +70,9 @@ const DesktopContainer: React.FC = (): ReactElement => {
       <Icon.MyWorks onClick={handleOnClick} dragable={true} y={230}>
         My Portfolio
       </Icon.MyWorks>
-      {/* <a href="tel:+251966751230"> */}
       <Icon.Phone onClick={handleOnClick} dragable={true} y={300}>
         Phone Number
-      </Icon.Phone>
-      {/* </a> */}
+      </Icon.Phone> */}
     </>
   );
 };
