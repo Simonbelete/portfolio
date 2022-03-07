@@ -38,7 +38,7 @@ const RightClickMenu: React.FC<{
                 return (
                   <Menu
                     as="li"
-                    className="w-full h-full cursor-pointer text-base px-2 py-[1px] hover:bg-mariner hover:text-white"
+                    className="relative w-full h-full cursor-pointer text-base px-2 py-[1px] hover:bg-mariner hover:text-white"
                   >
                     <Menu.Button>
                       <div className="flex justify-between">
@@ -46,7 +46,12 @@ const RightClickMenu: React.FC<{
                         <p>&gt;</p>
                       </div>
                     </Menu.Button>
-                    <Menu.Items>
+                    <Menu.Items
+                      className="absolute top-0 -right-[4.41em] bg-white flex flex-col gap-1"
+                      style={{
+                        boxShadow: "1px 1px 4px rgb(0 0 0)",
+                      }}
+                    >
                       {_.subMenus.map((e) => (
                         <Menu.Item disabled={e.disabled}>
                           {({ active }) => (
@@ -126,6 +131,31 @@ const Desktop: React.FC<React.ComponentProps<typeof RightClickMenu>> = ({
         },
         {
           menu: "Modified",
+        },
+        {
+          menu: "<hr />",
+        },
+        {
+          menu: "Show in Groups",
+          disabled: true,
+        },
+        {
+          menu: "Auto Arrange",
+        },
+        {
+          menu: "Align to Grid",
+        },
+        {
+          menu: "<hr />",
+        },
+        {
+          menu: "Show Desktop Icons",
+        },
+        {
+          menu: "Lock Web Items on Desktop",
+        },
+        {
+          menu: "Run Desktop Cleanup Wizard",
         },
       ],
     },
