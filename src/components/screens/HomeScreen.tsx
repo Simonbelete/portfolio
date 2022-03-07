@@ -40,8 +40,9 @@ const HomeScreen: React.FC<{
 
   const handleClick = useCallback(
     (e) => {
-      if (e.currentTarget != e.target) {
-        setShowMenu(false);
+      // Prevent closing when the clicking on the menu
+      if (e.currentTarget !== e.target) {
+        // setShowMenu(false);
         return;
       }
       showMenu && setShowMenu(false);

@@ -7,8 +7,13 @@ export interface Windows {
   focused?: boolean;
 }
 
+export interface Desktops {
+  id: number;
+}
+
 interface RootState {
   windows: Windows[];
+  desktops: Desktops[];
 }
 
 // Init statedefault
@@ -19,6 +24,7 @@ const initialState: RootState = {
       minimized: false,
     },
   ],
+  desktops: [],
 };
 
 export const rootSlice = createSlice({
