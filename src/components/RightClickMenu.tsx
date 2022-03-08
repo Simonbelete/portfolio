@@ -24,7 +24,7 @@ const RightClickMenu: React.FC<{
     <>
       {show && (
         <ul
-          className="absolute bg-white py-1 px-2"
+          className="absolute bg-white py-1 w-[128px] text-sm"
           style={{
             top: yPos,
             left: xPos,
@@ -40,36 +40,40 @@ const RightClickMenu: React.FC<{
                     as="li"
                     className="relative w-full h-full cursor-pointer text-base px-2 py-[1px] hover:bg-mariner hover:text-white"
                   >
-                    <Menu.Button>
-                      <div className="flex justify-between">
+                    <Menu.Button className="w-full">
+                      <div className="flex w-full justify-between">
                         {_.menu}
                         <p>&gt;</p>
                       </div>
                     </Menu.Button>
                     <Menu.Items
-                      className="absolute top-0 -right-[4.41em] bg-white flex flex-col gap-1"
+                      className="absolute w-[170px] top-0 left-[10.72em] bg-white flex flex-col gap-1 text-black px-2"
                       style={{
                         boxShadow: "1px 1px 4px rgb(0 0 0)",
                       }}
                     >
-                      {_.subMenus.map((e) => (
-                        <Menu.Item disabled={e.disabled}>
-                          {({ active }) => (
-                            <a
-                              className={`${active && "bg-blue-500"}`}
-                              href="/account-settings"
-                            >
-                              {e.menu}
-                            </a>
-                          )}
-                        </Menu.Item>
-                      ))}
+                      {_.subMenus.map((e) => {
+                        if (_.menu === "<hr />")
+                          return <hr className="py-[2px]" />;
+                        return (
+                          <Menu.Item disabled={e.disabled}>
+                            {({ active }) => (
+                              <a
+                                className={`${active && "bg-blue-500"}`}
+                                href="/account-settings"
+                              >
+                                {e.menu}
+                              </a>
+                            )}
+                          </Menu.Item>
+                        );
+                      })}
                     </Menu.Items>
                   </Menu>
                 );
               } else {
                 return (
-                  <li className=" w-full h-full cursor-pointer text-base px-2 py-[1px] hover:bg-mariner hover:text-white">
+                  <li className="w-full h-full cursor-pointer text-base pl-2 py-[1px] hover:bg-mariner hover:text-white">
                     {_.menu}
                   </li>
                 );
@@ -178,6 +182,38 @@ const Desktop: React.FC<React.ComponentProps<typeof RightClickMenu>> = ({
     },
     {
       menu: "New",
+      subMenus: [
+        {
+          menu: "Folder",
+        },
+        {
+          menu: "Shortcut",
+        },
+        {
+          menu: "<hr />",
+        },
+        {
+          menu: "Briefcase",
+        },
+        {
+          menu: "Bitmap Image",
+        },
+        {
+          menu: "Wordpad Document",
+        },
+        {
+          menu: "Rich Text Document",
+        },
+        {
+          menu: "Text Document",
+        },
+        {
+          menu: "Wave Sound",
+        },
+        {
+          menu: "Compressed (zipped) Folder",
+        },
+      ],
     },
     {
       menu: "<hr />",
