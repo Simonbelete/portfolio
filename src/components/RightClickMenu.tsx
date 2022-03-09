@@ -53,7 +53,7 @@ const RightClickMenu: React.FC<{
                       }}
                     >
                       {_.subMenus.map((e) => {
-                        if (_.menu === "<hr />")
+                        if (e.menu === "<hr />")
                           return <hr className="py-[2px]" />;
                         return (
                           <Menu.Item disabled={e.disabled}>
