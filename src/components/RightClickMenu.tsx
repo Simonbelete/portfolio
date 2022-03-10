@@ -47,7 +47,7 @@ const RightClickMenu: React.FC<{
                       </div>
                     </Menu.Button>
                     <Menu.Items
-                      className="absolute w-[170px] top-0 left-[10.72em] bg-white flex flex-col gap-1 text-black px-2"
+                      className="absolute w-[170px] top-0 left-[10.72em] bg-white flex flex-col gap-1 text-black"
                       style={{
                         boxShadow: "1px 1px 4px rgb(0 0 0)",
                       }}
@@ -57,14 +57,12 @@ const RightClickMenu: React.FC<{
                           return <hr className="py-[2px]" />;
                         return (
                           <Menu.Item disabled={e.disabled}>
-                            {({ active }) => (
-                              <a
-                                className={`${active && "bg-blue-500"}`}
-                                href="/account-settings"
-                              >
-                                {e.menu}
-                              </a>
-                            )}
+                            <a
+                              className="hover:bg-mariner hover:text-white px-2"
+                              href="/account-settings"
+                            >
+                              {e.menu}
+                            </a>
                           </Menu.Item>
                         );
                       })}
