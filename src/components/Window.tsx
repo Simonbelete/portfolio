@@ -1,9 +1,10 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 // import { ToolBar, TitleBarControllers } from "components";
 // import { Types } from "rootSlice";
 import { Rnd } from "react-rnd";
 import ToolBar from "./ToolBar";
 import { useScreenSize } from "hooks";
+import { WINDOWS } from "components/windows";
 
 const Window: React.FC<{
   title?: ReactElement | ReactElement[] | string;
@@ -18,6 +19,8 @@ const Window: React.FC<{
   onMinimize?: () => void;
   onMaximize?: () => void;
   onClose?: () => void;
+  onClick?: () => void;
+  zIndex?: number;
 }> = ({
   title,
   // type,
@@ -31,9 +34,11 @@ const Window: React.FC<{
   onMinimize,
   onMaximize,
   onClose,
+  onClick,
+  zIndex = 3,
 }): ReactElement => {
   const screen = useScreenSize();
-  const [zIndex, setZIndex] = useState(3); // Refer to Iocns component
+  const [zi, setzi] = useState(zIndex);
   const [fullScreen, setFullScreen] = useState(false);
   const [rnd, setRnd] = useState<any>(null);
   const [xPos, setXPos] = useState(x ?? 100);
@@ -51,6 +56,10 @@ const Window: React.FC<{
     }
   };
 
+  useEffect(() => {
+    setzi(zIndex);
+  }, [zIndex]);
+
   return (
     <Rnd
       ref={(c) => setRnd(c)}
@@ -63,15 +72,12 @@ const Window: React.FC<{
       bounds="parent"
       dragHandleClassName="handle"
       minWidth={100}
-      style={{ zIndex: zIndex }}
+      style={{ zIndex: zi }}
       onDragStart={(e, data) => {
-        setZIndex(4);
-      }}
-      onDragStop={() => {
-        setZIndex(3);
+        setzi(zi + 4);
       }}
     >
-      <div className="inline-flex w-full h-full">
+      <div className="inline-flex w-full h-full" onClick={onClick}>
         <div
           className="rounded-tl-[8px] rounded-tr-[8px] h-full w-full flex flex-col gap-0"
           style={{

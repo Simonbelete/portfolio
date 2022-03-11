@@ -12,12 +12,14 @@ export interface Desktops {
 }
 
 interface RootState {
+  activeWindow: number;
   windows: Windows[];
   desktops: Desktops[];
 }
 
 // Init statedefault
 const initialState: RootState = {
+  activeWindow: -1, // eg. windows[activeWindow]
   windows: [
     {
       id: 0,
@@ -53,10 +55,18 @@ export const rootSlice = createSlice({
       cp.splice(action.payload, 1);
       state.windows = cp;
     },
+    setActiveWindow: (state, action: PayloadAction<number>) => {
+      state.activeWindow = action.payload;
+    },
   },
 });
 
-export const { addWindow, minimizeWindow, maximizeWindow, removeWindow } =
-  rootSlice.actions;
+export const {
+  addWindow,
+  minimizeWindow,
+  maximizeWindow,
+  removeWindow,
+  setActiveWindow,
+} = rootSlice.actions;
 
 export default rootSlice.reducer;
