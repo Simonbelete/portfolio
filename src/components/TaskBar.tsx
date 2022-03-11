@@ -18,7 +18,7 @@ const TaskBar: React.FC<{
 
   return (
     <div
-      className="w-screen absolute bottom-0 left-0 right-0 h-[31px]"
+      className="w-screen absolute bottom-0 left-0 right-0 h-[31px] z-[999]"
       style={{
         background: "linear-gradient(white -26px, #225ad9 10px, #225ad9)",
       }}
