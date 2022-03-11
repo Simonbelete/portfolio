@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.bec73036.css",
-    "main.js": "/static/js/main.296790ac.js",
+    "main.css": "/static/css/main.e5af0c1c.css",
+    "main.js": "/static/js/main.176cfc3a.js",
     "static/media/tahoma.ttf": "/static/media/tahoma.bee3bb5e2dfa14107ea2.ttf",
     "static/media/tahomabd.ttf": "/static/media/tahomabd.5cd1be74e3107d9188ed.ttf",
     "static/media/scroll-arrow-up.svg": "/static/media/scroll-arrow-up.71b85cf9f00174a14fa6.svg",
@@ -17,11 +17,11 @@
     "static/media/scroll-thumb-horizontal.svg": "/static/media/scroll-thumb-horizontal.9895eba755eee65bb7c7.svg",
     "static/media/scroll-thumb.svg": "/static/media/scroll-thumb.9d4a0b76edd08383f6ce.svg",
     "static/media/CursorsXP.cur": "/static/media/CursorsXP.85d4fca447efc91fabb6.cur",
-    "main.bec73036.css.map": "/static/css/main.bec73036.css.map",
-    "main.296790ac.js.map": "/static/js/main.296790ac.js.map"
+    "main.e5af0c1c.css.map": "/static/css/main.e5af0c1c.css.map",
+    "main.176cfc3a.js.map": "/static/js/main.176cfc3a.js.map"
   },
   "entrypoints": [
-    "static/css/main.bec73036.css",
-    "static/js/main.296790ac.js"
+    "static/css/main.e5af0c1c.css",
+    "static/js/main.176cfc3a.js"
   ]
 }
