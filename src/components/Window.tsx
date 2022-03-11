@@ -73,7 +73,7 @@ const Window: React.FC<{
     >
       <div className="inline-flex w-full h-full">
         <div
-          className="rounded-tl-[8px] rounded-tr-[8px] h-full w-full flex flex-col"
+          className="rounded-tl-[8px] rounded-tr-[8px] h-full w-full flex flex-col gap-0"
           style={{
             boxShadow:
               "inset -1px -1px #00138c, inset 1px 1px #0831d9, inset -2px -2px #001ea0, inset 2px 2px #166aee, inset -3px -3px #003bda, inset 3px 3px #0855dd",
@@ -99,7 +99,7 @@ const Window: React.FC<{
             // enableResizing={enableResizing}
           >
             <div className="w-full truncate handle">{title}</div>
-            <div className="w-[80px] min-w-[80px]">
+            <div className="w-[74px] min-w-[74px]">
               <div className="flex flex-row gap-1 w-full justify-end cursor-auto">
                 <button
                   onClick={onMinimize}
