@@ -164,6 +164,7 @@ const IconWrapper: React.FC<React.ComponentProps<typeof Icon>> = ({
   y = 0,
   ...props
 }): ReactElement => {
+  const [zIndex, setZIndex] = useState(1);
   if (dragable)
     return (
       <Rnd
@@ -172,6 +173,13 @@ const IconWrapper: React.FC<React.ComponentProps<typeof Icon>> = ({
         handle=".handle"
         default={{ x: x, y: y, width: "auto", height: "70px" }}
         dragHandleClassName="handle"
+        style={{ zIndex: zIndex }}
+        onDragStart={(e, data) => {
+          setZIndex(2);
+        }}
+        onDragStop={() => {
+          setZIndex(1);
+        }}
       >
         <div className="inline-flex items-center justify-center h-full">
           <Icon {...props} />
