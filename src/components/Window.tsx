@@ -33,6 +33,7 @@ const Window: React.FC<{
   onClose,
 }): ReactElement => {
   const screen = useScreenSize();
+  const [zIndex, setZIndex] = useState(3); // Refer to Iocns component
   const [fullScreen, setFullScreen] = useState(false);
   const [rnd, setRnd] = useState<any>(null);
   const [xPos, setXPos] = useState(x ?? 100);
@@ -62,6 +63,13 @@ const Window: React.FC<{
       bounds="parent"
       dragHandleClassName="handle"
       minWidth={100}
+      style={{ zIndex: zIndex }}
+      onDragStart={(e, data) => {
+        setZIndex(4);
+      }}
+      onDragStop={() => {
+        setZIndex(3);
+      }}
     >
       <div className="inline-flex w-full h-full">
         <div
