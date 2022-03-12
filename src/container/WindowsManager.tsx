@@ -38,7 +38,8 @@ const WindowsManager: React.FC = (): ReactElement => {
               onMaximize: () => handleOnMaximize(i),
               onClose: () => handleOnClose(i),
               onClick: () => handleActiveWindow(i),
-              zIndex: i === activeWindow ? 3 + windowsList.length : 3 + i,
+              // zIndex: i === activeWindow ? 3 + windowsList.length : 3 + i,
+              zIndex: i + 3,
             });
           }
           return null;

@@ -74,7 +74,7 @@ const Window: React.FC<{
       minWidth={100}
       style={{ zIndex: zi }}
       onDragStart={(e, data) => {
-        setzi(zi + 4);
+        // setzi(zi + 4);
       }}
     >
       <div className="inline-flex w-full h-full" onClick={onClick}>

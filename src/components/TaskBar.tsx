@@ -41,7 +41,6 @@ const TaskBar: React.FC<{
           <div className="basis-3/4 lg:basis-4/5 border-r-2 border-gray-600 pt-[6px] pb-[2px] px-3">
             <div className="grid grid-cols-12 h-full w-full items-center justify-center">
               {/* // TODO: use static description for taksbars */}
-              {/* // Manually window's taskbar icon and title */}
               {windows.map((_, i) => {
                 return (
                   <div
