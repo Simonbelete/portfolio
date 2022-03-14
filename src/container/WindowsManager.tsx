@@ -5,6 +5,7 @@ import {
   maximizeWindow,
   removeWindow,
   setActiveWindow,
+  moveWindowToTop,
 } from "rootSlice";
 import { WINDOWS } from "components/windows";
 
@@ -24,7 +25,9 @@ const WindowsManager: React.FC = (): ReactElement => {
     dispatch(removeWindow(i));
   };
   const handleActiveWindow = (i: number) => {
+    console.log(i);
     dispatch(setActiveWindow(i));
+    dispatch(moveWindowToTop(i));
   };
   return (
     <>
