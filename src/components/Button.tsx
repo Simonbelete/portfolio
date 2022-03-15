@@ -4,7 +4,7 @@ const Button: React.FC<{ children: string }> = ({ children }): ReactElement => {
   return (
     <button
       type="button"
-      className="font-tahoma text-[11px] px-2 py-1"
+      className="font-tahoma text-[11px] px-2 py-1 active:outline-1"
       style={{
         boxSizing: "border-box",
         border: "1px solid #003c74",
