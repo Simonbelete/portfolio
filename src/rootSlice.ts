@@ -41,7 +41,10 @@ export const rootSlice = createSlice({
           ...state.windows,
           { id: action.payload, minimized: false },
         ];
-        state.windowsSequence = [...state.windowsSequence, action.payload];
+        state.windowsSequence = [
+          ...state.windowsSequence,
+          state.windows.length - 1,
+        ];
       }
     },
     minimizeWindow: (state, action: PayloadAction<number>) => {
