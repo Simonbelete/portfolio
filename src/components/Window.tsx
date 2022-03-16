@@ -77,6 +77,10 @@ const Window: React.FC<{
         // Temporary set z index to top
         setzi(100);
       }}
+      onResizeStart={(e, data) => {
+        // Temporary set z index to top
+        setzi(100);
+      }}
     >
       <div className="inline-flex w-full h-full" onClick={onClick}>
         <div
