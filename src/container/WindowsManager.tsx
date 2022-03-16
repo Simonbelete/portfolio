@@ -5,14 +5,13 @@ import {
   maximizeWindow,
   removeWindow,
   setActiveWindow,
-  moveWindowToTop,
 } from "rootSlice";
 import { WINDOWS } from "components/windows";
 
 const WindowsManager: React.FC = (): ReactElement => {
   const windowsList = useAppSelector((state) => state.RootReducer.windows);
-  const activeWindow = useAppSelector(
-    (state) => state.RootReducer.activeWindow
+  const { activeWindow, windowsSequence } = useAppSelector(
+    (state) => state.RootReducer
   );
   const dispatch = useAppDispatch();
   const handleOnMinimize = (i: number) => {
@@ -25,9 +24,8 @@ const WindowsManager: React.FC = (): ReactElement => {
     dispatch(removeWindow(i));
   };
   const handleActiveWindow = (i: number) => {
-    console.log(i);
     dispatch(setActiveWindow(i));
-    dispatch(moveWindowToTop(i));
+    // dispatch(moveWindowToTop(i));
   };
   return (
     <>
@@ -41,8 +39,9 @@ const WindowsManager: React.FC = (): ReactElement => {
               onMaximize: () => handleOnMaximize(i),
               onClose: () => handleOnClose(i),
               onClick: () => handleActiveWindow(i),
-              // zIndex: i === activeWindow ? 3 + windowsList.length : 3 + i,
-              zIndex: i + 3,
+              zIndex: () => {
+                return windowsSequence.findIndex((e) => e === i) + 3;
+              },
             });
           }
           return null;

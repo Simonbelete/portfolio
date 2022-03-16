@@ -12,6 +12,7 @@ export interface Desktops {
 }
 
 interface RootState {
+  windowsSequence: number[];
   activeWindow: number;
   windows: Windows[];
   desktops: Desktops[];
@@ -19,7 +20,8 @@ interface RootState {
 
 // Init statedefault
 const initialState: RootState = {
-  activeWindow: -1, // eg. windows[activeWindow]
+  windowsSequence: [0],
+  activeWindow: 0, // eg. windows[activeWindow]
   windows: [
     {
       id: 0,
@@ -34,11 +36,13 @@ export const rootSlice = createSlice({
   initialState,
   reducers: {
     addWindow: (state, action: PayloadAction<number>) => {
-      if (!state.windows.some((w) => w.id === action.payload))
+      if (!state.windows.some((w) => w.id === action.payload)) {
         state.windows = [
           ...state.windows,
           { id: action.payload, minimized: false },
         ];
+        state.windowsSequence = [...state.windowsSequence, action.payload];
+      }
     },
     minimizeWindow: (state, action: PayloadAction<number>) => {
       const cp = state.windows;
@@ -57,6 +61,9 @@ export const rootSlice = createSlice({
     },
     setActiveWindow: (state, action: PayloadAction<number>) => {
       state.activeWindow = action.payload;
+      const wc = state.windowsSequence;
+      wc.splice(wc.indexOf(action.payload), 1);
+      state.windowsSequence = [...wc, action.payload];
     },
     moveWindowToTop: (state, action: PayloadAction<number>) => {
       const cp = state.windows;
