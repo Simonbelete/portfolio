@@ -51,13 +51,22 @@ export const rootSlice = createSlice({
       state.windows = cp;
     },
     maximizeWindow: (state, action: PayloadAction<number>) => {
-      const cp = state.windows;
-      cp[action.payload].minimized = false;
-      state.windows = cp;
-      // Set Window up front
-      const wc = state.windowsSequence;
-      wc.splice(wc.indexOf(action.payload), 1);
-      state.windowsSequence = [...wc, action.payload];
+      // Toggle minimize or maximize
+      if (state.windows[action.payload].minimized) {
+        // Minimized to Maximize
+        const cp = state.windows;
+        cp[action.payload].minimized = false;
+        state.windows = cp;
+        // Set Window up front
+        const wc = state.windowsSequence;
+        wc.splice(wc.indexOf(action.payload), 1);
+        state.windowsSequence = [...wc, action.payload];
+      } else {
+        // Maximize to Minimize
+        const cp = state.windows;
+        cp[action.payload].minimized = true;
+        state.windows = cp;
+      }
     },
     removeWindow: (state, action: PayloadAction<number>) => {
       const cp = state.windows;
