@@ -13,7 +13,6 @@ export interface Desktops {
 
 interface RootState {
   windowsSequence: number[];
-  activeWindow: number;
   windows: Windows[];
   desktops: Desktops[];
 }
@@ -21,7 +20,6 @@ interface RootState {
 // Init statedefault
 const initialState: RootState = {
   windowsSequence: [0],
-  activeWindow: 0, // eg. windows[activeWindow]
   windows: [
     {
       id: 0,
@@ -56,6 +54,10 @@ export const rootSlice = createSlice({
       const cp = state.windows;
       cp[action.payload].minimized = false;
       state.windows = cp;
+      // Set Window up front
+      const wc = state.windowsSequence;
+      wc.splice(wc.indexOf(action.payload), 1);
+      state.windowsSequence = [...wc, action.payload];
     },
     removeWindow: (state, action: PayloadAction<number>) => {
       const cp = state.windows;
@@ -63,7 +65,6 @@ export const rootSlice = createSlice({
       state.windows = cp;
     },
     setActiveWindow: (state, action: PayloadAction<number>) => {
-      state.activeWindow = action.payload;
       const wc = state.windowsSequence;
       wc.splice(wc.indexOf(action.payload), 1);
       state.windowsSequence = [...wc, action.payload];

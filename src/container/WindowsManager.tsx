@@ -10,9 +10,7 @@ import { WINDOWS } from "components/windows";
 
 const WindowsManager: React.FC = (): ReactElement => {
   const windowsList = useAppSelector((state) => state.RootReducer.windows);
-  const { activeWindow, windowsSequence } = useAppSelector(
-    (state) => state.RootReducer
-  );
+  const { windowsSequence } = useAppSelector((state) => state.RootReducer);
   const dispatch = useAppDispatch();
   const handleOnMinimize = (i: number) => {
     dispatch(minimizeWindow(i));
@@ -40,9 +38,6 @@ const WindowsManager: React.FC = (): ReactElement => {
               onClose: () => handleOnClose(i),
               onClick: () => handleActiveWindow(i),
               zIndex: () => {
-                console.group("i =" + i);
-                console.log(windowsSequence.findIndex((e) => e === i));
-                console.groupEnd();
                 return windowsSequence.findIndex((e) => e === i) + 3;
               },
             });
