@@ -69,12 +69,6 @@ export const rootSlice = createSlice({
       wc.splice(wc.indexOf(action.payload), 1);
       state.windowsSequence = [...wc, action.payload];
     },
-    moveWindowToTop: (state, action: PayloadAction<number>) => {
-      const cp = state.windows;
-      const w = state.windows[action.payload];
-      cp.splice(action.payload, 1);
-      state.windows = [...cp, w];
-    },
   },
 });
 
@@ -84,7 +78,6 @@ export const {
   maximizeWindow,
   removeWindow,
   setActiveWindow,
-  moveWindowToTop,
 } = rootSlice.actions;
 
 export default rootSlice.reducer;

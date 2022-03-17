@@ -23,7 +23,6 @@ const WindowsManager: React.FC = (): ReactElement => {
   };
   const handleActiveWindow = (i: number) => {
     dispatch(setActiveWindow(i));
-    // dispatch(moveWindowToTop(i));
   };
   return (
     <>
