@@ -12,23 +12,23 @@ const App: React.FC = (): ReactElement => {
   // Init ga tracker
   useGaTracker();
 
-  // useEffect(() => {
-  //   if (isPowerOn) {
-  //     const timeId = setTimeout(() => {
-  //       setIsBootingDone(true);
-  //     }, 5000);
+  useEffect(() => {
+    if (isPowerOn) {
+      const timeId = setTimeout(() => {
+        setIsBootingDone(true);
+      }, 5000);
 
-  //     return () => {
-  //       clearTimeout(timeId);
-  //     };
-  //   }
-  // }, []);
+      return () => {
+        clearTimeout(timeId);
+      };
+    }
+  }, []);
 
-  // if (!isPowerOn) return <LockScreen />;
-  // else if (isBootingDone) return <HomeScreenContainer />;
-  // else return <BootingUpContaienr />;
+  if (!isPowerOn) return <LockScreen />;
+  else if (isBootingDone) return <HomeScreenContainer />;
+  else return <BootingUpContaienr />;
 
-  return <HomeScreenContainer />;
+  // return <HomeScreenContainer />;
 };
 
 export default App;
