@@ -27,7 +27,7 @@ const GrettingWindow: React.FC<React.ComponentProps<typeof Window>> = ({
           <p className="text-[12px] w-96">
             Welcome to my portfolio!
             <br />
-            I'm a Full Stack developer and AI enthusiast
+            I'm a Full Stack developer
           </p>
         </div>
         <div className="w-full flex flex-row gap-1 justify-end items-center pb-10">
