@@ -30,7 +30,7 @@ const TaskBar: React.FC<{
 
         <div className="flex flex-row h-full">
           <Menu.Button className="basis-24">
-            <div className="hover:brightness-125 h-full">
+            <div className="hover:brightness-110 hover:cursor-xp h-full">
               <img
                 src="/images/start_button.png"
                 alt="start Menu"
