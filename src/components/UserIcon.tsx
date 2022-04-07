@@ -1,5 +1,7 @@
 import React, { ReactElement } from "react";
 import { useAppDispatch, useAppSelector } from "hooks";
+import { addWindow } from "rootSlice";
+import { WINDOWS, UserAccountsWindow } from "components/windows";
 
 const UserIcon: React.FC<{
   image?: string;
@@ -11,10 +13,24 @@ const UserIcon: React.FC<{
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.RootReducer);
 
+  // TODO: Redundent code
+  const findInstanceIndex = (o: any) => {
+    for (var i = 0; i < WINDOWS.length; i = i + 1) {
+      if (WINDOWS[i].component({}).type === o) {
+        return WINDOWS[i].id;
+      }
+    }
+    return -1;
+  };
+
+  const openUserWindow = () => {
+    dispatch(addWindow(findInstanceIndex(UserAccountsWindow)));
+  };
+
   if (screen === "home")
     return (
       <div className="flex flex-row items-center gap-2">
-        <span className="cursor-pointer">
+        <span className="cursor-pointer" onClick={openUserWindow}>
           <img
             src={user.image}
             alt={user.name}

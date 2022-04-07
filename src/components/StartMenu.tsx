@@ -1,6 +1,6 @@
 import { Icon } from "components";
 import React, { ReactElement } from "react";
-import { UserIcon } from "components";
+import { UserIcon, GlowLine } from "components";
 
 const LeftStartMenus: React.FC = (): ReactElement => {
   return (
@@ -29,9 +29,10 @@ const StartMenu: React.FC = (): ReactElement => {
           }}
         >
           {/* Header */}
-          <div className="h-[15%] flex items-center justify-start px-2 py-2">
+          <div className="h-[15%] flexitems-center justify-start px-2 py-2">
             <UserIcon />
           </div>
+          <GlowLine colors={["white, #ED943F 50%, #d3e5fa"]} />
           {/* Body */}
           <div className="h-full w-full pr-[1px] bg-[#225ad9]">
             <div className="h-full w-full flex flex-row justify-between">

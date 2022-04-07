@@ -3,6 +3,7 @@ import BrowserWindow from "./BrowserWindow";
 import PhoneNumberWindow from "./PhoneNumberWindow";
 import GithubWindow from "./GithubWindow";
 import WorksWindow from "./WorksWindow";
+import UserAccountsWindow from "./UserAccountsWindow";
 
 export const WINDOWS = [
   {
@@ -29,6 +30,12 @@ export const WINDOWS = [
     toolBarIcon: "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-126.ico",
     title: "Portfolio",
   },
+  {
+    id: 4,
+    component: ({ ...props }) => <UserAccountsWindow {...props} />,
+    toolBarIcon: "/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-160.ico",
+    title: "User Accounts",
+  },
 ];
 
 export {
@@ -37,4 +44,5 @@ export {
   PhoneNumberWindow,
   GithubWindow,
   WorksWindow,
+  UserAccountsWindow,
 };
