@@ -1,21 +1,23 @@
 import React, { ReactElement } from "react";
+import { useAppDispatch, useAppSelector } from "hooks";
 
 const UserIcon: React.FC<{
-  name?: string;
   image?: string;
   screen?: string;
 }> = ({
-  name,
   image,
   screen = "home", // home | lock
 }): ReactElement => {
+  const dispatch = useAppDispatch();
+  const { user } = useAppSelector((state) => state.RootReducer);
+
   if (screen === "home")
     return (
       <div className="flex flex-row items-center gap-2">
         <span className="cursor-pointer">
           <img
-            src={image}
-            alt={name}
+            src={user.image}
+            alt={user.name}
             className="aspect-square w-[55px] h-[55px] border-[2px] border-white rounded"
           />
         </span>
@@ -23,7 +25,7 @@ const UserIcon: React.FC<{
           className="text-white font-tahoma text-lg font-bold"
           style={{ textShadow: "1px 2px black" }}
         >
-          {name}
+          {user.name}
         </p>
       </div>
     );
@@ -36,8 +38,8 @@ const UserIcon: React.FC<{
         }}
       >
         <img
-          src={image}
-          alt={name}
+          src={user.image}
+          alt={user.name}
           className="aspect-square w-[55px] h-[55px] border-[2px] border-white rounded"
         />
         <div className="flex flex-col gap-0">
@@ -45,7 +47,7 @@ const UserIcon: React.FC<{
             className="text-white text-[17px]"
             style={{ textShadow: "1px 2px black" }}
           >
-            {name}
+            {user.name}
           </p>
           <p className="text-white font-bold text-[11px]">Logged on</p>
         </div>

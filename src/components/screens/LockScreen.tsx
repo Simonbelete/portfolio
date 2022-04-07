@@ -23,11 +23,7 @@ const LockScreen: React.FC = (): ReactElement => {
           </p>
         </div>
         <GlowLine horizontal colors={["#658ced", "#91AEEE", "#658ced"]} />
-        <UserIcon
-          screen="lock"
-          image="/user_pictures/Chess_Pieces.png"
-          name="Simon Belete"
-        />
+        <UserIcon screen="lock" />
       </div>
       {/* Footer */}
       <GlowLine colors={["#203A97, #ED943F 50%, #26408C"]} />

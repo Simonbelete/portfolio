@@ -11,10 +11,16 @@ export interface Desktops {
   id: number;
 }
 
+export interface User {
+  name: string;
+  image: string;
+}
+
 interface RootState {
   windowsSequence: number[];
   windows: Windows[];
   desktops: Desktops[];
+  user: User;
 }
 
 // Init statedefault
@@ -27,6 +33,10 @@ const initialState: RootState = {
     },
   ],
   desktops: [],
+  user: {
+    name: "Simon Belete",
+    image: "/user_pictures/Chess_Pieces.png",
+  },
 };
 
 export const rootSlice = createSlice({
