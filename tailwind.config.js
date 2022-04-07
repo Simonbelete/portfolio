@@ -3,9 +3,13 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'tahoma': ['tahoma']
+    },
     fontSize: {
       'sm': '10px',
-      'base': '12px'
+      'base': '12px',
+      "lg": "16px"
     },
     extend: {
       cursor: {

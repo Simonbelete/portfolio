@@ -12,13 +12,15 @@ const UserIcon: React.FC<{
   if (screen === "home")
     return (
       <div className="flex flex-row items-center gap-2">
-        <img
-          src={image}
-          alt={name}
-          className="aspect-square w-[55px] h-[55px] border-[2px] border-white rounded"
-        />
+        <span className="cursor-pointer">
+          <img
+            src={image}
+            alt={name}
+            className="aspect-square w-[55px] h-[55px] border-[2px] border-white rounded"
+          />
+        </span>
         <p
-          className="text-white text-[17px] font-tahoma font-bold"
+          className="text-white font-tahoma text-lg font-bold"
           style={{ textShadow: "1px 2px black" }}
         >
           {name}
