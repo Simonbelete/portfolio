@@ -14,7 +14,8 @@ const UserAccountsWindow: React.FC<React.ComponentProps<typeof Window>> = ({
       height={500}
       x={width < 500 ? width * 0.06 : width * 0.4}
       y={height * 0.1}
-      title={<p>User Accounts</p>}
+      title="User Accounts"
+      icon="/win_xp_shell32_dll_ico/winxp_ico_shell32_dll-160.ico"
     >
       <>
         <Window.ExploreBar>

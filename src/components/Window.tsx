@@ -8,6 +8,7 @@ import { WINDOWS } from "components/windows";
 
 const Window: React.FC<{
   title?: ReactElement | ReactElement[] | string;
+  icon?: string;
   // type?: Types;
   children?: ReactElement | ReactElement[];
   width?: number;
@@ -23,6 +24,7 @@ const Window: React.FC<{
   zIndex?: number;
 }> = ({
   title,
+  icon,
   // type,
   children,
   width = 100,
@@ -109,7 +111,12 @@ const Window: React.FC<{
             }}
             // enableResizing={enableResizing}
           >
-            <div className="w-full truncate handle">{title}</div>
+            <div className="w-full truncate handle flex flex-row gap-1 itmes-center">
+              {icon && (
+                <img src={icon} alt={String(title)} className="h-5 w-5" />
+              )}
+              <p className="text-base text-white">{title}</p>
+            </div>
             <div className="w-[74px] min-w-[74px]">
               <div className="flex flex-row gap-1 w-full justify-end cursor-auto">
                 <button
