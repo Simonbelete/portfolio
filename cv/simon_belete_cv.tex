@@ -23,6 +23,7 @@
 \setlength{\multicolsep}{-3.0pt}
 \setlength{\columnsep}{-1pt}
 \input{glyphtounicode}
+\usepackage{graphicx}
 
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
@@ -46,6 +47,13 @@
 \colorlet{emphasis}{SlateGrey}
 \colorlet{body}{LightGrey}
 
+\usepackage{multienum}
+
+\newenvironment{multiitem}{%
+  \multienumerate\renewcommand{\labelname}{\textbullet}%
+}{%
+  \endmultienumerate%
+}
 
 
 %----------FONT OPTIONS----------
@@ -145,29 +153,43 @@
 \begin{document}
 
 %----------HEADING----------
-
+\begin{center}
+	\vfill
+    
+\end{center}
 
 \begin{center}
-    {\Huge \scshape Simon Belete Kassaye} \\ \vspace{1pt}
-    Addis Ababa,Ethiopia \\ \vspace{1pt}
+	\vspace{-2pt}
+    {\Huge \scshape Simon Belete Kassaye} 
+    \hspace{5em}
+    %\includegraphics[height=2cm]{image.jpg}
+    \\ \vspace{1pt}
+    
+    Addis Ababa,Ethiopia \\ \vspace{10pt}
     \small \href{tel:+xxxxxxxxxxxx}{ \raisebox{-0.1\height}\faPhone\ \underline{+251-966751230} ~} \href{mailto:simonbelete@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{simonbelete@gmail.com}} ~ 
     \href{https://linkedin.com/in/simonbelete}{\raisebox{-0.2\height}\faLinkedinSquare\ \underline{simonbelete}}  ~
     \href{https://github.com/Simonbelete}{\raisebox{-0.2\height}\faGithub\ \underline{Simonbelete}} ~
     \href{https://simonbelete.com}{\raisebox{-0.2\height}\faGlobe\ \underline{simonbelete.com}}
-    \vspace{-1pt}
+    \vspace{10pt}
 \end{center}
 
+\section{SUMMARY}
+I'm a software developer with 5+ years of expertise in developing various applications ranging from small to high end applications, skilled in full-stack development with an exceptional skill in javascript and modern libraries/frameworks, database desing and 3+ years as a python developer.
+
+\vspace{10pt}
 
 %-----------EXPERIENCE-----------
 \section{EXPERIENCE}
+\vspace{10pt}
   \resumeSubHeadingListStart
 
     \resumeSubheading
       {Ecopia}{06 2017 -- 09 2017} 
-      {\underline{Intern}}{Addis Ababa, Ethiopia}
+      {\underline{Fullstack Developer - Intern}}{Addis Ababa, Ethiopia}
       \resumeItemListStart
-        \resumeItem{\normalsize{Contribute to the desing of proposal.}}
-  \resumeItem{\normalsize{Contribute to the development of ERP Inventory Management System}}
+        \resumeItem{\normalsize{Create technical documentation for ERP software solution}}
+       \resumeItem{\normalsize{Participate in design and development using PHP (Symfony framework)}}
+  \resumeItem{\normalsize{Contribute to the development of ERP Inventory Management module}}
       \resumeItemListEnd 
       
       
@@ -175,7 +197,8 @@
       {Guya Delivery}{05 2019 -- 12 2020} 
       {\underline{Co-Founder and Software Engineer}}{Addis Ababa, Ethiopia}
       \resumeItemListStart
-      	\resumeItem{\normalsize{System Microservice Architecture}}
+      	\resumeItem{\normalsize{Implement REST Microservices using multiple lanaguages and frameworks.}}
+      	\resumeItem{\normalsize{Develop custom Gregorian to Geez date and time as an npm package}}
   		\resumeItem{\normalsize{Build GPS based e-commerce and delivery website with Microservice Architecture}}
       \resumeItemListEnd
 	
@@ -183,25 +206,32 @@
       {Prime Maven Engineering PLC}{03 2021 -- 05 2021} 
       {\underline{Backend developer}}{Addis Ababa, Ethiopia}
       \resumeItemListStart
-        \resumeItem{\normalsize{Develop REST API for mobile application}}
+        \resumeItem{\normalsize{Developed mobile services and APIs that enabled seamless communication between \\ android application and back-end components}}
+        \resumeItem{\normalsize{Optimize database searching query performance by using Elastic search}}
       \resumeItemListEnd    
       
       \resumeSubheading
       {Shewaberr Technologies PLC}{02 2021 -- 11 2021} 
-      {\underline{CTO \& CO-FOUNDER}}{Addis Ababa, Ethiopia}
+      {\underline{Fullstack Developer}}{Addis Ababa, Ethiopia}
       \resumeItemListStart
-        \resumeItem{\normalsize{Develop E-commerce website}}
-        \resumeItem{\normalsize{Prepare scrum}}
+        \resumeItem{\normalsize{Participate in UI/UX desing}}
+        \resumeItem{\normalsize{Develop and deploy a full functional a book E-commerce}}
+        \resumeItem{\normalsize{Prepare weekly scrum}}
         \resumeItem{\normalsize{Review codes and manage developers}}
-        \resumeItem{\normalsize{Deploy and monitor website(CI/CD)}}
+        \resumeItem{\normalsize{Utilized source control, automation tools, and CI/CD processes to improve \\ development cycles and optimize production releases}}
+        \resumeItem{\normalsize{Monitored system health, debugged performance issues, and optimized \\ applications using both server-side and client-side techniques}}
       \resumeItemListEnd     
       
+      \newpage
       \resumeSubheading
       {Adarsh Technologies}{01 2022 -- 12 2022} 
       {\underline{Senior Developer}}{Addis Ababa, Ethiopia}
       \resumeItemListStart
-        \resumeItem{\normalsize{Prepare software requirement document}}
-        \resumeItem{\normalsize{Develop ERP software }}
+        \resumeItem{\normalsize{Designed project requirements and system desings}}
+        \resumeItem{\normalsize{Develop ERP that closely resembles the day to day working flow by \\ using companie's ISO certified document }}
+        \resumeItem{\normalsize{Work closely with all levels of client's employees to understand current \\ and desired processes and procedures }}
+        \resumeItem{\normalsize{Develop a fully functional odoo based ERP}}
+        \resumeItem{\normalsize{Develop a custom module to generate reports which uses template based word document}}
       \resumeItemListEnd 
       
       \resumeSubheading
@@ -213,11 +243,19 @@
          \resumeItem{\normalsize{Contribute in REST API development and documentation}}
       \resumeItemListEnd 
       
-       \resumeSubheading
+     \resumeSubheading
       {International Livestock Research Institute(ILRI)}{01 2023 -- Current} 
       {\underline{Consultant}}{Addis Ababa, Ethiopia}
       \resumeItemListStart
-        \resumeItem{\normalsize{Develop various Website and mobile applications}}
+      \resumeItem{\normalsize{Development of multiple web based and android applications }}
+        \resumeItem{\normalsize{Develop a Nutrition Educatison Mobile APP in three languages (Amharic, English, and Swahili)}}
+		\resumeItem{\normalsize{Develop a training Mobile App for the farmer and or livestock extension agents/experts}}        
+		\resumeItem{\normalsize{Develop a portal webiste for the TPGS Platforms}}         
+        \resumeItem{\normalsize{Develop web based feed formulation}}
+        \resumeItem{\normalsize{Integrate Poultry Breeding Data Management and Feed formulation to TPGS Platforms }}
+        \resumeItem{\normalsize{Test all applications and deploy them to ILIR webiste}}
+        \resumeItem{\normalsize{Prepare a comprehensive user guid document}}
+        \resumeItem{\normalsize{Give a Quick start training to select staff members on how to use the platform}}
       \resumeItemListEnd 
       	
       \resumeSubheading
@@ -253,7 +291,7 @@
 
 %-----------PROJECTS-----------
 \section{PROJECTS}
-    \vspace{-5pt}
+    \vspace{10pt}
     \resumeSubHeadingListStart
 	
 			    
@@ -306,19 +344,29 @@ the Microservices Architecture}}
 
  
     \resumeSubHeadingListEnd
-\vspace{-12pt}
+\vspace{10pt}
 
 %
 
 %-----------PROGRAMMING SKILLS-----------
 \section{TECHNICAL SKILLS}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{\normalsize{Languages:}}{ \normalsize{Python, JavaScript, PHP, C++, Dart, Go,  SQL, NoSQL}} \\
-     \textbf{\normalsize{Technologies/Frameworks:}}{\normalsize{ Linux, GitHub, Docker, Kubernetes, CI/CD, ReactJS, Redux, Redux Toolkit, NextJS, NodeJS, ExpressJS, Git, Mongo, Flutter}} \\
-    }}
- \end{itemize}
- \vspace{-15pt}
+\vspace{10pt}
+ %\begin{itemize}[leftmargin=0.15in, label={}]
+%    \small{\item{
+%     \textbf{\normalsize{Languages:}}{ \normalsize{Python, JavaScript, PHP, C+%+, Dart, Go,  SQL, NoSQL}} \\
+%     \textbf{\normalsize{Technologies/Frameworks:}}{\normalsize{ Linux, %GitHub, Docker, Kubernetes, CI/CD, ReactJS, Redux, Redux Toolkit, NextJS, %NodeJS, ExpressJS, Git, Mongo, Flutter}} \\
+%    }}
+% \end{itemize}
+
+\begin{multiitem}
+\mitemxx{HTML/CSS}{JavaScript}
+\mitemxx{Python}{Django/flask API}
+\mitemxx{Docker}{Kubernetes}
+\mitemxx{Reactjs}{Nextjs}
+\mitemxx{SQL/NoSQL}{Mongo/PostgreSQL/MySql/Redis}
+\mitemxx{Flutter}{Firebase}
+\mitemxx{odoo}{}
+\end{multiitem}
 
  
  %-----------CERTIFICATIONS---------------
@@ -336,30 +384,42 @@ the Microservices Architecture}}
 %$\sbullet[.75] \hspace{0.2cm}${\href{certificateLink.com}{MongoDB Basics}} \hspace{0.5cm}
 %$\sbullet[.75] \hspace{0.2cm}${\href{certificateLink.com}{NodeJS with Express \&amp; MongoDB - Udemy}} \\
 
+\vspace{10pt}
 %-----------EDUCATION-----------
 \section{EDUCATION}
+\vspace{10pt}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Debre Markos University} {09 2016 -- 01 2021}
+      {Debre Markos University} {} %{2016 -- 2020}
       {Bachelor of Science Software Engineering }{Debre Markos, Ethiopia}
   \resumeSubHeadingListEnd
   
-% \pagebreak
-%\section{REFERENCE}
-%  \resumeSubHeadingListStart
-%    \resumeSubheading
-%      {Lishan Girmay} {Adarsh Technologies}
-%      {CEO }{+251911470407 / girmaylishan7@gmail.com}
-%  \resumeSubHeadingListEnd 
-%  \resumeSubHeadingListStart
-%    \resumeSubheading
-%      {Awlachew Sintie} {EDUHUB Technology Solutions}
-%      {CEO }{+251911465394 / info@eduhubplc.com}
-%  \resumeSubHeadingListEnd 
-%  \resumeSubHeadingListStart
-%    \resumeSubheading
-%      {Demelash} {Hagbes PLC}
-%      {Senior Developer}{+251939706469 / demelash1452@gmail.com}
-%  \resumeSubHeadingListEnd 
+  
+\vspace{10pt}  
+\section{LANGUAGE}
+\vspace{10pt}
+\begin{itemize}
+	\item \textbf{Amharic} - Native/Bilingual
+	\item \textbf{English} - Proficient
+\end{itemize}
+
+\vspace{10pt}
+%\pagebreak
+\section{REFERENCE}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Lishan Girmay} {Adarsh Technologies}
+            {CEO }{+251911470407 / girmaylishan7@gmail.com}
+  \resumeSubHeadingListEnd 
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Awlachew Sintie} {EDUHUB Technology Solutions}
+      {CEO }{+251911465394 / info@eduhubplc.com}
+  \resumeSubHeadingListEnd 
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Demelash} {Hagbes PLC}
+      {Senior Developer}{+251939706469 / demelash1452@gmail.com}
+  \resumeSubHeadingListEnd 
   
 \end{document}
